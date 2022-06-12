@@ -248,3 +248,10 @@ img, svg, video, canvas, audio, iframe, embed, object {
 .display-none{
     display: none;
 }
+
+button {
+    border: none;
+    background-color: unset;
+    border-width: 0;
+    border-style: solid;
+}

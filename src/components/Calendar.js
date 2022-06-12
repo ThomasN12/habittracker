@@ -263,7 +263,7 @@ export default function Example(props) {
                       !isEqual(day, selectedDay) && 'hover:bg-gray-200',
                       (isEqual(day, selectedDay) || isToday(day)) &&
                         'font-semibold',
-                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
+                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full square'
                     )}
                   >
                     <time dateTime={format(day, 'yyyy-MM-dd')}>
