@@ -20,7 +20,7 @@ const Habit = (props) =>{
     // const [propsTotal, setPropsTotal] = useState(0);
 
     // const [totalCheckedItem, setTotalCheckedItem] = useState(-14);
-
+    
     // console.log("weeks la ", weeks)
     
     // useEffect(() => {
