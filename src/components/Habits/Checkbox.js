@@ -46,23 +46,23 @@ const Checkbox = (props) =>{
 
     
 
-    useEffect(() =>{
-        if (!count){
-            return 
-        }
-        else if (checked === 'empty'){
-            props.setCountCheckedItem((prevCount) => {
-                // if (prevCount !== 0){
-                //     return prevCount - 1;
-                // }
-                return prevCount - 1;
-            })
-        }
-        else{
-            props.setCountCheckedItem((prevCount) => prevCount + 1)
-        }
+    // useEffect(() =>{
+    //     if (!count){
+    //         return 
+    //     }
+    //     else if (checked === 'empty'){
+    //         props.setCountCheckedItem((prevCount) => {
+    //             // if (prevCount !== 0){
+    //             //     return prevCount - 1;
+    //             // }
+    //             return prevCount - 1;
+    //         })
+    //     }
+    //     else{
+    //         props.setCountCheckedItem((prevCount) => prevCount + 1)
+    //     }
 
-    },[checked, props.setCountCheckedItem]);
+    // },[checked, props.setCountCheckedItem]);
 
     return (
         <label className="checkbox path" key = {props.id} id = {props.id}>

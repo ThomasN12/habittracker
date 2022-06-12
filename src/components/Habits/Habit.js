@@ -18,14 +18,16 @@ const Habit = (props) =>{
     }
 
     // const [propsTotal, setPropsTotal] = useState(0);
-    const [totalCheckedItem, setTotalCheckedItem] = useState(-14);
+
+    // const [totalCheckedItem, setTotalCheckedItem] = useState(-14);
+
     // console.log("weeks la ", weeks)
     
-    useEffect(() => {
-        setTotalCheckedItem((prevCount) =>{
-            return prevCount + 14
-        })
-    },[weeks])
+    // useEffect(() => {
+    //     setTotalCheckedItem((prevCount) =>{
+    //         return prevCount + 14
+    //     })
+    // },[weeks])
 
     const [checkedId, setCheckedId] = useState([])
 
@@ -41,7 +43,7 @@ const Habit = (props) =>{
         )
     }
 
-    // console.log("CheckedId la", checkedId)
+    console.log("CheckedId la", checkedId)
 
 
     // console.log("propstotal la ", propsTotal)
@@ -81,15 +83,15 @@ const Habit = (props) =>{
             <div className="habit__checkboxes--container">
                 {/* {console.log("key la", key)} */}
                 {[...Array(weeks)].map((e, i) =>(
-                    <>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-6} id={`${props.daterange[0]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-5} id={`${props.daterange[1]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-4} id={`${props.daterange[2]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-3} id={`${props.daterange[3]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-2} id={`${props.daterange[4]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-1} id={`${props.daterange[5]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7} id={`${props.daterange[6]}-${props.name}`} setCountCheckedItem = {setTotalCheckedItem}></Checkbox>
-                    </>   
+                    <React.Fragment key = "1">
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-6} id={`${props.daterange[0]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-5} id={`${props.daterange[1]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-4} id={`${props.daterange[2]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-3} id={`${props.daterange[3]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-2} id={`${props.daterange[4]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7-1} id={`${props.daterange[5]}-${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={props.id*7} id={`${props.daterange[6]}-${props.name}`}></Checkbox>
+                    </React.Fragment>   
                 ))}
             </div>
             <div className="habit__info" >
@@ -114,7 +116,7 @@ const Habit = (props) =>{
                         <img src={calendar} alt=""/>
                     </div>
                     <div className="total__data">
-                        <span>{totalCheckedItem}</span>
+                        <span>{checkedId.length}</span>
                     </div>
                 </div>
             </div>
