@@ -20,18 +20,21 @@ const myHabits = [
     importance: 'High',
     weeks: 1,
     total: 0,
+    checkedId: [],
   },
   {
     id: '2',
     name: 'Walking 10 minutes a day',
     importance: 'Moderate',
-    weeks: 1
+    weeks: 1,
+    checkedId: [],
   },
   {
     id: '3',
     name: 'Playing chess',
     importance: 'Low',
-    weeks: 1
+    weeks: 1,
+    checkedId: [],
   }
 ]
 
@@ -61,19 +64,23 @@ function App() {
   //     sunday: sunday
   // })
 
-
-
   const addNewHabit = (habit) =>{
     setHabits((prevHabits) => {
       return [...prevHabits, habit];
     })
   }
+
+  const saveHabit = (habit) => {
+    Object.assign(habits, habit)
+    console.log(habits);
+  }
+
   return (
     <>
       <Example onChangeDate = {setDate}/>
       <div className='habit__table'>
           <Date daterange = {date}></Date>
-          <Habits items = {habits} daterange = {date}></Habits>
+          <Habits items = {habits} daterange = {date} onSaveHabit = {saveHabit}></Habits>
           <NewHabit onNewHabit = {addNewHabit}/>
       </div>
     </>

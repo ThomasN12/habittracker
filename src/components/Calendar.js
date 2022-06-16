@@ -101,7 +101,9 @@ export default function Example(props) {
     let thursday = format(nextDay((firstday), 4),'dd-MMM-yyyy')
     let friday = format(nextDay((firstday), 5),'dd-MMM-yyyy')
     let saturday = format(nextDay((firstday), 6),'dd-MMM-yyyy')
+    let monday1 = nextDay((firstday), 1);
 
+    
 
     // setWeekSunday(sunday)
     // setWeekMonday(monday)
@@ -126,7 +128,8 @@ export default function Example(props) {
     let weekdays = [sunday,monday, tuesday, wednesday, thursday, friday, saturday]
 
     props.onChangeDate(weekdays)
-    console.log(weekdays)
+    console.log("type la",monday1);
+    // console.log(weekdays)
   }
 
   // console.log("sunday la", weekSunday)
