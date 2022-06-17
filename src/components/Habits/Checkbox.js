@@ -1,40 +1,22 @@
 import { useState, useEffect } from 'react';
 
 
+
 const Checkbox = (props) =>{
-
-
+  
     const [checked, setChecked] = useState('empty');
 
-    const [count, setCount] = useState(true)
-
-    // if (props.checkedId.includes(props.id)){
-    //     setChecked(props.id)
-    // }
-
     useEffect(() => {
+
+        setChecked('');
+
         if (props.checkedId.includes(props.id)){
             setChecked(props.id)
-            setCount(false)
         }
-        else{
-            setCount(true)
-        }
-    },[props.id])
-
-    // console.log("checks la", props.checkedId)
-
-    // props.checkedId.map((item) => item === props.id)
-
-    
-
-    // console.log("id la", props.id)
-    // console.log("checked la", checked)
-    // console.log("checkedId la", props.checkedId)
+    },[props.id, checked, props.checkedId])
 
     const checkHandler = (boxId) => {
         if (checked === boxId){
-            setCount(true)
             props.onRemoveId(boxId)
             setChecked('empty')
         }
@@ -43,26 +25,6 @@ const Checkbox = (props) =>{
             setChecked(boxId);  
         }
     }
-
-    
-
-    // useEffect(() =>{
-    //     if (!count){
-    //         return 
-    //     }
-    //     else if (checked === 'empty'){
-    //         props.setCountCheckedItem((prevCount) => {
-    //             // if (prevCount !== 0){
-    //             //     return prevCount - 1;
-    //             // }
-    //             return prevCount - 1;
-    //         })
-    //     }
-    //     else{
-    //         props.setCountCheckedItem((prevCount) => prevCount + 1)
-    //     }
-
-    // },[checked, props.setCountCheckedItem]);
 
     return (
         <label className="checkbox path" key = {props.id} id = {props.id}>
@@ -78,3 +40,11 @@ const Checkbox = (props) =>{
 }
 
 export default Checkbox;
+
+
+
+const habit = {
+    name: "Exercise",
+    checkedDays: ["Jun-10", "Jun-11", "Jun-12"],
+    totalDays: 3,
+}

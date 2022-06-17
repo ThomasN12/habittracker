@@ -1,36 +1,27 @@
 import React from 'react';
 import Habit from "./Habit";
-import { useState } from 'react';
 
 const Habits = (props) => {
 
-    const [checkData, setCheckData] = useState([]);
+    const updateHabitObject = (habit, checkedId) => {
+        let dateCheckedId = checkedId.map(dateFilter);
+        Object.assign(habit.checkedId, dateCheckedId)
+        console.log(props.items)
+    }
 
-    // const totalCheckData = (data) => {
-    //     setCheckData((prevData) =>{
-    //         return [...prevData, data]
-    //     })
-
-    //     console.log("checkData la", checkData)
-    // }
-    // const [checkBoxes, setCheckBoxes] = useState([]);
-
-    // const onCheckBox = (checkBoxData) =>{
-    //     setCheckBoxes((prevCheckBoxes) =>{
-    //         return [...prevCheckBoxes, checkBoxData]
-    //     })
-    // }
-
-    // console.log(checkBoxes);
-
-    // const [totalData, setTotalData] = useState(0);
+    const dateFilter = (item) => {
+        let checkeddaystring =  item.split('/')[0];
+        let parts = checkeddaystring.split('-')
+        let checkeddaydate = new Date(parts[2], parts[0], parts[1]);
+        return checkeddaydate;
+    }
 
     return (
         <>
             {props.items.map((habit) => (
-                <div className='habit__container' key = {habit.id}>
+                <div className='habit__container' key = {`${habit.name}-${habit.id}`}>
                     <Habit
-                        key = {habit.id}
+                        key = {`${habit.name}-${habit.id}`}
                         name = {habit.name}
                         weeks = {habit.weeks}
                         streak = {habit.streak}
@@ -38,9 +29,9 @@ const Habits = (props) => {
                         total = {habit.total}
                         daterange = {props.daterange}
                         id = {habit.id}
-                        // onTotalData = {setTotalData}
-                        // habitData = {onCheckBox}
-                        // onCheckData = {totalCheckData}
+                        checkedId = {habit.checkedId}
+                        habit = {habit}
+                        onUpdateChecked = {updateHabitObject}
                     />
                 </div>
             ))}

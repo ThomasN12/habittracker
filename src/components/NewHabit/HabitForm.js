@@ -32,7 +32,8 @@ const HabitForm = (props) =>{
             genre: habitGenre,
             target: habitTarget,
             days: habitDays,
-            weeks: 1
+            weeks: 1,
+            checkedId: []
         }
         props.onSaveHabitData(habitData);
         setHabitName('');
