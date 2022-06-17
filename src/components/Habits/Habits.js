@@ -3,9 +3,20 @@ import Habit from "./Habit";
 
 const Habits = (props) => {
 
-    let updateHabitObject = (habit, checkedId) => {
-        Object.assign(habit.checkedId, checkedId)
-        props.onSaveHabit(habit);
+    const updateHabitObject = (habit, checkedId) => {
+        let dateCheckedId = checkedId.map(dateFilter);
+        Object.assign(habit.checkedId, dateCheckedId)
+        console.log(props.items)
+    }
+
+    console.log(props.daterange)
+
+    const dateFilter = (item) => {
+        let checkeddaystring =  item.split('/')[0];
+        let parts = checkeddaystring.split('-')
+        let checkeddaydate = new Date(parts[2], parts[0], parts[1]);
+        console.log(parts[2], parts[1], parts[0])
+        return checkeddaydate;
     }
 
     return (

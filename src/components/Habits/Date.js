@@ -6,6 +6,10 @@ import {
 
 
 const Date = (props) =>{
+    console.log(props.daterange[0]);
+    console.log(new window.Date(props.daterange[0]))
+    console.log(props.daterange[1]);
+    console.log(new window.Date('12-06-2022'))
     let sunday = parseISO(new window.Date(props.daterange[0]).toISOString())
     let monday = parseISO(new window.Date(props.daterange[1]).toISOString())
     let tuesday = parseISO(new window.Date(props.daterange[2]).toISOString())
