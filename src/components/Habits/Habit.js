@@ -1,9 +1,10 @@
 import React from "react";
 import Checkbox from "./Checkbox";
 import fire from "../../img/fire.png";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import medal from "../../img/gold-medal.png";
 import calendar from "../../img/calendar.png";
+import Chart from "../Charts/HabitChart";
 
 const Habit = (props) =>{
     // const [weeks, setWeeks] = useState(props.weeks)
@@ -15,18 +16,27 @@ const Habit = (props) =>{
 
     const [checkedId, setCheckedId] = useState([])
     
+    const isMounted = useRef(false);
 
     const addId = (id) => {
         setCheckedId((prevIds) =>{
+            // props.onUpdateChecked(props.habit, checkedId);
+            
             return [...prevIds, id]
         })
     }
 
     useEffect(() => {
-        props.onUpdateChecked(props.habit, checkedId);
-    },[checkedId, props]);
+        if (isMounted.current) {
+            props.onUpdateChecked(props.habit, checkedId);
+        } 
+        else {
+          isMounted.current = true;
+        }
+    },[checkedId]);
 
     const removeId = (id) => {
+        // props.onUpdateChecked(props.habit, checkedId);
         setCheckedId(
            checkedId.filter((item) => item !== id)
         )
@@ -87,6 +97,9 @@ const Habit = (props) =>{
                     </div>
                 </div>
             </div>
+            {/* <div className="habit__chart">
+                <Chart></Chart>
+            </div> */}
         </React.Fragment>
     )
 }

@@ -1,20 +1,27 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
 
 
 const Checkbox = (props) =>{
-  
-    const [checked, setChecked] = useState('empty');
+
+    const isMounted = useRef(false);
 
     useEffect(() => {
+        if (isMounted.current) {
 
-        setChecked('');
+            setChecked('');
 
-        if (props.checkedId.includes(props.id)){
-            setChecked(props.id)
+            if (props.checkedId.includes(props.id)){
+                setChecked(props.id)
+            }
+        } 
+        
+        else {
+          isMounted.current = true;
         }
-    },[props.id, checked, props.checkedId])
+      }, [props.id]);
 
+    const [checked, setChecked] = useState('empty');
+    
     const checkHandler = (boxId) => {
         if (checked === boxId){
             props.onRemoveId(boxId)
@@ -43,8 +50,3 @@ export default Checkbox;
 
 
 
-const habit = {
-    name: "Exercise",
-    checkedDays: ["Jun-10", "Jun-11", "Jun-12"],
-    totalDays: 3,
-}
