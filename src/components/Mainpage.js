@@ -59,7 +59,7 @@ function Mainpage() {
             }
         }).then(res => {
             const data = res.data;
-            setHabits(prev => prev.concat(data));
+            setHabits(data);
         }).catch(err => {
             console.log(err);
             navigate('/login');
@@ -87,7 +87,7 @@ function Mainpage() {
                 <Habits
                     items={habits}
                     daterange={date}
-                ></Habits>
+                />
                 <NewHabit onNewHabit={addNewHabit} />
             </div>
         </>

@@ -19,9 +19,9 @@ const Habits = (props) => {
     return (
         <>
             {props.items.map((habit) => (
-                <div className='habit__container' key = {`${habit.name}-${habit.id}`}>
+                <div className='habit__container' key = {`${habit.name}-${habit._id}`}>
                     <Habit
-                        key = {`${habit.name}-${habit.id}`}
+                        key = {`${habit.name}-${habit._id}`}
                         name = {habit.name}
                         // weeks = {habit.weeks}
                         streak = {habit.streak}
