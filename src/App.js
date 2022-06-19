@@ -1,9 +1,9 @@
 import './App.css';
-import React,{useState} from 'react'
+import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Login from './components/Login';
+import Register from './components/Register';
 import Mainpage from './components/Mainpage';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 // import Date from './components/Habits/Date.js'
 // import Example from './components/Calendar';
 // import Habits from './components/Habits/Habits';
@@ -71,6 +71,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/login' element={<Login />}/>
+        <Route path='/register' element={<Register />}/>
         <Route path="/main" element={<Mainpage />} />
       </Routes>
     </BrowserRouter>

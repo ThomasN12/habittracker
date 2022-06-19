@@ -53,7 +53,7 @@ function Mainpage() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         const baseUrl = process.env.REACT_APP_ROOT_API;
-        axios.get(`${baseUrl}/habit/`, {
+        axios.get(`${baseUrl}/habit`, {
             headers: {
                 "auth-token": token,
             }
