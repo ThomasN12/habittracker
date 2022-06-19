@@ -61,13 +61,13 @@ const Habit = (props) =>{
             <div className="habit__checkboxes--container">
                 {/* {[...Array(weeks)].map((e, i) =>( */}
                     <>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-6}`} id={`${props.daterange[0]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-5}`} id={`${props.daterange[1]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-4}`} id={`${props.daterange[2]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-3}`} id={`${props.daterange[3]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-2}`} id={`${props.daterange[4]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7-1}`} id={`${props.daterange[5]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id*7}`} id={`${props.daterange[6]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}6`} id={`${props.daterange[0]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}5`} id={`${props.daterange[1]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}4`} id={`${props.daterange[2]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}3`} id={`${props.daterange[3]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}2`} id={`${props.daterange[4]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}1`} id={`${props.daterange[5]}/${props.name}`}></Checkbox>
+                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}0`} id={`${props.daterange[6]}/${props.name}`}></Checkbox>
                     </>   
                 {/* ))} */}
             </div>

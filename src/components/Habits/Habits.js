@@ -6,7 +6,7 @@ const Habits = (props) => {
     const updateHabitObject = (habit, checkedId) => {
         let dateCheckedId = checkedId.map(dateFilter);
         Object.assign(habit.checkedId, dateCheckedId)
-        console.log(props.items)
+        console.log(props.items);
     }
 
     const dateFilter = (item) => {
@@ -19,16 +19,16 @@ const Habits = (props) => {
     return (
         <>
             {props.items.map((habit) => (
-                <div className='habit__container' key = {`${habit.name}-${habit.id}`}>
+                <div className='habit__container' key = {`${habit.name}-${habit._id}`}>
                     <Habit
-                        key = {`${habit.name}-${habit.id}`}
+                        key = {`${habit.name}-${habit._id}`}
                         name = {habit.name}
-                        weeks = {habit.weeks}
+                        // weeks = {habit.weeks}
                         streak = {habit.streak}
                         record = {habit.record}
-                        total = {habit.total}
+                        // total = {habit.total}
                         daterange = {props.daterange}
-                        id = {habit.id}
+                        id = {habit._id}
                         checkedId = {habit.checkedId}
                         habit = {habit}
                         onUpdateChecked = {updateHabitObject}
