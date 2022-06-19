@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { Form, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
@@ -20,7 +20,6 @@ const Login = (props) => {
             console.log(res);
             localStorage.setItem('token', res.data.token);
             navigate('/main');
-
         }).catch(err => {
             console.log(err);
         })

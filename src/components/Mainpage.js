@@ -13,31 +13,32 @@ import {
     format
 } from 'date-fns'
 
-let myHabits = [
-    {
-        _id: '1',
-        name: 'Exercise',
-        importance: 'High',
-        weeks: 1,
-        total: 0,
-        checkedId: [],
-    },
-    {
-        _id: '2',
-        name: 'Walking 10 minutes a day',
-        importance: 'Moderate',
-        weeks: 1,
-        checkedId: [],
-    },
-    {
-        _id: '3',
-        name: 'Playing chess',
-        importance: 'Low',
-        weeks: 1,
-        checkedId: [],
-    }
-]
+// let myHabits = [
+//     {
+//         _id: '1',
+//         name: 'Exercise',
+//         importance: 'High',
+//         weeks: 1,
+//         total: 0,
+//         checkedId: [],
+//     },
+//     {
+//         _id: '2',
+//         name: 'Walking 10 minutes a day',
+//         importance: 'Moderate',
+//         weeks: 1,
+//         checkedId: [],
+//     },
+//     {
+//         _id: '3',
+//         name: 'Playing chess',
+//         importance: 'Low',
+//         weeks: 1,
+//         checkedId: [],
+//     }
+// ]
 
+let myHabits = [];
 let firstday = startOfWeek(startOfToday())
 let sunday = format(firstday, 'MM-dd-yyyy')
 let monday = format(nextDay((firstday), 1), 'MM-dd-yyyy')
