@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import medal from "../../img/gold-medal.png";
 import calendar from "../../img/calendar.png";
 import Chart from "../Charts/HabitChart";
+import axios from "axios";
 
 const Habit = (props) =>{
     // const [weeks, setWeeks] = useState(props.weeks)
@@ -29,10 +30,31 @@ const Habit = (props) =>{
     useEffect(() => {
         if (isMounted.current) {
             props.onUpdateChecked(props.habit, checkedId);
+            //Send update
+            const token = localStorage.getItem('token');
+            const baseUrl = process.env.REACT_APP_ROOT_API;
+            console.log(props.checkedId);
+            let updatedHabit = {
+                ...props.habit,
+                checkedId: props.checkedId
+            }
+            // console.log(updatedHabit);
+            let body = {updatedHabit};
+            axios.put(`${baseUrl}/habit/${props.id}`, body, {
+                headers: {
+                    "auth-token": token,
+                },
+            }).then(res => {
+                console.log(res);
+                console.log("Successfully update a habit");
+            }).catch(err => {
+                console.log(err);
+            });
         } 
         else {
           isMounted.current = true;
         }
+
     },[checkedId]);
 
     const removeId = (id) => {

@@ -8,7 +8,6 @@ const NewHabit = (props) => {
     const saveHabitDataHandler = (habitData) =>{
         const habitObject = {
             ...habitData, 
-            id: Math.random().toString()
         }
         props.onNewHabit(habitObject);
     }

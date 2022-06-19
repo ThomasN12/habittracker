@@ -7,6 +7,7 @@ const HabitForm = (props) =>{
 
     
     const [habitName, setHabitName] = useState('');
+    const [habitImportance, setHabitImportance] = useState('');
     const [habitGenre, setHabitGenre] = useState('');
     const [habitTarget, setHabitTarget] = useState('');
     const [habitDays, setHabitDays] = useState('');
@@ -24,11 +25,16 @@ const HabitForm = (props) =>{
         setHabitDays(event.target.value);
     }
 
+    const importanceChangeHandler = (event) =>{
+        setHabitImportance(event.target.value);
+    }
+
     const submitHandler = (e) =>{
         e.preventDefault();
 
         const habitData = {
             name: habitName,
+            importance: habitImportance,
             genre: habitGenre,
             target: habitTarget,
             days: habitDays,
@@ -40,6 +46,7 @@ const HabitForm = (props) =>{
         setHabitGenre('');
         setHabitTarget('');
         setHabitDays('');
+        setHabitImportance('');
     }
 
 
@@ -53,6 +60,11 @@ const HabitForm = (props) =>{
                     <label>Yayyy what's your new habit today</label>
                     <br/>
                     <input type="text" onChange={titleChangeHandler} value={habitName}/>
+                </div>
+                <div className="newhabit__control">
+                    <label>Importance</label>
+                    <br/>
+                    <input type="text" onChange={importanceChangeHandler} value={habitImportance}/>
                 </div>
                 <div className="newhabit__control">
                     <label>Is it negative or postitive one?</label>

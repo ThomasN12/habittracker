@@ -51,6 +51,7 @@ let saturday = format(nextDay((firstday), 6), 'MM-dd-yyyy')
 
 function Mainpage() {
     let navigate = useNavigate();
+    const [habits, setHabits] = useState(myHabits);
     useEffect(() => {
         const token = localStorage.getItem('token');
         const baseUrl = process.env.REACT_APP_ROOT_API;
@@ -59,23 +60,38 @@ function Mainpage() {
                 "auth-token": token,
             }
         }).then(res => {
-            const data = res.data;
-            setHabits(data);
+            let foundHabits = res.data.habits;
+            // foundHabits.forEach(habit => {
+            //     habit.checkedId = habit.checkedId.map(e => {
+            //         return new Date(e);
+            //     });
+            // })
+            console.log(foundHabits);
+            setHabits(foundHabits);
         }).catch(err => {
             console.log(err);
             navigate('/login');
         });
     }, [])
-    const [habits, setHabits] = useState(myHabits);
 
 
     const [date, setDate] =
         useState([sunday, monday, tuesday, wednesday, thursday, friday, saturday])
 
     const addNewHabit = (habit) => {
-        setHabits((prevHabits) => {
-            return [...prevHabits, habit];
-        })
+        const token = localStorage.getItem('token');
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        let body = {habit};
+        axios.post(`${baseUrl}/habit`, body, {
+            headers: {
+                "auth-token": token,
+            }
+        }).then(res => {
+            const foundHabits = res.data.habits;
+            setHabits(foundHabits);
+        }).catch(err => {
+            console.log(err);
+        });
     }
 
     console.log("myhabits: ", myHabits)
