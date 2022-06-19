@@ -97,9 +97,9 @@ const Habit = (props) =>{
                     </div>
                 </div>
             </div>
-            {/* <div className="habit__chart">
+            <div className="habit__chart">
                 <Chart></Chart>
-            </div> */}
+            </div>
         </React.Fragment>
     )
 }

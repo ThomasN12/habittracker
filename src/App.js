@@ -61,7 +61,7 @@ function App() {
     })
   }
 
-  console.log("myhabits: ", myHabits)
+  console.log("myhabits: ", habits)
 
   return (
     <>
