@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import { Form, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
@@ -28,7 +26,7 @@ const Login = (props) => {
     return (
         <>
             <h1>Login</h1>
-            <Form onSubmit={submitHandler}>
+            {/* <Form onSubmit={submitHandler}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Enter username</Form.Label>
                     <Form.Control type="text" placeholder="Enter username" value={username} onChange={event => setUsername(event.target.value)} />
@@ -41,7 +39,7 @@ const Login = (props) => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>
+            </Form> */}
         </>
     )
 }

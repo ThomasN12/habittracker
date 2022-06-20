@@ -74,7 +74,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example(props) {
+export default function Calendar(props) {
   let today = startOfToday()
   let [selectedDay, setSelectedDay] = useState(today);
   

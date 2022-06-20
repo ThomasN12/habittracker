@@ -12,6 +12,7 @@ const Checkbox = (props) =>{
 
             if (props.checkedId.includes(props.id)){
                 setChecked(props.id)
+                // props.onSaveChartData(props.id)
             }
         } 
         

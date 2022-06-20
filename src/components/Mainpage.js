@@ -1,4 +1,4 @@
-import Example from './Calendar';
+import Calendar from './Calendar';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Date from './Habits/Date.js';
@@ -50,21 +50,21 @@ let saturday = format(nextDay((firstday), 6), 'MM-dd-yyyy')
 
 function Mainpage() {
     let navigate = useNavigate();
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        axios.get(`${baseUrl}/habit`, {
-            headers: {
-                "auth-token": token,
-            }
-        }).then(res => {
-            const data = res.data;
-            setHabits(data);
-        }).catch(err => {
-            console.log(err);
-            navigate('/login');
-        });
-    }, [])
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     const baseUrl = process.env.REACT_APP_ROOT_API;
+    //     axios.get(`${baseUrl}/habit`, {
+    //         headers: {
+    //             "auth-token": token,
+    //         }
+    //     }).then(res => {
+    //         const data = res.data;
+    //         setHabits(data);
+    //     }).catch(err => {
+    //         console.log(err);
+    //         navigate('/login');
+    //     });
+    // }, [])
     const [habits, setHabits] = useState(myHabits);
 
 
@@ -81,7 +81,7 @@ function Mainpage() {
 
     return (
         <>
-            <Example onChangeDate={setDate} />
+            <Calendar onChangeDate={setDate} />
             <div className='habit__table'>
                 <Date daterange={date}></Date>
                 <Habits

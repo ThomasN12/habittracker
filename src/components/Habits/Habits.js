@@ -6,7 +6,7 @@ const Habits = (props) => {
     const updateHabitObject = (habit, checkedId) => {
         let dateCheckedId = checkedId.map(dateFilter);
         Object.assign(habit.checkedId, dateCheckedId)
-        console.log(props.items);
+        // console.log(props.items);
     }
 
     const dateFilter = (item) => {
