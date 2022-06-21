@@ -31,25 +31,27 @@ const Habit = (props) =>{
         if (isMounted.current) {
             props.onUpdateChecked(props.habit, checkedId);
             //Send update
-            const token = localStorage.getItem('token');
-            const baseUrl = process.env.REACT_APP_ROOT_API;
             console.log(props.checkedId);
-            let updatedHabit = {
-                ...props.habit,
-                checkedId: props.checkedId
-            }
-            // console.log(updatedHabit);
-            let body = {updatedHabit};
-            axios.put(`${baseUrl}/habit/${props.id}`, body, {
-                headers: {
-                    "auth-token": token,
-                },
-            }).then(res => {
-                console.log(res);
-                console.log("Successfully update a habit");
-            }).catch(err => {
-                console.log(err);
-            });
+            console.log(checkedId);
+            // const token = localStorage.getItem('token');
+            // const baseUrl = process.env.REACT_APP_ROOT_API;
+            // console.log(props.checkedId);
+            // let updatedHabit = {
+            //     ...props.habit,
+            //     checkedId: props.checkedId
+            // }
+            // // console.log(updatedHabit);
+            // let body = {updatedHabit};
+            // axios.put(`${baseUrl}/habit/${props.id}`, body, {
+            //     headers: {
+            //         "auth-token": token,
+            //     },
+            // }).then(res => {
+            //     console.log(res);
+            //     console.log("Successfully update a habit");
+            // }).catch(err => {
+            //     console.log(err);
+            // });
         } 
         else {
           isMounted.current = true;
@@ -59,8 +61,8 @@ const Habit = (props) =>{
 
     const removeId = (id) => {
         // props.onUpdateChecked(props.habit, checkedId);
-        setCheckedId(
-           checkedId.filter((item) => item !== id)
+        setCheckedId(prev =>
+           prev.filter((item) => item !== id)
         )
     }
 

@@ -66,7 +66,7 @@ function Mainpage() {
             //         return new Date(e);
             //     });
             // })
-            console.log(foundHabits);
+            // console.log(foundHabits);
             setHabits(foundHabits);
         }).catch(err => {
             console.log(err);
