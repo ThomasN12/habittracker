@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+  html{
+    font-size: 80%;
+      /* font-size: 62.5%; */
+      overflow: hidden;
+  }
+
+  input{
+    font-family: nunito;
+    font-size: 20px;
+  }
+
+.login__container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container > img{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+::placeholder{
+  font-family: nunito;
+  color: #333;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.login__form{
+  width: 50rem;
+  height: 50rem;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  font-family: nunito;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .login__block{
+  background-color: antiquewhite;
+} */
+.login__welcome{
+  font-size: 1.7rem;
+  margin: 2.2rem 0;
+  font-weight: 600;
+}
+.login__account input{
+  height: 4rem;
+  width: 29rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.login__password input{
+  height: 4rem;
+  width: 29rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+.login__utilities{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.login__rememberme{
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.login__rememberme label{
+  font-size: 1.2rem;
+}
+
+.login__rememberme input{
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #333;
+  border-radius: 7px;
+  margin-right: 1rem;
+}
+
+.login__forgot{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.login__forgot a{
+  text-decoration: none;
+  color: black;
+}
+
+.login__signin--btn{
+  width: 100%;
+  background-color: #111727;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.login__google--btn{
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.login__google--btn> span > img{
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.login__google--btn> span{
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+/* .login__google--btn> img{
+  max-width: 100%;
+} */
+.login__signup{
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.login__signup a{
+  color:black;
+  font-weight: 700;
+}

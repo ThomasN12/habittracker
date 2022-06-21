@@ -1,4 +1,4 @@
-import Example from './Calendar';
+import Calendar from './Calendar';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Date from './Habits/Date.js';
@@ -98,7 +98,7 @@ function Mainpage() {
 
     return (
         <>
-            <Example onChangeDate={setDate} />
+            <Calendar onChangeDate={setDate} />
             <div className='habit__table'>
                 <Date daterange={date}></Date>
                 <Habits

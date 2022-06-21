@@ -1,57 +1,62 @@
-// import { ResponsivePie } from '@nivo/pie'
+import React, { useState } from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// const pieData = [
-//     {
-//       id: "java",
-//       label: "java",
-//       value: 195,
-//       color: "hsl(90, 70%, 50%)"
-//     },
-//     {
-//       id: "erlang",
-//       label: "erlang",
-//       value: 419,
-//       color: "hsl(56, 70%, 50%)"
-//     },
-//     {
-//       id: "ruby",
-//       label: "ruby",
-//       value: 407,
-//       color: "hsl(103, 70%, 50%)"
-//     },
-//     {
-//       id: "haskell",
-//       label: "haskell",
-//       value: 474,
-//       color: "hsl(186, 70%, 50%)"
-//     },
-//     {
-//       id: "go",
-//       label: "go",
-//       value: 71,
-//       color: "hsl(104, 70%, 50%)"
-//     }
-//   ];
+const Chart = (props) => {
 
-//   const Chart = () => {
-//     return (
-//       <ResponsivePie
-//         data={pieData}
-//         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-//         innerRadius={0.5}
-//         padAngle={0.7}
-//         cornerRadius={3}
-//         activeOuterRadiusOffset={8}
-//         borderWidth={1}
-//         borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
-//         arcLinkLabelsSkipAngle={10}
-//         arcLinkLabelsTextColor="#333333"
-//         arcLinkLabelsThickness={2}
-//         arcLinkLabelsColor={{ from: "color" }}
-//         arcLabelsSkipAngle={10}
-//         arcLabelsTextColor={{ from: "color", modifiers: [["darker", 2]] }}
-//       />
-//     );
-//   };
+    // Store checkedIds in props.daterange in an array
+    let ids = [];
+    for (let i = 0; i < 7; i++){
+      if (props.checkedId.includes(props.chartData[i].name)){
+        ids.push(i)
+      }
+    }
+  
+    // Create a copy of props.chartData and change "checked" properties based on checkedIds
+    const data = structuredClone(props.chartData);
+    console.log("data la:", data)
+    for (let i = 0; i < ids.length; i++){
+      data[ids[i]].checked = 1;
+    }
 
-// export default Chart;
+    // Format date function
+    const dateFilter  = (dates) => {
+      let splitDate = dates.split('/')[0]
+      let parts = splitDate.split('-')
+      let date = parts[0];
+      let month = parts[1]
+      return date + '-' + month
+    }
+    
+    console.log(props.chartData)
+
+    // Format date on Y-axis
+    for (let i = 0; i < 7; i++){
+      data[i].name 
+      = dateFilter(data[i].name);
+    }
+
+    return (
+      <React.Fragment>
+          <ResponsiveContainer width="97%" height="100%" className="margin__auto">
+            <AreaChart
+              width={600}
+              height={200}
+              data={data}
+              margin={{
+                top: 10,
+                right: 50,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <CartesianGrid fill='#dc84ff' stroke="#6e0fca"/>
+              <XAxis dataKey="name"/>
+              <YAxis  tickCount={0}/>
+              <Tooltip />
+              <Area type="monotone" dataKey="checked" stroke="#ca7bf4" fill="#ffffff" />
+            </AreaChart>
+          </ResponsiveContainer>
+      </React.Fragment>
+    );
+}
+export default Chart;
