@@ -1,6 +1,6 @@
 import background from "../img/formbg2.jpg";
 import google from "../img/google.png"
-
+import "./LoginForm.css"
 
 const LoginForm = () => {
     return (

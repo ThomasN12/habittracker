@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis} from 'recharts';
 
 const Chart = (props) => {
+      
+      
+      const circleSize = 50;
 
     // Store checkedIds in props.daterange in an array
     let ids = [];
@@ -10,6 +14,10 @@ const Chart = (props) => {
         ids.push(i)
       }
     }
+
+    const datacircle = [
+      { name: 'target', value: ids.length }
+    ];
   
     // Create a copy of props.chartData and change "checked" properties based on checkedIds
     const data = structuredClone(props.chartData);
@@ -37,8 +45,9 @@ const Chart = (props) => {
 
     return (
       <React.Fragment>
-          <ResponsiveContainer width="97%" height="100%" className="margin__auto">
+          <ResponsiveContainer width="83%" height="80%" className="margin__auto habit__areachart">
             <AreaChart
+              defaultShowTooltip = "true"
               width={600}
               height={200}
               data={data}
@@ -56,6 +65,42 @@ const Chart = (props) => {
               <Area type="monotone" dataKey="checked" stroke="#ca7bf4" fill="#ffffff" />
             </AreaChart>
           </ResponsiveContainer>
+        <ResponsiveContainer width = "17%" height = "100%" className="habit__doughnutchart">
+          <RadialBarChart 
+              // width={circleSize}
+              // height={circleSize}
+              cx="50%"
+              cy="50%"
+              innerRadius="80%"
+              outerRadius="100%"
+              barSize={10}
+              data={datacircle}
+              startAngle={90}
+              endAngle={-270}
+            >
+            <PolarAngleAxis
+              type="number"
+              domain={[0, 7]}
+              angleAxisId={0}
+              tick={false}
+            />
+            <RadialBar
+              background
+              clockWise
+              dataKey="value"
+              cornerRadius={circleSize / 2}
+              fill="#82ca9d"
+            />
+            <text
+              
+              textAnchor="middle"
+              dominantBaseline="middle"
+              className="habit__doughnutchart--label"
+            >
+              {ids.length}/7
+            </text>
+          </RadialBarChart>
+        </ResponsiveContainer>
       </React.Fragment>
     );
 }
