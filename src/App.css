@@ -371,6 +371,18 @@ html {
   font-family: nunito;
   font-weight: 600; }
 
+.gif__activity {
+  width: 50%;
+  height: 100%; }
+
+.introduction__container {
+  display: flex;
+  justify-content: center;
+  background-color: #fabf58;
+  border: 3px solid black;
+  padding: 5rem;
+  border-radius: 5px; }
+
 .pt-16 {
   padding-top: 6.4rem; }
 

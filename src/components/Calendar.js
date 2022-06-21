@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
+import activity from "../img/reactivities.gif"
 import clsx from 'clsx';
 import {
   add,
@@ -185,7 +186,7 @@ export default function Calendar(props) {
 
   return (
     <div className="pt-16">
-      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
+      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 introduction__container">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 calendar__container">
           <div className="md:pr-14">
             <div className="flex items-center">
@@ -299,6 +300,7 @@ export default function Calendar(props) {
             </ol>
           </section>
         </div>
+        <img src={activity} alt='' className='gif__activity'/>
       </div>
     </div>
   )
