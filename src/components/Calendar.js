@@ -265,7 +265,7 @@ export default function Calendar(props) {
                       'mx-auto flex h-8 w-8 items-center justify-center rounded-full square'
                     )}
                   >
-                    <time dateTime={format(day, 'yyyy-MM-dd')}>
+                    <time dateTime={format(day, 'yyyy-MM-dd')} className='font__nunito'>
                       {format(day, 'd')}
                     </time>
                   </button>

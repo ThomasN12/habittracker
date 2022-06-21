@@ -155,7 +155,7 @@ html {
   flex-wrap: wrap; }
 
 .habitform__container {
-  width: 70%;
+  width: 60%;
   padding: 0rem 2rem 2rem;
   background-color: #f6d1cb;
   margin: 3rem auto 0;
@@ -352,6 +352,25 @@ html {
   position: absolute;
   transform: translate(50%, 50%); }
 
+.habit__background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+.page__container {
+  background-color: white;
+  border-radius: 2rem;
+  border: 3px solid black;
+  padding: 5rem 5rem 10rem; }
+
+.body__container {
+  padding: 5rem 10rem; }
+
+.font__nunito {
+  font-family: nunito;
+  font-weight: 600; }
+
 .pt-16 {
   padding-top: 6.4rem; }
 
@@ -384,7 +403,7 @@ html {
   display: flex; }
 
 .font-semibold {
-  font-weight: 600; }
+  font-weight: 800; }
 
 .flex-auto {
   flex: 1 1 auto; }
@@ -522,7 +541,9 @@ img, svg, video, canvas, audio, iframe, embed, object {
   line-height: 1.6rem; }
 
 .calendar__container {
-  width: 350px; }
+  width: 350px;
+  font-family: nunito;
+  margin: 0 auto; }
 
 .text-white {
   color: white; }
@@ -538,9 +559,6 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 .border-top {
   border-top: 1px solid grey; }
-
-.font-bold {
-  font-weight: 500; }
 
 .background-beige {
   background-color: beige; }

@@ -58,7 +58,7 @@
     display: flex;
 }
 .font-semibold {
-    font-weight: 600;
+    font-weight: 800;
 }
 .flex-auto {
     flex: 1 1 auto;
@@ -205,6 +205,8 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 .calendar__container{
     width: 350px;
+    font-family: nunito;
+    margin: 0 auto;
 }
 
 .text-white{
@@ -222,9 +224,6 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 .border-top{
     border-top: 1px solid grey;
-}
-.font-bold{
-    font-weight: 500;
 }
 .background-beige{
     background-color: beige;
