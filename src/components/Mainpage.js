@@ -39,7 +39,7 @@ import {
 //     }
 // ]
 
-let myHabits = [];
+// let myHabits = [];
 let firstday = startOfWeek(startOfToday())
 let sunday = format(firstday, 'MM-dd-yyyy')
 let monday = format(nextDay((firstday), 1), 'MM-dd-yyyy')
@@ -52,7 +52,7 @@ let saturday = format(nextDay((firstday), 6), 'MM-dd-yyyy')
 
 function Mainpage() {
     let navigate = useNavigate();
-    const [habits, setHabits] = useState(myHabits);
+    const [habits, setHabits] = useState([]);
     useEffect(() => {
         const token = localStorage.getItem('token');
         const baseUrl = process.env.REACT_APP_ROOT_API;
@@ -62,12 +62,7 @@ function Mainpage() {
             }
         }).then(res => {
             let foundHabits = res.data.habits;
-            // foundHabits.forEach(habit => {
-            //     habit.checkedId = habit.checkedId.map(e => {
-            //         return new Date(e);
-            //     });
-            // })
-            // console.log(foundHabits);
+            console.log(foundHabits);
             setHabits(foundHabits);
         }).catch(err => {
             console.log(err);
@@ -95,7 +90,7 @@ function Mainpage() {
         });
     }
 
-    console.log("myhabits: ", myHabits)
+    // console.log("myhabits: ", myHabits)
 
     return (
         <React.Fragment>

@@ -64,9 +64,22 @@ const Habit = (props) =>{
         setChartData(originChartData)
     }
   }, [props.daterange])
-
-
-    const [checkedId, setCheckedId] = useState([])
+    
+    //   "2022-07-20T17:00:00.000Z"
+    // "06-22-2022/Final"
+    const initialCheckedId = props.habit.checkedId.map(e => {
+        let date = new Date(e);
+        let year = date.getFullYear();
+        let month = date.getMonth();
+        let monthPrefix = date.getMonth() < 10 ? '0' : '';
+        let day = date.getDate();
+        let res = `${monthPrefix}${month+1}-${day}-${year}/${props.habit.name}`
+        console.log(res);
+        return res;
+    });
+    // console.log(props.habit.checkedId);
+    // console.log(initialCheckedId);
+    const [checkedId, setCheckedId] = useState(initialCheckedId);
     
     const isMounted = useRef(false);
 
@@ -92,41 +105,44 @@ const Habit = (props) =>{
     }
 
     // Prevent re-render on the first time render
+    let mount = 0;
 
     useEffect(() => {
         if (isMounted.current) {
+            console.log(props.habit);
             props.onUpdateChecked(props.habit, checkedId);
             //Send update
-            console.log(props.checkedId);
-            console.log(checkedId);
-            // const token = localStorage.getItem('token');
-            // const baseUrl = process.env.REACT_APP_ROOT_API;
-            // console.log(props.checkedId);
-            // let updatedHabit = {
-            //     ...props.habit,
-            //     checkedId: props.checkedId
-            // }
-            // // console.log(updatedHabit);
-            // let body = {updatedHabit};
-            // axios.put(`${baseUrl}/habit/${props.id}`, body, {
-            //     headers: {
-            //         "auth-token": token,
-            //     },
-            // }).then(res => {
-            //     console.log(res);
-            //     console.log("Successfully update a habit");
-            // }).catch(err => {
-            //     console.log(err);
-            // });
+            const token = localStorage.getItem('token');
+            const baseUrl = process.env.REACT_APP_ROOT_API;
+            console.log(props.habit.checkedId);
+            let updatedHabit = {
+                ...props.habit,
+                checkedId: props.habit.checkedId
+            }
+            updatedHabit.checkedId = updatedHabit.checkedId.map(obj => obj.getTime());
+            let body = {updatedHabit};
+            debugger;
+            axios.put(`${baseUrl}/habit/${props.id}`, body, {
+                headers: {
+                    "auth-token": token,
+                },
+            }).then(res => {
+                console.log(res);
+                console.log("Successfully update a habit");
+            }).catch(err => {
+                console.log(err);
+            });
         } 
         else {
-          isMounted.current = true;
+            mount++
+          if(mount === 2){
+            isMounted.current = true;
+            console.log("prevent")
+          }
         }
-
     },[checkedId]);
 
     // Remove Id function
-
     const removeId = (id) => {
         const searchIndex = chartData.findIndex((habit) => {
             return habit.name === id
