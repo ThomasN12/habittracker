@@ -61,7 +61,7 @@ const Chart = (props) => {
               <CartesianGrid fill='#dc84ff' stroke="#6e0fca"/>
               <XAxis dataKey="name"/>
               <YAxis  tickCount={0}/>
-              <Tooltip />
+              {/* <Tooltip /> */}
               <Area type="monotone" dataKey="checked" stroke="#ca7bf4" fill="#ffffff" />
             </AreaChart>
           </ResponsiveContainer>
