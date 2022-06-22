@@ -5,7 +5,7 @@ import { RadialBarChart, RadialBar, PolarAngleAxis} from 'recharts';
 const Chart = (props) => {
       
       
-      const circleSize = 50;
+      const circleSize = 70;
 
     // Store checkedIds in props.daterange in an array
     let ids = [];
@@ -71,9 +71,9 @@ const Chart = (props) => {
               // height={circleSize}
               cx="50%"
               cy="50%"
-              innerRadius="80%"
+              innerRadius="70%"
               outerRadius="100%"
-              barSize={10}
+              barSize={15}
               data={datacircle}
               startAngle={90}
               endAngle={-270}
@@ -89,7 +89,7 @@ const Chart = (props) => {
               clockWise
               dataKey="value"
               cornerRadius={circleSize / 2}
-              fill="#82ca9d"
+              fill="#ff3a2f"
             />
             <text
               

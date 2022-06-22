@@ -204,6 +204,10 @@
         background-color: #FB8B18;
     }
 
+.bg-yellow{
+    background-color: #FB8B18 !important;
+    color: white;
+}
 
 .text-white{
     color: white;
@@ -232,8 +236,8 @@
     background-color: #FF4A70;
 }
 .padding-9{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
 }
 .border-radius-none{
     border-radius: unset;
@@ -247,9 +251,9 @@
     border-bottom-right-radius: 999px;
 }
 
-.display-none{
-    display: none;
-}
+// .display-none{
+//     display: none;
+// }
 
 button {
     border: none;
