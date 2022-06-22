@@ -5,6 +5,7 @@ import Date from './Habits/Date.js';
 import Habits from './Habits/Habits';
 import NewHabit from './NewHabit/NewHabit';
 import axios from 'axios';
+import background from ".././img/formbg2.jpg";
 
 import {
     nextDay,
@@ -97,17 +98,22 @@ function Mainpage() {
     console.log("myhabits: ", myHabits)
 
     return (
-        <>
-            <Calendar onChangeDate={setDate} />
-            <div className='habit__table'>
-                <Date daterange={date}></Date>
-                <Habits
-                    items={habits}
-                    daterange={date}
-                />
-                <NewHabit onNewHabit={addNewHabit} />
+        <React.Fragment>
+            <img src={background} alt="" className='habit__background'/>
+            <div className='body__container'>
+                <div className = 'page__container'>
+                    <Calendar onChangeDate={setDate} />
+                    <div className='habit__table'>
+                        <Date daterange={date}></Date>
+                        <Habits
+                            items={habits}
+                            daterange={date}
+                        />
+                        <NewHabit onNewHabit={addNewHabit} />
+                    </div>
+                </div>
             </div>
-        </>
+        </React.Fragment>
     );
 }
 

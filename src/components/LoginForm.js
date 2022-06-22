@@ -3,7 +3,7 @@ import google from "../img/google.png"
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-
+import "./LoginForm.css"
 
 const LoginForm = (props) => {
     const [username, setUsername] = useState('');

@@ -1,15 +1,4 @@
-*,
-*::after,
-*::before {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: inherit; }
 
-  html{
-    font-size: 80%;
-      /* font-size: 62.5%; */
-      overflow: hidden;
-  }
 
   input{
     font-family: nunito;
@@ -21,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .login__container > img{

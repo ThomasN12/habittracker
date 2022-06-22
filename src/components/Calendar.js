@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
+import activity from "../img/reactivities.gif"
 import clsx from 'clsx';
 import {
   add,
@@ -184,21 +185,21 @@ export default function Calendar(props) {
   )
 
   return (
-    <div className="pt-16">
-      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
+    <div className="pt-16 introhabit__container">
+      <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 introduction__container">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 calendar__container">
-          <div className="md:pr-14">
-            <div className="flex items-center">
-              <h2 className="flex-auto font-semibold text-gray-900">
+          <div className="md:pr-14 calendar__body">
+            <div className="flex items-center calendar__date--controls">
+              <h2 className="flex-auto font-semibold text-gray-900 calendar__month">
                 {format(firstDayCurrentMonth, 'MMMM yyyy')}
               </h2>
               <button
                 type="button"
                 onClick={previousMonth}
-                className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 calendar__button"
               >
                 <span className="sr-only">Previous month</span>
-                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+                <ChevronLeftIcon className="w-5 h-5 calendar--prev" aria-hidden="true" />
               </button>
               <button
                 onClick={nextMonth}
@@ -206,26 +207,26 @@ export default function Calendar(props) {
                 className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">Next month</span>
-                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+                <ChevronRightIcon className="w-5 h-5 calendar--next" aria-hidden="true" />
               </button>
             </div>
-            <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-center text-gray-500">
-              <div>S</div>
-              <div>M</div>
-              <div>T</div>
-              <div>W</div>
-              <div>T</div>
-              <div>F</div>
-              <div>S</div>
+            <div className="calendar__weekdays--controls grid grid-cols-7 mt-10 text-xs leading-6 text-center text-gray-500">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
             </div>
-            <div className="grid grid-cols-7 mt-2 text-sm">
+            <div className="calendar__monthdays grid grid-cols-7 mt-2 text-sm">
               {days.map((day, dayIdx) => (
                 <div
                   key={day.toString()}
                   className={clsx(
                     dayIdx > 6 && 'border-top',
                     dayIdx === 0 && colStartClasses[getDay(day)],
-                    'py-1.5'
+                    'py-1.5 calendar__day'
                   )}
                 >
                   <button
@@ -238,7 +239,7 @@ export default function Calendar(props) {
                       // isEqual(day, selectedDay) && 'text-white background-black',
                       // !isEqual(day, selectedDay) &&
                         isToday(day) &&
-                        'text-red font-bold',
+                        'text-pink font-bold',
                       weekDaySelected(day, selectedDay) && 
                         'background-beige padding-9 border-radius-none font-bold',
                       weekDaySelected(day, selectedDay) && 
@@ -251,7 +252,7 @@ export default function Calendar(props) {
                         !isToday(day) &&
                         isSameMonth(day, firstDayCurrentMonth) &&
                         'text-gray-900',
-                      !isEqual(day, selectedDay) &&
+                      // !isEqual(day, selectedDay) &&
                         !isToday(day) &&
                         !isSameMonth(day, firstDayCurrentMonth) &&
                         'text-gray-400',
@@ -262,10 +263,10 @@ export default function Calendar(props) {
                       !isEqual(day, selectedDay) && 'hover:bg-gray-200',
                       (isEqual(day, selectedDay) || isToday(day)) &&
                         'font-semibold',
-                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full square'
+                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full square calendar__daybutton'
                     )}
                   >
-                    <time dateTime={format(day, 'yyyy-MM-dd')}>
+                    <time dateTime={format(day, 'yyyy-MM-dd')} className='font__montserrat'>
                       {format(day, 'd')}
                     </time>
                   </button>
@@ -299,6 +300,7 @@ export default function Calendar(props) {
             </ol>
           </section>
         </div>
+        {/* <img src={activity} alt='' className='gif__activity'/> */}
       </div>
     </div>
   )
