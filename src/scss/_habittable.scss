@@ -431,6 +431,8 @@
   .habit__doughnutchart--label{
     position: absolute;
     transform: translate(50%,50%);
+    font-family: montserrat;
+    font-weight: 600;
   }
   .habit__background{
     position: fixed;
@@ -464,28 +466,20 @@
     padding-top: 6.4rem;
 }
 .introduction__container{
-    margin-left: auto;
-    margin-right: auto;
-    width: 89.6rem;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    // background-color: white;
-    // border: 3px solid black;
-    padding: 5rem;
-    border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 5rem 0;
+  background-color: white;
 }
 .calendar__container{
-    width: 450px;
-    font-family: nunito;
-    margin: 0 auto;
-    display: grid;
+    width: 100%;
+    display: flex;
     background-color: white;
-    padding: 5rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 1rem;
+    justify-content: space-evenly;
+    // padding: 5rem;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // border-radius: 1rem;
+    // margin: 0 auto;
 }
 .calendar__date--controls{
     display: flex;
@@ -556,4 +550,26 @@
   .text-gray-400 {
     --tw-text-opacity: 1;
     color: rgb(156,163,175);
+}
+
+.calendar__body{
+  padding: 5rem;
+  width: 35%;
+}
+
+.calendar__schedule{
+  width: 35%;
+  padding: 5rem;
+  border-left: 3px solid black;
+  font-family: montserrat;
+}
+
+.schedule__title{
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  margin-bottom: 2rem;
+}
+.schedule__content{
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 }

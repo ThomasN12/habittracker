@@ -350,7 +350,9 @@ html {
 
 .habit__doughnutchart--label {
   position: absolute;
-  transform: translate(50%, 50%); }
+  transform: translate(50%, 50%);
+  font-family: montserrat;
+  font-weight: 600; }
 
 .habit__background {
   position: fixed;
@@ -381,26 +383,16 @@ html {
   padding-top: 6.4rem; }
 
 .introduction__container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 89.6rem;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  padding: 5rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 5rem 0;
+  background-color: white; }
 
 .calendar__container {
-  width: 450px;
-  font-family: nunito;
-  margin: 0 auto;
-  display: grid;
+  width: 100%;
+  display: flex;
   background-color: white;
-  padding: 5rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 1rem; }
+  justify-content: space-evenly; }
 
 .calendar__date--controls {
   display: flex;
@@ -472,6 +464,25 @@ html {
   --tw-text-opacity: 1;
   color: #9ca3af; }
 
+.calendar__body {
+  padding: 5rem;
+  width: 35%; }
+
+.calendar__schedule {
+  width: 35%;
+  padding: 5rem;
+  border-left: 3px solid black;
+  font-family: montserrat; }
+
+.schedule__title {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  margin-bottom: 2rem; }
+
+.schedule__content {
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
+
 .col-start-1 {
   grid-column-start: 1; }
 
@@ -497,6 +508,10 @@ html {
   --tw-bg-opacity: 0.8;
   background-color: #FB8B18; }
 
+.bg-yellow {
+  background-color: #FB8B18 !important;
+  color: white; }
+
 .text-white {
   color: white; }
 
@@ -521,8 +536,8 @@ html {
   background-color: #FF4A70; }
 
 .padding-9 {
-  padding-left: 1rem;
-  padding-right: 1rem; }
+  padding-left: 1.2rem;
+  padding-right: 1.2rem; }
 
 .border-radius-none {
   border-radius: unset; }
@@ -534,9 +549,6 @@ html {
 .border-right {
   border-top-right-radius: 999px;
   border-bottom-right-radius: 999px; }
-
-.display-none {
-  display: none; }
 
 button {
   border: none;
