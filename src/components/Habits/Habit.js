@@ -109,17 +109,17 @@ const Habit = (props) =>{
 
     useEffect(() => {
         if (isMounted.current) {
-            console.log(props.habit);
             props.onUpdateChecked(props.habit, checkedId);
+            setStreak(props.habit.streak);
+            setRecord(props.habit.record);
             //Send update
             const token = localStorage.getItem('token');
             const baseUrl = process.env.REACT_APP_ROOT_API;
-            console.log(props.habit.checkedId);
+            // console.log(props.habit.checkedId);
             let updatedHabit = {
                 ...props.habit,
                 checkedId: props.habit.checkedId
             }
-            updatedHabit.checkedId = updatedHabit.checkedId.map(obj => obj.getTime());
             let body = {updatedHabit};
             debugger;
             axios.put(`${baseUrl}/habit/${props.id}`, body, {
@@ -127,8 +127,8 @@ const Habit = (props) =>{
                     "auth-token": token,
                 },
             }).then(res => {
-                console.log(res);
-                console.log("Successfully update a habit");
+                // console.log(res);
+                // console.log("Successfully update a habit");
             }).catch(err => {
                 console.log(err);
             });
@@ -160,6 +160,8 @@ const Habit = (props) =>{
     }
 
     const [show, setShow] = useState(false);
+    const [streak, setStreak] = useState(props.habit.streak || 0);
+    const [record, setRecord] = useState(props.habit.record || 0);
 
     return (
         <React.Fragment key = {`habit-${props.id}`}>
@@ -197,7 +199,7 @@ const Habit = (props) =>{
                         <img src={fire} alt=""/>
                     </div>
                     <div className="current__data">
-                        <span>03</span>
+                        <span>{streak}</span>
                     </div>
                 </div>
                 <div className="record__container">
@@ -205,7 +207,7 @@ const Habit = (props) =>{
                         <img src={medal} alt=""/>
                     </div>
                     <div className="record__data">
-                        <span>05</span>
+                        <span>{record}</span>
                     </div>
                 </div>
                 <div className="total__container">
