@@ -62,7 +62,6 @@
   &.path {
       input {
           &:checked {
-              background-color: antiquewhite;
               --s: 2px;
               transition-delay: .4s;
               
@@ -118,7 +117,7 @@
 }
 
 .habit__table{
-  width: 80vw;
+  width: 100%;
   margin: 4rem auto;
   font-family: montserrat;
   font-size: 2rem;
@@ -299,13 +298,14 @@
 .data--title{
   font-size: 1.4rem;
   text-align:center;
+  padding: 1rem
 }
 .habit__info{
   width:25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .current__container{
@@ -407,7 +407,7 @@
 
   .habit__button{
     display:inline-block;
-    min-width: 10.5rem;
+    min-width: 11rem;
   }
   .habit__button--add{
     margin: 0.5rem 1rem 1rem;
@@ -442,18 +442,20 @@
   }
   .page__container{
     background-color: white;
-    border-radius: 2rem;
-    border: 3px solid black;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
     padding: 5rem 5rem 10rem;
   }
   .body__container{
-    padding: 5rem 10rem;
+    margin-left: 20rem;
+    margin-right: 45rem;
+    background-color: #fbf5ee;;
   }
 
   .font__montserrat{
     font-family: montserrat;
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
     font-weight: 500;
   }
 
@@ -463,19 +465,21 @@
   }
 
   .introhabit__container{
-    padding-top: 6.4rem;
+    display: inline-flex;
+    width: 100%;
 }
 .introduction__container{
+  width: 100%;
   border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 5rem 0;
-  background-color: white;
+  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: inline-block;
 }
 .calendar__container{
-    width: 100%;
     display: flex;
-    background-color: white;
-    justify-content: space-evenly;
+    // background-color: white;
+    border-radius: 4rem;
+    // justify-content: space-evenly;
+    flex-direction: column;
     // padding: 5rem;
     // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     // border-radius: 1rem;
@@ -486,35 +490,36 @@
     align-items: center;
 }
 .calendar__weekdays--controls{
-    font-size: 1.8rem;
-    line-height: 2.2rem;
+    font-size: 1.15rem;
+    line-height: 1.4rem;
     font-family: montserrat;
     font-weight: 700;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2.56rem;
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 .calendar__monthdays{
-    margin-top: 0.8rem;
+    margin-top: 0.512rem;
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 0.896rem;
+    line-height: 1.28rem;
 }
 .calendar--prev, .calendar--next{
-    width: 4rem;
-    height: 4rem;
+    width: 2.55rem;
+    height: 2.55rem;
     color: black;
 }
 .calendar__day{
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 0.384rem;
+    padding-bottom: 0.384rem;
     font-weight: 700;
+    position: relative;
 }
 .calendar__daybutton{
-    height: 4.5rem;
-    width: 4.5rem;
+    height: 3.88rem;
+    width: 3.88rem;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -534,9 +539,9 @@
       border-width: 0;
   }
   .calendar__button{
-    margin-top: -0.6rem;
-    margin-bottom: -0.6rem;
-    padding: 0.6rem;
+    margin-top: -0.384rem;
+    margin-bottom: -0.384rem;
+    padding: 0.384rem;
   }
   .calendar__month{
     flex: 1 1 auto;
@@ -544,8 +549,8 @@
     color: #111827;
     font-family: montserrat;
     font-weight: 700;
-    font-size: 3.6rem;
-    line-height: 4.4rem;
+    font-size: 2.3rem;
+    line-height: 2.8rem;
   }
   .text-gray-400 {
     --tw-text-opacity: 1;
@@ -553,23 +558,28 @@
 }
 
 .calendar__body{
-  padding: 5rem;
-  width: 35%;
+  padding: 3.2rem 3.2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .calendar__schedule{
-  width: 35%;
-  padding: 5rem;
-  border-left: 3px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 3.2rem;
   font-family: montserrat;
+  height: 30rem;
 }
 
 .schedule__title{
-  font-size: 2.2rem;
-  line-height: 2.6rem;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.66rem;
+  margin-bottom: 1.28rem;
 }
-.schedule__content{
+
+
+.recharts-text{
   font-size: 1.8rem;
-  line-height: 2.2rem;
+  font-weight: 600;
+  font-family: montserrat;
 }

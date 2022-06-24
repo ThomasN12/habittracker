@@ -56,8 +56,8 @@ const Habit = (props) =>{
   useEffect(() => {
      
     prevChartData.current = chartData;
-    console.log("prevChartData:", prevChartData)
-    console.log("prevChartData:", prevChartData.current[1].name)
+    // console.log("prevChartData:", prevChartData)
+    // console.log("prevChartData:", prevChartData.current[1].name)
     if (prevChartData.current[1].name !== originChartData[1].name){
         console.log("true");
         setChartData(originChartData)
@@ -80,7 +80,7 @@ const Habit = (props) =>{
             let newData = [
                 ...prevChartData,
             ]
-            console.log("chartData: ", newData)
+            // console.log("chartData: ", newData)
             newData[searchIndex].checked = 1;
             return newData
         })
@@ -89,17 +89,6 @@ const Habit = (props) =>{
             return [...prevIds, id]
         })
     }
-
-    // Prevent re-render on the first time render
-
-    useEffect(() => {
-        if (isMounted.current) {
-            props.onUpdateChecked(props.habit, checkedId);
-        } 
-        else {
-          isMounted.current = true;
-        }
-    },[checkedId]);
 
     // Remove Id function
 
@@ -118,6 +107,26 @@ const Habit = (props) =>{
            checkedId.filter((item) => item !== id)
         )
     }
+
+    // Prevent re-render on the first time render
+
+    let mount = 0;
+
+    useEffect(() => {
+        if (isMounted.current) {
+            props.onUpdateChecked(props.habit, checkedId);
+            // console.log("checkedId:", checkedId)
+            // console.log(props.checkedId);
+            console.log(props.habit.checkedId);
+        } 
+        else {
+            mount++
+          if(mount === 2){
+            isMounted.current = true;
+            // console.log("prevent")
+          }
+        }
+    },[checkedId]);
 
     const [show, setShow] = useState(false);
 

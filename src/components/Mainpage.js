@@ -6,7 +6,8 @@ import Habits from './Habits/Habits';
 import NewHabit from './NewHabit/NewHabit';
 import axios from 'axios';
 import background from ".././img/formbg2.jpg";
-
+import QueryForm from './QueryForm';
+import Sidebar from './Sidebar';
 import {
     nextDay,
     startOfToday,
@@ -21,21 +22,21 @@ let myHabits = [
         importance: 'High',
         weeks: 1,
         total: 0,
-        checkedId: [],
+        checkedId: [1],
     },
     {
         _id: '2',
         name: 'Walking 10 minutes a day',
         importance: 'Moderate',
         weeks: 1,
-        checkedId: [],
+        checkedId: [1],
     },
     {
         _id: '3',
         name: 'Playing chess',
         importance: 'Low',
         weeks: 1,
-        checkedId: [],
+        checkedId: [1],
     }
 ]
 
@@ -82,10 +83,13 @@ function Mainpage() {
 
     return (
         <React.Fragment>
-            <img src={background} alt="" className='habit__background'/>
+            {/* <img src={background} alt="" className='habit__background'/> */}
+            <Sidebar/>
+            <Calendar onChangeDate={setDate} />
             <div className='body__container'>
                 <div className = 'page__container'>
-                    <Calendar onChangeDate={setDate} />
+                    
+                    <QueryForm/>
                     <div className='habit__table'>
                         <Date daterange={date}></Date>
                         <Habits

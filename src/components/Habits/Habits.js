@@ -5,14 +5,18 @@ const Habits = (props) => {
 
     const updateHabitObject = (habit, checkedId) => {
         let dateCheckedId = checkedId.map(dateFilter);
-        Object.assign(habit.checkedId, dateCheckedId)
+        habit.checkedId = structuredClone(dateCheckedId);
         // console.log(props.items);
+        // console.log("habit.checkedId: ",habit.checkedId)
+        // console.log("checkedId: ",checkedId)
     }
 
     const dateFilter = (item) => {
         let checkeddaystring =  item.split('/')[0];
         let parts = checkeddaystring.split('-')
-        let checkeddaydate = new Date(parts[2], parts[0], parts[1]);
+        let checkeddaydate = new Date(parts[2], parts[0]-1, parts[1]);
+        console.log("parts: ",parts)
+        console.log("date:", checkeddaydate)
         return checkeddaydate;
     }
 

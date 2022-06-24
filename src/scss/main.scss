@@ -8,8 +8,11 @@
   html{
       font-size: 62.5%;
   }
-
+@import "font.scss";
 @import "habittable.scss";
+@import "form.scss";
+@import "sidebar.scss";
+@import "rightbar.scss";
 
 // html {
 // //   font-size: 62.5%;
@@ -201,11 +204,11 @@
     }
     .hover\:bg-gray-200:hover {
         --tw-bg-opacity: 0.8;
-        background-color: #FB8B18;
+        background-color: #f3cd8f;
     }
 
 .bg-yellow{
-    background-color: #FB8B18 !important;
+    background-color: #f3cd8f !important;
     color: white;
 }
 
@@ -224,7 +227,8 @@
     // border-radius: 50%;
 }
 .text-pink{
-    background-color: #744AFF;
+    // background-color: #744AFF;
+    background-color: #3f4460;
     color: white;
     border-radius: 50%;
 }
@@ -233,11 +237,12 @@
     border-top: 1px solid grey;
 }
 .background-beige{
-    background-color: #FF4A70;
+    background-color: #84b29c;
+    color: black;
 }
 .padding-9{
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 2.43rem;
+    padding-right: 2.43rem;
 }
 .border-radius-none{
     border-radius: unset;
@@ -261,4 +266,6 @@ button {
     border-width: 0;
     border-style: solid;
 }
-
+.background-blue{
+    background-color: black;
+}
