@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+
 import axios from 'axios';
 
 const Register = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    let navigate = useNavigate();
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -13,12 +16,8 @@ const Register = (props) => {
             username: username,
             password: password,
         }).then(res => {
-            // console.log(res);
-            // localStorage.setItem('token', res.data.token);
-            const token = localStorage.getItem('token');
-            if (!token) {
-                localStorage.setItem('token', res.data.token);
-            }
+            localStorage.setItem('token', res.data.token);
+            navigate('/main');
         }).catch(err => {
             console.log(err);
         })
@@ -26,19 +25,17 @@ const Register = (props) => {
     return (
         <>
             <h1>Register</h1>
-            {/* <Form onSubmit={submitHandler}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Enter username</Form.Label>
-                    <Form.Control type="text" placeholder="Enter username" value={username} onChange={event => setUsername(event.target.value)} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Enter password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" value={password} onChange={event => setPassword(event.target.value)} />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form> */}
+            <form onSubmit={submitHandler}>
+                <div>
+                    <label htmlFor="username">Enter username</label>
+                    <input type="text" name="" id="username" value={username} onChange={event => setUsername(event.target.value)} />
+                </div>
+                <div>
+                    <label htmlFor="password">Enter password</label>
+                    <input type="password" name="" id="password" value={password} onChange={event => setPassword(event.target.value)} />
+                </div>
+                <button type="submit">Create account</button>
+            </form>
         </>
     )
 }

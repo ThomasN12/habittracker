@@ -14,7 +14,6 @@ const LoginForm = (props) => {
         console.log(res);
         const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
-            console.log(res);
             localStorage.setItem('token', res.data.token);
             navigate('/main');
         }).catch(err => {
