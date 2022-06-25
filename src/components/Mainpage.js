@@ -6,6 +6,7 @@ import Habits from './Habits/Habits';
 import NewHabit from './NewHabit/NewHabit';
 import axios from 'axios';
 import background from ".././img/formbg2.jpg";
+import { toast } from 'react-toastify';
 import QueryForm from './QueryForm';
 import Sidebar from './Sidebar';
 import {
@@ -62,11 +63,16 @@ function Mainpage() {
                 "auth-token": token,
             }
         }).then(res => {
-            let foundHabits = res.data.habits;
-            console.log(foundHabits);
-            setHabits(foundHabits);
+            const { data } = res;
+            if (data.success) {
+                let foundHabits = res.data.habits;
+                setHabits(foundHabits);
+            } else {
+                toast.error(data.message);
+                navigate('/login');
+            }
         }).catch(err => {
-            console.log(err);
+            toast.error(err.message);
             navigate('/login');
         });
     }, [])
