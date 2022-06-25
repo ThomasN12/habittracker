@@ -6,6 +6,7 @@ import medal from "../../img/gold-medal.png";
 import calendar from "../../img/calendar.png";
 import Chart from "../Charts/HabitChart";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 
@@ -122,13 +123,13 @@ const Habit = (props) =>{
             let body = {updatedHabit};
             axios.put(`${baseUrl}/habit/${props.id}`, body, {
                 headers: {
-                    "auth-token": token,
+                    "accessToken": token,
                 },
             }).then(res => {
                 // console.log(res);
                 // console.log("Successfully update a habit");
             }).catch(err => {
-                console.log(err);
+                toast.error(err.response.data);
             });
         } 
         else {

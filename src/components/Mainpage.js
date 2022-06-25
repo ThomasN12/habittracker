@@ -60,7 +60,7 @@ function Mainpage() {
         const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.get(`${baseUrl}/habit`, {
             headers: {
-                "auth-token": token,
+                "accessToken": token,
             }
         }).then(res => {
             const { data } = res;
@@ -72,7 +72,7 @@ function Mainpage() {
                 navigate('/login');
             }
         }).catch(err => {
-            toast.error(err.message);
+            toast.error(err.response.data);
             navigate('/login');
         });
     }, [])
@@ -87,13 +87,13 @@ function Mainpage() {
         let body = {habit};
         axios.post(`${baseUrl}/habit`, body, {
             headers: {
-                "auth-token": token,
+                "accessToken": token,
             }
         }).then(res => {
             const foundHabits = res.data.habits;
             setHabits(foundHabits);
         }).catch(err => {
-            console.log(err);
+            toast.error(err.response.data);
         });
     }
 
