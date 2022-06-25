@@ -1,0 +1,112 @@
+.form__container{
+    padding: 5rem 10rem;
+    background: #FFFFFF;
+    box-shadow: 0px 44px 64px rgba(69, 25, 160, 0.1);
+    border-radius: 32px;
+    padding: 7.5rem;
+}
+.form__title{
+    font-size: 2.05rem;
+    line-height: 2.56rem;
+    font-family: montserrat;
+    font-weight: 700;
+    margin-bottom: 2.56rem;
+    color: black;
+}
+
+
+.form__query--1 > label{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.form__query--1 > input{
+    margin-top: 0.8rem;
+    width: 100%;
+    padding: 1.25rem;
+    border: 1px solid #8F9DCE;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form__query--1 > input::placeholder{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: black;
+}
+
+.queryform__style--1{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: black;
+}
+
+.form__checkbox--1{
+    margin-top: 1.15rem;
+    display: flex;
+    align-items: center;
+}
+
+.form__checkbox--1 > input{
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.32rem;
+    box-sizing: border-box;
+}
+
+.mt-32{
+    margin-top: 2.05rem;
+}
+.queryform__style--2{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+.pickupdate__date{
+    padding: 1.6rem;
+    width: 30rem;
+    height: 6.5rem;
+    border: 1px solid #8F9DCE;
+    border-radius: 4px;
+}
+
+
+.form__query{
+    display: flex;
+    justify-content: space-evenly;
+    width: 85rem;
+    margin: 0 auto;
+}
+
+.form__content{
+    padding: 3.2rem;
+    width: 35%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form__apply{
+    margin: 4.5rem auto 0;
+    background: #1E1411;
+    border-radius: 0.8rem;
+    width: 13rem;
+    color: white;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.form__apply > span{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+

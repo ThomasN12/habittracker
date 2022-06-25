@@ -2,6 +2,8 @@ import { Menu, Transition } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import activity from "../img/reactivities.gif"
+import pencil from "../img/Pencil.svg"
+import bell from "../img/Bell.svg"
 import clsx from 'clsx';
 import {
   add,
@@ -68,6 +70,14 @@ const meetings = [
     //   'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     startDatetime: '2022-05-13T14:00',
     endDatetime: '2022-05-13T14:30',
+  },
+  {
+    id: 6,
+    name: 'Dries Vincent',
+    // imageUrl:
+    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    startDatetime: '2022-05-20T17:00',
+    endDatetime: '2022-05-20T18:30',
   },
 ]
 
@@ -185,7 +195,26 @@ export default function Calendar(props) {
   )
 
   return (
-    <div className="pt-16 introhabit__container">
+    <div className="rightbar__container">
+        <div className="rightbar__intro">
+            <div className="rightbar__intro--content">
+                <div className="rightbar__name">
+                    <span className="rightbar__name--text">Jane Oegentro</span><br/>
+                    <span className="rightbar__name--schedule">Schedule</span>
+                </div>
+                <div className="rightbar__edit">
+                    <div className="rightbar__editimg">
+                        <img src={pencil} alt=""/>
+                    </div>
+                </div>
+                <div className="rightbar__noti">
+                    <div className="rightbar__notiimg">
+                        <img src={bell} alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="pt-16 introhabit__container">
       <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6 introduction__container">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200 calendar__container">
           <div className="md:pr-14 calendar__body">
@@ -271,11 +300,11 @@ export default function Calendar(props) {
                     </time>
                   </button>
 
-                  <div className="w-1 h-1 mx-auto mt-1">
+                  <div className="w-1 h-1 mx-auto mt-1 schedule__dotcontainer">
                     {meetings.some((meeting) =>
                       isSameDay(parseISO(meeting.startDatetime), day)
                     ) && (
-                      <div className="w-1 h-1 rounded-full bg-sky-500"></div>
+                      <div className="w-1 h-1 rounded-full bg-sky-500 background-blue schedule__dot"></div>
                     )}
                   </div>
                 </div>
@@ -300,43 +329,50 @@ export default function Calendar(props) {
             </ol>
           </section>
         </div>
-        {/* <img src={activity} alt='' className='gif__activity'/> */}
+          {/* <img src={activity} alt='' className='gif__activity'/> */}
+        </div>
       </div>
     </div>
   )
 }
+
 
 function Meeting({ meeting }) {
   let startDateTime = parseISO(meeting.startDatetime)
   let endDateTime = parseISO(meeting.endDatetime)
 
   return (
-    <li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
-      {/* <img
-        src={meeting.imageUrl}
-        alt=""
-        className="flex-none w-10 h-10 rounded-full"
-      /> */}
-      <div className="flex-auto">
-        <p className="text-gray-900">{meeting.name}</p>
-        <p className="mt-0.5">
-          <time dateTime={meeting.startDatetime}>
-            {format(startDateTime, 'h:mm a')}
-          </time>{' '}
-          -{' '}
-          <time dateTime={meeting.endDatetime}>
-            {format(endDateTime, 'h:mm a')}
-          </time>
-        </p>
-      </div>
-      <Menu
+  
+        <div class="rightbar__schedule">
+            <div class="rightbar__event">
+                <div class="event__datecontainer">
+                    <div class="event__date">
+                        <span>15</span>
+                    </div>
+                    <div class="event__border"></div>
+                </div>
+                <div class="rightbar__event--info">
+                    <div class="event__title">
+                        <span class="event__name">{meeting.name}</span><br/>
+                        <span class="event__type">Deadline</span>
+                    </div>
+                    <div class="event__time">
+                        <span>         
+                           <time dateTime={meeting.startDatetime}>
+                              {format(startDateTime, 'h:mm a')}
+                          </time>{' '}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <Menu
         as="div"
-        className="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100"
+        className="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100 options__container"
       >
         <div>
-          <Menu.Button className="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600">
+          <Menu.Button className=" options__button -m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600">
             <span className="sr-only">Open options</span>
-            <DotsVerticalIcon className="w-6 h-6" aria-hidden="true" />
+            <DotsVerticalIcon className="options__dots w-6 h-6" aria-hidden="true" />
           </Menu.Button>
         </div>
 
@@ -381,7 +417,8 @@ function Meeting({ meeting }) {
           </Menu.Items>
         </Transition>
       </Menu>
-    </li>
+        </div>
+
   )
 }
 

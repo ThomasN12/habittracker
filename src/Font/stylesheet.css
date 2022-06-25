@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-BoldItalic.woff2') format('woff2'),
+        url('CocoSharpTrial-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Bold.woff2') format('woff2'),
+        url('CocoSharpTrial-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-ExtraboldItalic.woff2') format('woff2'),
+        url('CocoSharpTrial-ExtraboldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Heavy.woff2') format('woff2'),
+        url('CocoSharpTrial-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-ExtraLight.woff2') format('woff2'),
+        url('CocoSharpTrial-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-ExtraLightItalic.woff2') format('woff2'),
+        url('CocoSharpTrial-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Extrabold.woff2') format('woff2'),
+        url('CocoSharpTrial-Extrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Light.woff2') format('woff2'),
+        url('CocoSharpTrial-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-LightItalic.woff2') format('woff2'),
+        url('CocoSharpTrial-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Italic.woff2') format('woff2'),
+        url('CocoSharpTrial-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-HeavyItalic.woff2') format('woff2'),
+        url('CocoSharpTrial-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CocoSharp Trial';
+    src: url('CocoSharpTrial-Regular.woff2') format('woff2'),
+        url('CocoSharpTrial-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

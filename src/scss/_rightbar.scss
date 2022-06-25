@@ -1,0 +1,214 @@
+.rightbar__container{
+    box-sizing: border-box;
+    width: 450px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    background: #fbf5ee;
+    padding: 30px 23px;
+    margin-bottom: 20px;
+}
+.rightbar__intro--content{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.rightbar__editimg{
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0 5px;
+}
+
+.rightbar__editimg > img{
+    width: 20px;
+    height: 20px;
+}
+.rightbar__notiimg > img{
+    width: 20px;
+    height: 20px;
+}
+.rightbar__notiimg{
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0 5px;
+}
+.rightbar__name{
+    flex: 1 1 auto;
+}
+
+.rightbar__name--text{
+    font-family: mulish;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.rightbar__name--schedule{
+    font-family: mulish;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+//Part 2
+
+.rightbar__schedule{
+    margin-top: 4px;
+    display: flex;
+}
+.rightbar__event{
+    margin: 0 auto;
+    width: 320px;
+    height: 65px;
+    display: flex;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+}
+
+
+
+.event__datecontainer{
+    min-width: 15.65%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    align-items: center;
+    // background-color: white;
+}
+
+.event__date{
+    width: 100%;
+    font-family: montserrat;
+    height: 62.35%;
+    color: black;
+    // background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event__border{
+    width: 5px;
+    height: 60%;
+    background-color: #70367c;
+    border-radius: 999px;
+}
+
+.rightbar__event--info{
+    // background-color: white;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    color: black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 16px 24px 16px 16px;
+}
+.event__name{
+    font-family: montserrat;
+    font-weight: 700;
+    font-size: 12px;
+}
+.event__type{
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 9px;
+}
+.event__time{
+    text-align: center;
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 9px;
+    min-width: 50px;
+}
+.event__title{
+    flex: 1 1 auto;
+}
+
+
+
+.schedule__dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+.schedule__dotcontainer{
+    width: 4px;
+    height: 4px;
+    margin: 4px auto 0;
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.options__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.options__button{
+    padding: 6px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.options__dots{
+    width: 24px;
+    height: 24px;
+}
+
+.schedule__content{
+    font-size: 1.15rem;
+    line-height: 1.4rem;
+  }
+  .rightbar__schedule:nth-child(n+1) .event__border{
+    background-color: #f3cd8f;
+  }
+  .rightbar__schedule:nth-child(n+2) .event__border{
+    background-color: #3f4460;
+  }
+  .rightbar__schedule:nth-child(n+3) .event__border{
+    background-color: #84b29c;
+  }
+
+  .rightbar__schedule:hover .event__datecontainer{
+    background-color: #f3cd8f;
+  }
+.rightbar__schedule:hover .event__date{
+    background-color: #f3cd8f;
+    border: none;
+    color: black
+}
+.rightbar__schedule:hover .rightbar__event--info{
+    background-color: #3f4460;
+    color: #eee;
+}
+
+.rightbar__schedule:hover .options__container{
+    opacity: 1;
+}
+
+.rightbar__schedule:hover .event__border{
+    background-color: unset;
+}

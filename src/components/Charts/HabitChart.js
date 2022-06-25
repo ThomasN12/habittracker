@@ -21,7 +21,7 @@ const Chart = (props) => {
   
     // Create a copy of props.chartData and change "checked" properties based on checkedIds
     const data = structuredClone(props.chartData);
-    console.log("data la:", data)
+    // console.log("data la:", data)
     for (let i = 0; i < ids.length; i++){
       data[ids[i]].checked = 1;
     }
@@ -58,11 +58,13 @@ const Chart = (props) => {
                 bottom: 0,
               }}
             >
-              <CartesianGrid fill='#dc84ff' stroke="#6e0fca"/>
-              <XAxis dataKey="name"/>
+              {/* <CartesianGrid fill='#dc84ff' stroke="#6e0fca"/> */}
+              <CartesianGrid fill='#84b29c' stroke="#3f4460"/>
+              <XAxis dataKey="name" className='areachart__date'/>
               <YAxis  tickCount={0}/>
               {/* <Tooltip /> */}
-              <Area type="monotone" dataKey="checked" stroke="#ca7bf4" fill="#ffffff" />
+              {/* <Area type="monotone" dataKey="checked" stroke="#ca7bf4" fill="#ffffff" /> */}
+              <Area type="monotone" dataKey="checked" stroke="#84b29c" fill="#ffffff" />
             </AreaChart>
           </ResponsiveContainer>
         <ResponsiveContainer width = "17%" height = "100%" className="habit__doughnutchart">

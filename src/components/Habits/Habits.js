@@ -18,7 +18,8 @@ const Habits = (props) => {
         let parts = checkeddaystring.split('-')
         let checkeddaydate = new Date(parts[2], parts[0]-1, parts[1]);
         let checkeddaydateTime = checkeddaydate.getTime();
-        // console.dir(checkeddaydate);
+        console.log("parts: ",parts)
+        console.log("date:", checkeddaydate)
         return checkeddaydateTime;
     }
 

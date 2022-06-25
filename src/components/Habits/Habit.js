@@ -57,8 +57,8 @@ const Habit = (props) =>{
   useEffect(() => {
      
     prevChartData.current = chartData;
-    console.log("prevChartData:", prevChartData)
-    console.log("prevChartData:", prevChartData.current[1].name)
+    // console.log("prevChartData:", prevChartData)
+    // console.log("prevChartData:", prevChartData.current[1].name)
     if (prevChartData.current[1].name !== originChartData[1].name){
         console.log("true");
         setChartData(originChartData)
@@ -94,7 +94,7 @@ const Habit = (props) =>{
             let newData = [
                 ...prevChartData,
             ]
-            console.log("chartData: ", newData)
+            // console.log("chartData: ", newData)
             newData[searchIndex].checked = 1;
             return newData
         })
