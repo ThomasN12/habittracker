@@ -5,6 +5,8 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Login from './components/Login';
 import Register from './components/Register';
 import Mainpage from './components/Mainpage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import Date from './components/Habits/Date.js'
 // import Example from './components/Calendar';
 // import Habits from './components/Habits/Habits';
@@ -77,6 +79,18 @@ function App() {
             <Route path="/main" element={<Mainpage />} />
           </Routes>
         </BrowserRouter>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+        />
+
       </GoogleOAuthProvider>;
 
 

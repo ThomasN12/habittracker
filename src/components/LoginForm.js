@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
+
 import "./LoginForm.css"
 
 const LoginForm = (props) => {
@@ -11,31 +13,40 @@ const LoginForm = (props) => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const responseSuccessGoogle = (res) => {
-        console.log(res);
         const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
-            localStorage.setItem('token', res.data.token);
-            navigate('/main');
+            const { data } = res;
+            if (data.success) {
+                localStorage.setItem('token', data.token);
+                navigate('/main');
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
         }).catch(err => {
-            console.log(err);
+            toast.error(err.message);
         })
     }
 
-    const responseErrorGoogle = (res) => {
-        console.log(res);
+    const responseErrorGoogle = (err) => {
+        toast.error(err.message);
     }
     const submitHandler = (event) => {
-        // event.preventDefault();
-        // console.log(username, password);
         const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.post(`${baseUrl}/user/login`, {
             username: username,
             password: password,
         }).then(res => {
-            localStorage.setItem('token', res.data.token);
-            navigate('/main');
+            const { data } = res;
+            if (data.success) {
+                localStorage.setItem('token', data.token);
+                navigate('/main');
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
         }).catch(err => {
-            console.log(err);
+            toast.error(err.message);
         })
     }
 

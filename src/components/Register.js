@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const Register = (props) => {
@@ -16,10 +16,16 @@ const Register = (props) => {
             username: username,
             password: password,
         }).then(res => {
-            localStorage.setItem('token', res.data.token);
-            navigate('/main');
+            const { data } = res;
+            if (data.success) {
+                localStorage.setItem('token', data.token);
+                navigate('/main');
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
         }).catch(err => {
-            console.log(err);
+            toast.error(err.message);
         })
     }
     return (
