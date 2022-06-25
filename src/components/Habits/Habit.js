@@ -74,7 +74,6 @@ const Habit = (props) =>{
         let monthPrefix = date.getMonth() < 10 ? '0' : '';
         let day = date.getDate();
         let res = `${monthPrefix}${month+1}-${day}-${year}/${props.habit.name}`
-        console.log(res);
         return res;
     });
     // console.log(props.habit.checkedId);
@@ -121,7 +120,6 @@ const Habit = (props) =>{
                 checkedId: props.habit.checkedId
             }
             let body = {updatedHabit};
-            debugger;
             axios.put(`${baseUrl}/habit/${props.id}`, body, {
                 headers: {
                     "auth-token": token,
