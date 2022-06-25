@@ -1,7 +1,7 @@
 import LoginForm from './LoginForm';
 import "./LoginForm.css";
 import React from 'react';
-import axios from 'axios';
+// import { GoogleLogin } from 'react-google-login';
 
 const Login = (props) => {
     return (
