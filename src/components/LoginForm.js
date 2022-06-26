@@ -13,7 +13,9 @@ const LoginForm = (props) => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const responseSuccessGoogle = (res) => {
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "http://localhost:5000/api"
+            // process.env.REACT_APP_ROOT_API;
+            
         axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
             const { data } = res;
             if (data.success) {
@@ -32,7 +34,8 @@ const LoginForm = (props) => {
         toast.error(err.message);
     }
     const submitHandler = (event) => {
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "http://localhost:5000/api"
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.post(`${baseUrl}/user/login`, {
             username: username,
             password: password,

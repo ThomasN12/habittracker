@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type';
 import project from '../img/icondashboard.svg';
 import page from '../img/iconpage.svg';
 import report from '../img/iconreport.svg';
@@ -30,3 +31,5 @@ const Sidebar = () => {
 }
 
 export default Sidebar;
+
+

@@ -11,7 +11,8 @@ const Register = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         // console.log(username, password);
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "http://localhost:5000/api"
         axios.post(`${baseUrl}/user/register`, {
             username: username,
             password: password,

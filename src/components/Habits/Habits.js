@@ -68,19 +68,21 @@ const Habits = (props) => {
         <>
             {props.items.map((habit) => (
                 <div className='habit__container' key = {`${habit.name}-${habit._id}`}>
-                    <Habit
-                        key = {`${habit.name}-${habit._id}`}
-                        name = {habit.name}
-                        // weeks = {habit.weeks}
-                        streak = {habit.streak}
-                        record = {habit.record}
-                        // total = {habit.total}
-                        daterange = {props.daterange}
-                        id = {habit._id}
-                        // checkedId = {habit.checkedId}
-                        habit = {habit}
-                        onUpdateChecked = {updateHabitObject}
-                    />
+                    <div className='habit__box'>
+                        <Habit
+                            key = {`${habit.name}-${habit._id}`}
+                            name = {habit.name}
+                            // weeks = {habit.weeks}
+                            streak = {habit.streak}
+                            record = {habit.record}
+                            // total = {habit.total}
+                            daterange = {props.daterange}
+                            id = {habit._id}
+                            // checkedId = {habit.checkedId}
+                            habit = {habit}
+                            onUpdateChecked = {updateHabitObject}
+                        />
+                    </div>
                 </div>
             ))}
         </>

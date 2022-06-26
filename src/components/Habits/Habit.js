@@ -114,7 +114,8 @@ const Habit = (props) =>{
             setRecord(props.habit.record);
             //Send update
             const token = localStorage.getItem('token');
-            const baseUrl = process.env.REACT_APP_ROOT_API;
+            // const baseUrl = process.env.REACT_APP_ROOT_API;
+            const baseUrl = "http://localhost:5000/api"
             // console.log(props.habit.checkedId);
             let updatedHabit = {
                 ...props.habit,
