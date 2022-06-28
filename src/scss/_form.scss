@@ -88,6 +88,7 @@
 }
 
 .form__content{
+    background: linear-gradient(to right, #2bc0e4, #eaecc6);
     padding: 3.2rem;
     width: 35%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -110,3 +111,8 @@
     line-height: 1.8rem;
 }
 
+.form__apply--btn{
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}

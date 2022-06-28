@@ -18,8 +18,6 @@ const Habits = (props) => {
         let parts = checkeddaystring.split('-')
         let checkeddaydate = new Date(parts[2], parts[0]-1, parts[1]);
         let checkeddaydateTime = checkeddaydate.getTime();
-        console.log("parts: ",parts)
-        console.log("date:", checkeddaydate)
         return checkeddaydateTime;
     }
 
@@ -68,8 +66,8 @@ const Habits = (props) => {
         <>
             {props.items.map((habit) => (
                 <div className='habit__container' key = {`${habit.name}-${habit._id}`}>
-                    <div className='habit__box'>
                         <Habit
+                            habits = {props.items}
                             key = {`${habit.name}-${habit._id}`}
                             name = {habit.name}
                             // weeks = {habit.weeks}
@@ -82,7 +80,6 @@ const Habits = (props) => {
                             habit = {habit}
                             onUpdateChecked = {updateHabitObject}
                         />
-                    </div>
                 </div>
             ))}
         </>

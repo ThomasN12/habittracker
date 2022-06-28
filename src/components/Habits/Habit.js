@@ -1,16 +1,21 @@
 import React from "react";
 import Checkbox from "./Checkbox";
 import fire from "../../img/fire.png";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import medal from "../../img/gold-medal.png";
 import calendar from "../../img/calendar.png";
 import Chart from "../Charts/HabitChart";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import information from "../../img/info2.png"
+import bin from "../../img/bin.png"
+import pencil from "../../img/pencil.png"
+import { MainPageTheme } from "../Mainpage";
 
 
 const Habit = (props) =>{
+
+    const mainPageTheme = useContext(MainPageTheme)
     // const [weeks, setWeeks] = useState(props.weeks)
 
 
@@ -84,6 +89,20 @@ const Habit = (props) =>{
     const isMounted = useRef(false);
 
     // Add Id function
+
+    const handleDelete = (id) => {
+        mainPageTheme.setHabits(() => {
+            return (
+            mainPageTheme.habits.filter((item) => {
+                console.log("item: ", item)
+                console.log("itemid: ", item._id)
+                return item._id !== id
+            }))
+        })
+        
+        console.log("id la", id)
+        console.log("habits la: ", mainPageTheme.habits)
+    }
 
     const addId = (id) => {
         
@@ -164,60 +183,57 @@ const Habit = (props) =>{
     const [record, setRecord] = useState(props.habit.record || 0);
 
     return (
-        <React.Fragment key = {`habit-${props.id}`}>
-            <div className="habitname__container" >
-                <div className="habit__name">
-                    <span>{props.name}</span>
+        <React.Fragment>
+            <div className="habit__box" key = {`habit-${props.id}`}>
+                <div className="habitname__container" >
+                    <div className="habit__name">
+                        <span>{props.name}</span>
+                    </div>
                 </div>
-                <div className="habit__button">
-                    <div className="habit__button--add">
-                        <button className="weekadd" 
-                        // onClick={onAddWeek}
-                        onClick={() => setShow(!show)}
-                        >
-                            Show details
-                        </button>
+                <div className="habit__checkboxes--container">
+                    {/* {[...Array(weeks)].map((e, i) =>( */}
+                        <>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}6`} id={`${props.daterange[0]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}5`} id={`${props.daterange[1]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}4`} id={`${props.daterange[2]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}3`} id={`${props.daterange[3]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}2`} id={`${props.daterange[4]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}1`} id={`${props.daterange[5]}/${props.name}`}></Checkbox>
+                            <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}0`} id={`${props.daterange[6]}/${props.name}`}></Checkbox>
+                        </>   
+                    {/* ))} */}
+                </div>
+                <div className="habit__info" >
+                    <div className="current__container">
+                        <div className="current__img">
+                            <img src={fire} alt=""/>
+                        </div>
+                        <div className="current__data">
+                            <span>{streak}</span>
+                        </div>
+                    </div>
+                    <div className="record__container">
+                        <div className="record__img">
+                            <img src={medal} alt=""/>
+                        </div>
+                        <div className="record__data">
+                            <span>{record}</span>
+                        </div>
+                    </div>
+                    <div className="total__container">
+                        <div className="total__img">
+                            <img src={calendar} alt=""/>
+                        </div>
+                        <div className="total__data">
+                            <span>{checkedId.length}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="habit__checkboxes--container">
-                {/* {[...Array(weeks)].map((e, i) =>( */}
-                    <>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}6`} id={`${props.daterange[0]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}5`} id={`${props.daterange[1]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}4`} id={`${props.daterange[2]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}3`} id={`${props.daterange[3]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}2`} id={`${props.daterange[4]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}1`} id={`${props.daterange[5]}/${props.name}`}></Checkbox>
-                        <Checkbox checkedId = {checkedId} daterange = {props.daterange} onAddId = {addId} onRemoveId = {removeId} key={`box-${props.id}0`} id={`${props.daterange[6]}/${props.name}`}></Checkbox>
-                    </>   
-                {/* ))} */}
-            </div>
-            <div className="habit__info" >
-                <div className="current__container">
-                    <div className="current__img">
-                        <img src={fire} alt=""/>
-                    </div>
-                    <div className="current__data">
-                        <span>{streak}</span>
-                    </div>
-                </div>
-                <div className="record__container">
-                    <div className="record__img">
-                        <img src={medal} alt=""/>
-                    </div>
-                    <div className="record__data">
-                        <span>{record}</span>
-                    </div>
-                </div>
-                <div className="total__container">
-                    <div className="total__img">
-                        <img src={calendar} alt=""/>
-                    </div>
-                    <div className="total__data">
-                        <span>{checkedId.length}</span>
-                    </div>
-                </div>
+            <div className="habit__button">
+                <img alt="" src={information} className="habit__button--information" onClick={() => setShow(!show)}/>
+                <img alt="" src={pencil} className="habit__button--information"/>
+                <img alt="" src={bin} className="habit__button--information" onClick={() => handleDelete(props.id)} />
             </div>
             {show &&
                 <div className="habit__chart">
@@ -226,8 +242,8 @@ const Habit = (props) =>{
                         checkedId = {checkedId}
                         daterange = {props.daterange}
                         name = {props.name}
-                    ></Chart>
-            </div>
+                    ></Chart>          
+                </div>
             }
         </React.Fragment>
     )

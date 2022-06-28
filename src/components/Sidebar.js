@@ -3,7 +3,7 @@ import project from '../img/icondashboard.svg';
 import page from '../img/iconpage.svg';
 import report from '../img/iconreport.svg';
 import setting from '../img/iconsetting.svg';
-
+import logout from '../img/logout1.png'
 
 const Sidebar = () => {
     return (
@@ -24,6 +24,10 @@ const Sidebar = () => {
             <div className="sidebar__child">
                 <img alt='' src={setting}/>
                 <span>Setting</span>
+            </div>
+            <div className="sidebar__child">
+                <img alt='' src={logout}/>
+                <span>Log out</span>
             </div>
         </div>
     </div>

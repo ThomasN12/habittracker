@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M24 24L24 0L0 -1.04907e-06L-1.04907e-06 24L24 24Z" fill="white"/>
+<path d="M16.3135 8.0625L20.25 12L16.3135 15.9375" stroke="#002858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.75001 12L20.2473 12" stroke="#002858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.75 20.25L4.5 20.25C4.30109 20.25 4.11032 20.171 3.96967 20.0303C3.82902 19.8897 3.75 19.6989 3.75 19.5L3.75 4.5C3.75 4.30109 3.82902 4.11032 3.96967 3.96967C4.11032 3.82902 4.30109 3.75 4.5 3.75L9.75 3.75" stroke="#002858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 0L25 4.37114e-08L25 -1L24 -1L24 0ZM24 24L24 25L25 25L25 24L24 24ZM-1.04907e-06 24L-1 24L-1 25L-1.09278e-06 25L-1.04907e-06 24ZM0 -1.04907e-06L4.37114e-08 -1L-1 -1L-1 -1.09278e-06L0 -1.04907e-06ZM23 -4.37114e-08L23 24L25 24L25 4.37114e-08L23 -4.37114e-08ZM24 23L-1.00536e-06 23L-1.09278e-06 25L24 25L24 23ZM0.999999 24L1 -1.00536e-06L-1 -1.09278e-06L-1 24L0.999999 24ZM-4.37114e-08 0.999999L24 1L24 -1L4.37114e-08 -1L-4.37114e-08 0.999999Z" fill="#002858"/>
+</g>
+</svg>

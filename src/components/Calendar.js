@@ -5,6 +5,8 @@ import activity from "../img/reactivities.gif"
 import pencil from "../img/Pencil.svg"
 import bell from "../img/Bell.svg"
 import clsx from 'clsx';
+import React, { useContext } from 'react';
+import { MainPageTheme } from './Mainpage';
 import {
   add,
   eachDayOfInterval,
@@ -30,86 +32,15 @@ import {
 import { isSameISOWeekYear } from 'date-fns/esm';
 import { Fragment, useState } from 'react'
 
-const meetings = [
-  {
-    id: 1,
-    name: 'Leslie Alexander',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-11T13:00',
-    endDatetime: '2022-05-11T14:30',
-  },
-  {
-    id: 2,
-    name: 'Michael Foster',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T09:00',
-    endDatetime: '2022-05-20T11:30',
-  },
-  {
-    id: 3,
-    name: 'Dries Vincent',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
-  },
-  {
-    id: 4,
-    name: 'Leslie Alexander',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-06-09T13:00',
-    endDatetime: '2022-06-09T14:30',
-  },
-  {
-    id: 5,
-    name: 'Michael Foster',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-13T14:00',
-    endDatetime: '2022-05-13T14:30',
-  },
-  {
-    id: 6,
-    name: 'Dries Vincent',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
-  },
-  {
-    id: 7,
-    name: 'Dries Vincent',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
-  },
-  {
-    id: 8,
-    name: 'Dries Vincent',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
-  },
-  {
-    id: 9,
-    name: 'Dries Vincent',
-    // imageUrl:
-    //   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    startDatetime: '2022-05-20T17:00',
-    endDatetime: '2022-05-20T18:30',
-  },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Calendar(props) {
+  const mainPageTheme = useContext(MainPageTheme)
+  const meetings = mainPageTheme.schedule;
   let today = startOfToday()
   let [selectedDay, setSelectedDay] = useState(today);
   
@@ -367,20 +298,20 @@ function Meeting({ meeting }) {
 
   return (
   
-        <div class="rightbar__schedule">
-            <div class="rightbar__event">
-                <div class="event__datecontainer">
-                    <div class="event__date">
+        <div className="rightbar__schedule">
+            <div className="rightbar__event">
+                <div className="event__datecontainer">
+                    <div className="event__date">
                         <span>15</span>
                     </div>
-                    <div class="event__border"></div>
+                    <div className="event__border"></div>
                 </div>
-                <div class="rightbar__event--info">
-                    <div class="event__title">
-                        <span class="event__name">{meeting.name}</span><br/>
-                        <span class="event__type">Deadline</span>
+                <div className="rightbar__event--info">
+                    <div className="event__title">
+                        <span className="event__name">{meeting.name}</span><br/>
+                        <span className="event__type">Deadline</span>
                     </div>
-                    <div class="event__time">
+                    <div className="event__time">
                         <span>         
                            <time dateTime={meeting.startDatetime}>
                               {format(startDateTime, 'h:mm a')}
