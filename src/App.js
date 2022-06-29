@@ -91,7 +91,7 @@ function App() {
           pauseOnHover={false}
         />
 
-      </GoogleOAuthProvider>;
+      </GoogleOAuthProvider>
 
 
     </>

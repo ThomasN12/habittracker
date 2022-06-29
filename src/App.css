@@ -1009,6 +1009,136 @@ body {
   font-size: 14px;
   font-family: montserrat; }
 
+.signup__container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.signup__container > img {
+  position: absolute;
+  width: 100%;
+  height: 100vh; }
+
+::placeholder {
+  font-family: nunito;
+  color: #333;
+  font-weight: 700; }
+
+.signup__form {
+  width: 50rem;
+  height: 50rem;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  font-family: nunito;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/* .signup__block{
+    background-color: antiquewhite;
+  } */
+.signup__welcome {
+  font-size: 1.7rem;
+  margin: 2.2rem 0;
+  font-weight: 600; }
+
+.signup__account input {
+  height: 4rem;
+  width: 29rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem; }
+
+.signup__password input {
+  height: 4rem;
+  width: 29rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem; }
+
+.signup__utilities {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem; }
+
+.signup__rememberme {
+  font-weight: 700;
+  display: flex;
+  align-items: center; }
+
+.signup__rememberme label {
+  font-size: 1.2rem; }
+
+.signup__rememberme input {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #333;
+  border-radius: 7px;
+  margin-right: 1rem; }
+
+.signup__forgot {
+  font-size: 1.2rem;
+  font-weight: 700; }
+
+.signup__forgot a {
+  text-decoration: none;
+  color: black; }
+
+.signup__signin--btn {
+  width: 100%;
+  background-color: #111727;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito'; }
+
+.signup__google--btn {
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  border-radius: 6px;
+  border: 2px solid #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem; }
+
+.signup__google--btn > span > img {
+  width: 1.8rem;
+  height: 1.8rem; }
+
+.signup__google--btn > span {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem; }
+
+/* .signup__google--btn> img{
+    max-width: 100%;
+  } */
+.signup__signup {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  justify-content: center; }
+
+.signup__signup a {
+  color: black;
+  font-weight: 700; }
+
 .col-start-1 {
   grid-column-start: 1; }
 
