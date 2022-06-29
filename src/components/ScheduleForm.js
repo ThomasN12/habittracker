@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { MainPageTheme } from './Mainpage';
+import { format,parseISO } from 'date-fns'
 
 const ScheduleForm = (props) => {
 
     const mainPageTheme = useContext(MainPageTheme)
+    let selectedDay = format(mainPageTheme.selectedDay, 'dd-MMM');
 
     const [scheduleName, setScheduleName] = useState('');
     const [scheduleImportance, setScheduleImportance] = useState('');
@@ -33,8 +35,8 @@ const ScheduleForm = (props) => {
 
         const scheduleData = {
             name: scheduleName,
-            startDatetime: '2022-05-11T13:00',
-            endDatetime: '2022-05-11T14:30',
+            startDatetime: mainPageTheme.selectedDay
+            // startDatetime: '2022-05-20T00:00'
         }
 
         
@@ -53,6 +55,7 @@ const ScheduleForm = (props) => {
         setScheduleTarget('');
         setScheduleDays('');
         setScheduleImportance('');
+        
     }
 
     return (
@@ -105,7 +108,7 @@ const ScheduleForm = (props) => {
 
         <form className="form__content" onSubmit={submitHandler}>
             <div className="form__title">
-                <span>New schedule today</span>
+                <span>New schedule for {selectedDay}</span>
             </div>
             <div className="form__query--1">
                 <label>What's your schedule name?</label>

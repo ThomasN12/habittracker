@@ -1,11 +1,10 @@
 import { Menu, Transition } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import activity from "../img/reactivities.gif"
 import pencil from "../img/Pencil.svg"
 import bell from "../img/Bell.svg"
 import clsx from 'clsx';
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { MainPageTheme } from './Mainpage';
 import {
   add,
@@ -27,10 +26,9 @@ import {
   startOfToday,
   nextDay,
   startOfWeek,
-  startOfISOWeek,
 } from 'date-fns'
 import { isSameISOWeekYear } from 'date-fns/esm';
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 
 
 
@@ -40,23 +38,14 @@ function classNames(...classes) {
 
 export default function Calendar(props) {
   const mainPageTheme = useContext(MainPageTheme)
-  const meetings = mainPageTheme.schedule;
-  let today = startOfToday()
-  let [selectedDay, setSelectedDay] = useState(today);
-  
+
+
+  let today = mainPageTheme.today
+  console.log("today calendar: ", today)
+  let selectedDay = mainPageTheme.selectedDay
+  // let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
-
-
-  // let [weekSunday, setWeekSunday] = useState('');
-  // let [weekMonday, setWeekMonday] = useState('');
-  // let [weekTuesday, setWeekTuesday] = useState('');
-  // let [weekWednesday, setWeekWednesday] = useState('');
-  // let [weekThursday, setWeekThursday] = useState('');
-  // let [weekFriday, setWeekFriday] = useState('');
-  // let [weekSaturday, setWeekSaturday] = useState('');
-
-  // let [chosenWeek, setChosenWeek] = useState([]);
 
   function chooseWeek(day){
     let firstday = startOfWeek(day)
@@ -68,48 +57,12 @@ export default function Calendar(props) {
     let friday = format(nextDay((firstday), 5),'MM-dd-yyyy')
     let saturday = format(nextDay((firstday), 6),'MM-dd-yyyy')    
 
-    // setWeekSunday(sunday)
-    // setWeekMonday(monday)
-    // setWeekTuesday(tuesday)
-    // setWeekWednesday(wednesday)
-    // setWeekThursday(thursday)
-    // setWeekFriday(friday)
-    // setWeekSaturday(saturday)
-
-
-    // setChosenWeek([{monday},{tuesday},{wednesday},{thursday},{friday},{saturday}])
-    // let weekdays = {
-    //   monday: monday,
-    //   tuesday: tuesday,
-    //   wednesday: wednesday,
-    //   thursday: thursday,
-    //   friday: friday,
-    //   saturday: saturday,
-    //   sunday: sunday
-    // }
-
     let weekdays = [sunday,monday, tuesday, wednesday, thursday, friday, saturday]
 
     props.onChangeDate(weekdays)
-    // console.log(weekdays)
-  }
-
-  // console.log("sunday la", weekSunday)
-  // console.log("monday la", weekMonday)
-  // console.log("tuesday la", weekTuesday)
-  // console.log("wednesday la", weekWednesday)
-  // console.log("thursday la", weekThursday)
-  // console.log("friday la", weekFriday)
-  // console.log("saturday la", weekSaturday)
-
-  // console.log(chosenWeek);
-
-  
-  
+  }  
 
   const weekDaySelected = (date, selectedDate) =>{
-    // let firstDayofWeek = startOfWeek(date)
-    // let lastDayofWeek = endOfWeek(date)
 
     return isWithinInterval (date, {  
       start: startOfWeek(selectedDate),
@@ -145,9 +98,16 @@ export default function Calendar(props) {
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
   }
 
-  let selectedDayMeetings = meetings.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  let events = mainPageTheme.schedule
+
+  let selectedDayEvents = events.filter((event) =>
+    isSameDay((event.startDatetime), selectedDay)
   )
+
+  console.log("events: ", events)
+  console.log("selected day:", selectedDayEvents);
+
+  
 
   return (
     <div className="rightbar__container">
@@ -216,7 +176,7 @@ export default function Calendar(props) {
                   <button
                     type="button"
                     onClick={() => {
-                      setSelectedDay(day)
+                      mainPageTheme.setSelectedDay(day)
                       chooseWeek(day)
                     }}
                     className={clsx(
@@ -256,8 +216,8 @@ export default function Calendar(props) {
                   </button>
 
                   <div className="w-1 h-1 mx-auto mt-1 schedule__dotcontainer">
-                    {meetings.some((meeting) =>
-                      isSameDay(parseISO(meeting.startDatetime), day)
+                    {events.some((event) =>
+                      isSameDay((event.startDatetime), day)
                     ) && (
                       <div className="w-1 h-1 rounded-full bg-sky-500 background-blue schedule__dot"></div>
                     )}
@@ -266,35 +226,33 @@ export default function Calendar(props) {
               ))}
             </div>
           </div>
-          <section className="mt-12 md:mt-0 md:pl-14 calendar__schedule">
-            <h2 className="font-semibold text-gray-900 schedule__title">
-              Schedule for{' '}
-              <time dateTime={format(selectedDay, 'yyyy-MM-dd')}>
-                {format(selectedDay, 'MMM dd, yyy')}
-              </time>
-            </h2>
-            <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500 schedule__content">
-              {selectedDayMeetings.length > 0 ? (
-                selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} />
-                ))
-              ) : (
-                <p>No meetings for today.</p>
-              )}
-            </ol>
-          </section>
-        </div>
-          {/* <img src={activity} alt='' className='gif__activity'/> */}
+            <section className="mt-12 md:mt-0 md:pl-14 calendar__schedule">
+              <h2 className="font-semibold text-gray-900 schedule__title">
+                Schedule for{' '}
+                <time dateTime={format(selectedDay, 'yyyy-MM-dd')}>
+                  {format(selectedDay, 'MMM dd, yyy')}
+                </time>
+              </h2>
+              <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500 schedule__content">
+                {selectedDayEvents.length > 0 ? (
+                  selectedDayEvents.map((event) => (
+                    <Meeting event={event} key={event.id} />
+                  ))
+                ) : (
+                  <p>No events for today.</p>
+                )}
+              </ol>
+            </section>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-
-function Meeting({ meeting }) {
-  let startDateTime = parseISO(meeting.startDatetime)
-  let endDateTime = parseISO(meeting.endDatetime)
+function Meeting({ event }) {
+  // let startDateTime = parseISO(meeting.startDatetime)
+  let startDateTime = event.startDateTime
 
   return (
   
@@ -308,13 +266,13 @@ function Meeting({ meeting }) {
                 </div>
                 <div className="rightbar__event--info">
                     <div className="event__title">
-                        <span className="event__name">{meeting.name}</span><br/>
+                        <span className="event__name">{event.name}</span><br/>
                         <span className="event__type">Deadline</span>
                     </div>
                     <div className="event__time">
                         <span>         
-                           <time dateTime={meeting.startDatetime}>
-                              {format(startDateTime, 'h:mm a')}
+                           <time dateTime={event.startDatetime}>
+                              {/* {format(startDateTime, 'h:mm a')} */}
                           </time>{' '}
                         </span>
                     </div>

@@ -16,35 +16,10 @@ import {
     nextDay,
     startOfToday,
     startOfWeek,
-    format
+    format,
+    parseISO
 } from 'date-fns'
 
-// let myHabits = [
-//     {
-//         _id: '1',
-//         name: 'Exercise',
-//         importance: 'High',
-//         weeks: 1,
-//         total: 0,
-//         checkedId: [],
-//     },
-//     {
-//         _id: '2',
-//         name: 'Walking 10 minutes a day',
-//         importance: 'Moderate',
-//         weeks: 1,
-//         checkedId: [],
-//     },
-//     {
-//         _id: '3',
-//         name: 'Playing chess',
-//         importance: 'Low',
-//         weeks: 1,
-//         checkedId: [],
-//     }
-// ]
-
-// let myHabits = [];
 let firstday = startOfWeek(startOfToday())
 let sunday = format(firstday, 'MM-dd-yyyy')
 let monday = format(nextDay((firstday), 1), 'MM-dd-yyyy')
@@ -56,67 +31,67 @@ let saturday = format(nextDay((firstday), 6), 'MM-dd-yyyy')
 
 export const MainPageTheme = createContext();
 
-const meetings = [
-    {
-      id: 1,
-      name: 'Leslie Alexander',
-      startDatetime: '2022-05-11T13:00',
-      endDatetime: '2022-05-11T14:30',
-    },
-    {
-      id: 2,
-      name: 'Michael Foster',
-      startDatetime: '2022-05-20T09:00',
-      endDatetime: '2022-05-20T11:30',
-    },
-    {
-      id: 3,
-      name: 'Dries Vincent',
-      startDatetime: '2022-05-20T17:00',
-      endDatetime: '2022-05-20T18:30',
-    },
-    {
-      id: 4,
-      name: 'Leslie Alexander',
-      startDatetime: '2022-06-09T13:00',
-      endDatetime: '2022-06-09T14:30',
-    },
-    {
-      id: 5,
-      name: 'Michael Foster',
-      startDatetime: '2022-05-13T14:00',
-      endDatetime: '2022-05-13T14:30',
-    },
-    {
-      id: 6,
-      name: 'Dries Vincent',
-      startDatetime: '2022-05-20T17:00',
-      endDatetime: '2022-05-20T18:30',
-    },
-    {
-      id: 7,
-      name: 'Dries Vincent',
-      startDatetime: '2022-05-20T17:00',
-      endDatetime: '2022-05-20T18:30',
-    },
-    {
-      id: 8,
-      name: 'Dries Vincent',
-      startDatetime: '2022-05-20T17:00',
-      endDatetime: '2022-05-20T18:30',
-    },
-    {
-      id: 9,
-      name: 'Dries Vincent',
-      startDatetime: '2022-05-20T17:00',
-      endDatetime: '2022-05-20T18:30',
-    },
-  ]
-
+// const meetings = [
+//     {
+//       id: 1,
+//       name: 'Leslie Alexander',
+//       startDatetime: '2022-05-11T13:00',
+//       endDatetime: '2022-05-11T14:30',
+//     },
+//     {
+//       id: 2,
+//       name: 'Michael Foster',
+//       startDatetime: '2022-05-20T09:00',
+//       endDatetime: '2022-05-20T11:30',
+//     },
+//     {
+//       id: 3,
+//       name: 'Dries Vincent',
+//       startDatetime: '2022-05-20T17:00',
+//       endDatetime: '2022-05-20T18:30',
+//     },
+//     {
+//       id: 4,
+//       name: 'Leslie Alexander',
+//       startDatetime: '2022-06-09T13:00',
+//       endDatetime: '2022-06-09T14:30',
+//     },
+//     {
+//       id: 5,
+//       name: 'Michael Foster',
+//       startDatetime: '2022-05-13T14:00',
+//       endDatetime: '2022-05-13T14:30',
+//     },
+//     {
+//       id: 6,
+//       name: 'Dries Vincent',
+//       startDatetime: '2022-05-20T17:00',
+//       endDatetime: '2022-05-20T18:30',
+//     },
+//     {
+//       id: 7,
+//       name: 'Dries Vincent',
+//       startDatetime: '2022-05-20T17:00',
+//       endDatetime: '2022-05-20T18:30',
+//     },
+//     {
+//       id: 8,
+//       name: 'Dries Vincent',
+//       startDatetime: '2022-05-20T17:00',
+//       endDatetime: '2022-05-20T18:30',
+//     },
+//     {
+//       id: 9,
+//       name: 'Dries Vincent',
+//       startDatetime: '2022-05-20T17:00',
+//       endDatetime: '2022-05-20T18:30',
+//     },
+//   ]
+  console.log("date time:", parseISO('2022-05-20T00:00'))
 function Mainpage() {
     let navigate = useNavigate();
     const [habits, setHabits] = useState([]);
-    const [schedule, setSchedule] = useState(meetings)
+    const [schedule, setSchedule] = useState([])
     useEffect(() => {
         const token = localStorage.getItem('token');
         const baseUrl = "http://localhost:5000/api";
@@ -140,6 +115,8 @@ function Mainpage() {
         });
     }, [])
 
+    let today = startOfToday()
+    let [selectedDay, setSelectedDay] = useState(today);
 
     const [date, setDate] =
         useState([sunday, monday, tuesday, wednesday, thursday, friday, saturday])
@@ -175,6 +152,9 @@ function Mainpage() {
         schedule,
         habits,
         setHabits,
+        today,
+        selectedDay,
+        setSelectedDay
     }
 
     return (
