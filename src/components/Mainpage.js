@@ -90,8 +90,13 @@ function Mainpage() {
                 "accessToken": token,
             }
         }).then(res => {
-            const foundHabits = res.data.habits;
-            setHabits(foundHabits);
+            const { data } = res;
+            if (data.success) {
+                let foundHabits = data.habits;
+                setHabits(foundHabits);
+            } else {
+                toast.error(data.message);
+            }
         }).catch(err => {
             toast.error(err.response.data);
         });
