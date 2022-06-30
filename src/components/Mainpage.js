@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 // import QueryForm from './HabitForm';
 import Sidebar from './Sidebar';
 import HabitForm from './HabitForm';
+import TaskList from './TaskList';
 import ScheduleForm from './ScheduleForm';
 import search from '.././img/search.svg'
 import {
@@ -177,6 +178,7 @@ function Mainpage() {
                                 </div>
                             </div>
                         </div>
+                        <TaskList/>
                         <div className='habit__table'>
                             <Date daterange={date}></Date>
                             <Habits
