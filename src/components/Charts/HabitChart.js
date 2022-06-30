@@ -45,7 +45,7 @@ const Chart = (props) => {
 
     return (
       <React.Fragment>
-          <ResponsiveContainer width="83%" height="80%" className="margin__auto habit__areachart">
+          <ResponsiveContainer width="100%" height="100%" className="margin__auto habit__areachart">
             <AreaChart
               defaultShowTooltip = "true"
               width={600}
@@ -59,7 +59,7 @@ const Chart = (props) => {
               }}
             >
               {/* <CartesianGrid fill='#dc84ff' stroke="#6e0fca"/> */}
-              <CartesianGrid fill='#84b29c' stroke="#3f4460"/>
+              {/* <CartesianGrid fill='#84b29c' stroke="#3f4460"/> */}
               <XAxis dataKey="name" className='areachart__date'/>
               <YAxis  tickCount={0}/>
               {/* <Tooltip /> */}
@@ -67,7 +67,7 @@ const Chart = (props) => {
               <Area type="monotone" dataKey="checked" stroke="#84b29c" fill="#ffffff" />
             </AreaChart>
           </ResponsiveContainer>
-        <ResponsiveContainer width = "17%" height = "100%" className="habit__doughnutchart">
+        {/* <ResponsiveContainer width = "17%" height = "100%" className="habit__doughnutchart">
           <RadialBarChart 
               // width={circleSize}
               // height={circleSize}
@@ -102,7 +102,7 @@ const Chart = (props) => {
               {ids.length}/7
             </text>
           </RadialBarChart>
-        </ResponsiveContainer>
+        </ResponsiveContainer> */}
       </React.Fragment>
     );
 }

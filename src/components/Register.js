@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import google from "../img/google.png"
+import background from "../img/formbg2.jpg";
 
 const Register = (props) => {
     const [username, setUsername] = useState('');
@@ -11,7 +13,8 @@ const Register = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         // console.log(username, password);
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "http://localhost:5000/api"
         axios.post(`${baseUrl}/user/register`, {
             username: username,
             password: password,
@@ -30,7 +33,7 @@ const Register = (props) => {
     }
     return (
         <>
-            <h1>Register</h1>
+            {/* <h1>Register</h1>
             <form onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="username">Enter username</label>
@@ -41,6 +44,47 @@ const Register = (props) => {
                     <input type="password" name="" id="password" value={password} onChange={event => setPassword(event.target.value)} />
                 </div>
                 <button type="submit">Create account</button>
+            </form> */}
+
+
+            <form className="signup__container" onSubmit={submitHandler}>
+                <img src={background} alt=""/>
+                <div className="signup__form">
+                    <div className="signup__block">
+                        <div className="signup__welcome">
+                            <h2>Get's started</h2>
+                        </div>
+                        <div className="signup__account">
+                            <input type="text" placeholder="Enter your username" name="" id="username" value={username} onChange={event => setUsername(event.target.value)} />
+                        </div>
+                        <div className="signup__password">
+                            <input type="password" placeholder="Enter your password" name="" id="password" value={password} onChange={event => setPassword(event.target.value)}/>
+                        </div>
+                        <div className="signup__utilities">
+                            <div className="signup__rememberme">
+                                <input type="checkbox" id="remember"/>
+                                <label for="remember">I agree with Terms and Privacy</label>
+                            </div>
+                        </div>
+                        <div className="signup__signin">
+                            <button type='submit' className="signup__signin--btn">
+                                <span>Sign up</span>
+                            </button>
+                        </div>
+                        <div className="signup__google">
+                            <div className="signup__google--btn">
+                                <span><img src={google} alt=""/></span>
+                                <span>Sign up with Google</span>
+                            </div>
+                        </div>
+                        <div className="signup__signup">
+                            <span>Already have an account &nbsp;
+                            &nbsp;</span>
+                            
+                            <a href="#"> Log in</a>
+                        </div>
+                    </div>
+                </div>
             </form>
         </>
     )

@@ -182,13 +182,13 @@
     font-size: 1.15rem;
     line-height: 1.4rem;
   }
-  .rightbar__schedule:nth-child(n+1) .event__border{
+  .rightbar__schedule:nth-child(3n+1) .event__border{
     background-color: #f3cd8f;
   }
-  .rightbar__schedule:nth-child(n+2) .event__border{
+  .rightbar__schedule:nth-child(3n+2) .event__border{
     background-color: #3f4460;
   }
-  .rightbar__schedule:nth-child(n+3) .event__border{
+  .rightbar__schedule:nth-child(3n+3) .event__border{
     background-color: #84b29c;
   }
 
