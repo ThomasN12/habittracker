@@ -32,16 +32,16 @@ const HabitForm = (props) => {
         const habitData = {
             name: habitName,
             importance: habitImportance,
-            genre: habitGenre,
-            target: habitTarget,
-            days: habitDays,
-            weeks: 1,
+            // genre: habitGenre,
+            // target: habitTarget,
+            // days: habitDays,
+            // weeks: 1,
             checkedId: [],
             streak: 0,
             record: 0,
         }
 
-        console.log("habitdata: ", habitData)
+        // console.log("habitdata: ", habitData)
 
         const habitObject = {
             ...habitData, 

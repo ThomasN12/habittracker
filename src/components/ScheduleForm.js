@@ -35,15 +35,15 @@ const ScheduleForm = (props) => {
 
         const scheduleData = {
             name: scheduleName,
-            startDatetime: mainPageTheme.selectedDay
-            // startDatetime: '2022-05-20T00:00'
+            date: mainPageTheme.selectedDay.getTime()
+            // date: '2022-05-20T00:00'
         }
 
         
 
         const scheduleObject = {
             ...scheduleData, 
-            id: Math.random().toString()
+            // id: Math.random().toString()
         }
         props.onNewSchedule(scheduleObject);
 
