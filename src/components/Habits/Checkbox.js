@@ -8,22 +8,24 @@ const Checkbox = (props) =>{
 
     const isMounted = useRef(false);
 
+
     useEffect(() => {
         if (isMounted.current) {
-
-            setChecked('');
 
             let checkeddaystring =  props.id.split('/')[0];
             let parts = checkeddaystring.split('-')
             let checkeddaydate = new Date(parts[2], parts[0]-1, parts[1]);
             let today = startOfToday()
-
+    
             if (isAfter(checkeddaydate, today)){
                 setCheckedState(props.id)
             }
 
-            if (props.checkedId.includes(props.id)){
-                setChecked(props.id)
+            else{
+                setChecked('');
+                if (props.checkedId.includes(props.id)){
+                    setChecked(props.id)
+                }
             }
         } 
         
