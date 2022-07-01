@@ -36,7 +36,7 @@ const TaskList = () => {
     console.log("tasks: ", tasks)
 
     let selectedDayTasks = tasks.filter((task) =>
-        isSameDay((task.startDatetime), selectedDay)
+        isSameDay((task.date), selectedDay)
     )
 
     console.log("selectedDay:" , selectedDayTasks)
@@ -57,7 +57,7 @@ const TaskList = () => {
                         <Task 
                         // task={task} 
                         name = {task.name}
-                        key={task.id} 
+                        key={task._id} 
                         id={`${task.name}/${task.stringDate}`}
                         onAddId = {addId}
                         onRemoveId = {removeId}
