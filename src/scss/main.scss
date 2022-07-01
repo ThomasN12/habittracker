@@ -272,3 +272,18 @@ button {
 .background-blue{
     background-color: black;
 }
+
+.checkbox__disable{
+    opacity: 0.8;
+}
+.checkbox__disable::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background-color: red;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 999px;
+}
