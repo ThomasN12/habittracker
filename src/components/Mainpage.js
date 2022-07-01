@@ -32,67 +32,11 @@ let saturday = format(nextDay((firstday), 6), 'MM-dd-yyyy')
 
 export const MainPageTheme = createContext();
 
-// const meetings = [
-//     {
-//       id: 1,
-//       name: 'Leslie Alexander',
-//       startDatetime: '2022-05-11T13:00',
-//       endDatetime: '2022-05-11T14:30',
-//     },
-//     {
-//       id: 2,
-//       name: 'Michael Foster',
-//       startDatetime: '2022-05-20T09:00',
-//       endDatetime: '2022-05-20T11:30',
-//     },
-//     {
-//       id: 3,
-//       name: 'Dries Vincent',
-//       startDatetime: '2022-05-20T17:00',
-//       endDatetime: '2022-05-20T18:30',
-//     },
-//     {
-//       id: 4,
-//       name: 'Leslie Alexander',
-//       startDatetime: '2022-06-09T13:00',
-//       endDatetime: '2022-06-09T14:30',
-//     },
-//     {
-//       id: 5,
-//       name: 'Michael Foster',
-//       startDatetime: '2022-05-13T14:00',
-//       endDatetime: '2022-05-13T14:30',
-//     },
-//     {
-//       id: 6,
-//       name: 'Dries Vincent',
-//       startDatetime: '2022-05-20T17:00',
-//       endDatetime: '2022-05-20T18:30',
-//     },
-//     {
-//       id: 7,
-//       name: 'Dries Vincent',
-//       startDatetime: '2022-05-20T17:00',
-//       endDatetime: '2022-05-20T18:30',
-//     },
-//     {
-//       id: 8,
-//       name: 'Dries Vincent',
-//       startDatetime: '2022-05-20T17:00',
-//       endDatetime: '2022-05-20T18:30',
-//     },
-//     {
-//       id: 9,
-//       name: 'Dries Vincent',
-//       startDatetime: '2022-05-20T17:00',
-//       endDatetime: '2022-05-20T18:30',
-//     },
-//   ]
-  console.log("date time:", parseISO('2022-05-20T00:00'))
 function Mainpage() {
     let navigate = useNavigate();
     const [habits, setHabits] = useState([]);
-    const [schedule, setSchedule] = useState([])
+    const [schedule, setSchedule] = useState([]);
+    const [checkedTask, setCheckedTask] = useState([]);
     useEffect(() => {
         const token = localStorage.getItem('token');
         const baseUrl = "http://localhost:5000/api";
@@ -155,7 +99,9 @@ function Mainpage() {
         setHabits,
         today,
         selectedDay,
-        setSelectedDay
+        setSelectedDay,
+        checkedTask,
+        setCheckedTask
     }
 
     return (

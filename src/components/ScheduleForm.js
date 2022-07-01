@@ -35,7 +35,8 @@ const ScheduleForm = (props) => {
 
         const scheduleData = {
             name: scheduleName,
-            startDatetime: mainPageTheme.selectedDay
+            startDatetime: mainPageTheme.selectedDay,
+            stringDate: selectedDay
             // startDatetime: '2022-05-20T00:00'
         }
 
