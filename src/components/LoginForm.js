@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import "./LoginForm.css"
 
 const LoginForm = (props) => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const responseSuccessGoogle = (res) => {
@@ -36,7 +36,7 @@ const LoginForm = (props) => {
         const baseUrl = "http://localhost:5000/api"
         // const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.post(`${baseUrl}/user/login`, {
-            username: username,
+            email: email,
             password: password,
         }).then(res => {
             const { data } = res;
@@ -61,7 +61,7 @@ const LoginForm = (props) => {
                         <h2>Welcome</h2>
                     </div>
                     <div className="login__account">
-                        <input type="text" placeholder="Enter your email" value={username} onChange={event => setUsername(event.target.value)} />
+                        <input type="text" placeholder="Enter your email" value={email} onChange={event => setEmail(event.target.value)} />
                     </div>
                     <div className="login__password">
                         <input type="password" placeholder="Enter your password" onChange={event => setPassword(event.target.value)} />

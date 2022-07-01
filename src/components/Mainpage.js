@@ -39,8 +39,8 @@ function Mainpage() {
     const [checkedTask, setCheckedTask] = useState([]);
     useEffect(() => {
         const token = localStorage.getItem('token');
-        const baseUrl = "http://localhost:5000/api";
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "http://localhost:5000/api";
+        const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.get(`${baseUrl}/habit`, {
             headers: {
                 "accessToken": token,
