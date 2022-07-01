@@ -41,7 +41,6 @@ export default function Calendar(props) {
 
 
   let today = mainPageTheme.today
-  console.log("today calendar: ", today)
   let selectedDay = mainPageTheme.selectedDay
   // let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
@@ -105,11 +104,6 @@ export default function Calendar(props) {
   let selectedDayEvents = events.filter((event) =>
     isSameDay((event.date), selectedDay)
   )
-
-  console.log("events: ", events)
-  console.log("selected day:", selectedDayEvents);
-
-  
 
   return (
     <div className="rightbar__container">

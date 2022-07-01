@@ -1,108 +1,87 @@
+import { useState, useContext } from 'react';
+import { MainPageTheme } from './Mainpage';
 import event from "./../img/event.png";
+import Task from './Task.js';
+import { 
+    format,
+    isSameDay 
+} 
+
+from 'date-fns'
 
 const TaskList = () => {
+
+    const mainPageTheme = useContext(MainPageTheme);
+    const selectedDay = mainPageTheme.selectedDay
+    const tasks = mainPageTheme.schedule;
+    const taskday = format(selectedDay, 'dd-MMM');
+    // const [checkedTask, setCheckedTask] = useState([]);
+
+    const addId = (id) =>{
+        mainPageTheme.setCheckedTask((prevTasks) => {
+            return [...prevTasks, id];
+        })
+        console.log("add");
+    }
+
+    const removeId = (id) => {
+        mainPageTheme.setCheckedTask(
+            mainPageTheme.checkedTask.filter((task) => task !== id) 
+        )
+        console.log("remove")
+    }
+
+    console.log("checked task: ", mainPageTheme.checkedTask);
+
+    console.log("tasks: ", tasks)
+
+    let selectedDayTasks = tasks.filter((task) =>
+        isSameDay((task.startDatetime), selectedDay)
+    )
+
+    console.log("selectedDay:" , selectedDayTasks)
+
     return (
         <div className="tasklist__container">
-            <div class="tasklist__name">
-                <div class="tasklist__title">
+            <div className="tasklist__name">
+                <div className="tasklist__title">
                     <span>Task list</span>
                 </div>
-                <div class="tasklist__content">
-                    <span>June 30th</span>
+                <div className="tasklist__content">
+                    <span>{taskday}</span>
                 </div>
             </div>
             <div className="task__container">
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="02" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="02" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="02" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="02" className="task__item--area"></label>
-                        <label htmlFor="02" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
+                {selectedDayTasks.length > 0 ? (
+                    selectedDayTasks.map((task) => (
+                        <Task 
+                        // task={task} 
+                        name = {task.name}
+                        key={task.id} 
+                        id={`${task.name}/${task.stringDate}`}
+                        onAddId = {addId}
+                        onRemoveId = {removeId}
+                        checkedTask = {mainPageTheme.checkedTask}
+                        />
+                    ))
+                ) : (
+                    <div className='task__blank'>
+                        <p>No tasks for today.</p>
                     </div>
-                </div>
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="03" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="03" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="03" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="03" className="task__item--area"></label>
-                        <label htmlFor="03" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
-                    </div>
-                </div>
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="04" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="04" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="04" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="04" className="task__item--area"></label>
-                        <label htmlFor="04" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
-                    </div>
-                </div>
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="05" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="05" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="05" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="05" className="task__item--area"></label>
-                        <label htmlFor="05" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
-                    </div>
-                </div>
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="06" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="06" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="06" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="06" className="task__item--area"></label>
-                        <label htmlFor="06" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
-                    </div>
-                </div>
-                <div className="task__item--container">
-                    <div className="task__item--content">
-                        <input id="07" type="checkbox" name="r" value="2" className="task__item"/>
-                        <label htmlFor="07" className="task__name">
-                            Cheese
-                        </label>
-                        <label htmlFor="07" className="task__item--type">
-                            <span>Deadline</span>
-                        </label>
-                        <label htmlFor="07" className="task__item--area"></label>
-                        <label htmlFor="07" className="task__item--img">
-                            <img src={event} alt=""/>
-                        </label>
-                    </div>
-                </div>
+                )} 
             </div>
+            {/* <div className='task__add'>
+                <div className='task__addbutton'>
+                    <div className='task__button--content'>
+                        <div className='task__button--image'>
+                            <img alt='' src=''/>
+                        </div>
+                        <div className='task__button--add'>
+                            <span>Add a task</span>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
         </div>
     )
 }
