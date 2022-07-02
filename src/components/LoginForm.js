@@ -13,7 +13,8 @@ const LoginForm = (props) => {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const responseSuccessGoogle = (res) => {
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         // const baseUrl = "http://localhost:5000/api";
         axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
             const { data } = res;
@@ -33,8 +34,9 @@ const LoginForm = (props) => {
         toast.error(err.message);
     }
     const submitHandler = (event) => {
-        const baseUrl = "http://localhost:5000/api"
+        // const baseUrl = "http://localhost:5000/api"
         // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         axios.post(`${baseUrl}/user/login`, {
             email: email,
             password: password,

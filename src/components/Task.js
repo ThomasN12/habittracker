@@ -32,7 +32,8 @@ const Task = (props) => {
         setChecked(prev => !prev);
         //Send update
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let updatedSchedule = {
             ...props.task,
             checked: !checkedVal

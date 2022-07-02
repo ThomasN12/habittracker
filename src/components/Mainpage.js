@@ -40,7 +40,8 @@ function Mainpage() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         // const baseUrl = "http://localhost:5000/api";
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         axios.get(`${baseUrl}/habit`, {
             headers: {
                 "accessToken": token,
@@ -92,8 +93,9 @@ function Mainpage() {
 
     const addNewHabit = (habit) => {
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
         // const baseUrl = "http://localhost:5000/api"
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let body = {habit};
         axios.post(`${baseUrl}/habit`, body, {
             headers: {
@@ -119,8 +121,9 @@ function Mainpage() {
         //     return [schedule, ...prevSchedule];
         // })
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = process.env.REACT_APP_ROOT_API;
         // const baseUrl = "http://localhost:5000/api"
+        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let body = {schedule};
         axios.post(`${baseUrl}/schedule`, body, {
             headers: {
