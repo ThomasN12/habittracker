@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
+// import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -13,6 +14,13 @@ function App() {
   return (
     <>
       <GoogleOAuthProvider clientId="868855841872-rqi0fq7l869n55toq9f1js9f977ugd35.apps.googleusercontent.com">
+        {/* <Router basename={"/habittracker"}>
+            <Routes>
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/register' element={<Register />} />
+              <Route exact path="/main" element={<Mainpage />} />
+            </Routes>
+        </Router> */}
         <HashRouter>
             <Routes>
               <Route path='/login' element={<Login />} />
