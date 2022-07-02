@@ -7,6 +7,7 @@ const Habits = (props) => {
         let dateCheckedId = checkedId.map(dateFilter);
         habit.checkedId = dateCheckedId;
         habit.checkedId.sort();
+        console.log("UpdateHabitObject");
         // console.log(props.items);
         habit.streak = calculateStreak(habit.checkedId);
         console.log(calculateRecord(habit.checkedId));

@@ -122,7 +122,7 @@ const Habit = (props) =>{
     }
 
     const addId = (id) => {
-        
+        console.log("ADDID", id);
         const searchIndex = chartData.findIndex((habit) => {
             return habit.name === id
         });
@@ -144,8 +144,10 @@ const Habit = (props) =>{
     let mount = 0;
 
     useEffect(() => {
+        console.log(isMounted.current);
         if (isMounted.current) {
             props.onUpdateChecked(props.habit, checkedId);
+            console.log("Send update");
             setStreak(props.habit.streak);
             setRecord(props.habit.record);
             //Send update
@@ -178,6 +180,7 @@ const Habit = (props) =>{
 
     // Remove Id function
     const removeId = (id) => {
+        console.log("REMOVEID", id);
         const searchIndex = chartData.findIndex((habit) => {
             return habit.name === id
         });

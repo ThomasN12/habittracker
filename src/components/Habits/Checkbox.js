@@ -38,6 +38,7 @@ const Checkbox = (props) =>{
     const [checkedState, setCheckedState] = useState()
     
     const checkHandler = (boxId) => {
+        console.log("CHECKED");
         if (checked === boxId){
             props.onRemoveId(boxId)
             setChecked('empty')
