@@ -6,17 +6,17 @@ import google from "../img/google.png"
 import background from "../img/formbg2.jpg";
 
 const Register = (props) => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
 
     const submitHandler = (event) => {
         event.preventDefault();
-        // console.log(username, password);
+        // console.log(email, password);
         // const baseUrl = process.env.REACT_APP_ROOT_API;
         const baseUrl = "http://localhost:5000/api"
         axios.post(`${baseUrl}/user/register`, {
-            username: username,
+            email: email,
             password: password,
         }).then(res => {
             const { data } = res;
@@ -55,7 +55,7 @@ const Register = (props) => {
                             <h2>Get's started</h2>
                         </div>
                         <div className="signup__account">
-                            <input type="text" placeholder="Enter your username" name="" id="username" value={username} onChange={event => setUsername(event.target.value)} />
+                            <input type="text" placeholder="Enter your email" name="" id="email" value={email} onChange={event => setEmail(event.target.value)} />
                         </div>
                         <div className="signup__password">
                             <input type="password" placeholder="Enter your password" name="" id="password" value={password} onChange={event => setPassword(event.target.value)}/>

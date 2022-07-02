@@ -97,10 +97,12 @@ export default function Calendar(props) {
     setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
   }
 
-  let events = mainPageTheme.schedule
+  let events = mainPageTheme.schedule.map(obj => {
+    return {...obj, date: new Date(obj.date)};
+  });
 
   let selectedDayEvents = events.filter((event) =>
-    isSameDay((event.startDatetime), selectedDay)
+    isSameDay((event.date), selectedDay)
   )
 
   return (
@@ -211,7 +213,7 @@ export default function Calendar(props) {
 
                   <div className="w-1 h-1 mx-auto mt-1 schedule__dotcontainer">
                     {events.some((event) =>
-                      isSameDay((event.startDatetime), day)
+                      isSameDay((event.date), day)
                     ) && (
                       <div className="w-1 h-1 rounded-full bg-sky-500 background-blue schedule__dot"></div>
                     )}
@@ -230,7 +232,7 @@ export default function Calendar(props) {
               <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500 schedule__content">
                 {selectedDayEvents.length > 0 ? (
                   selectedDayEvents.map((event) => (
-                    <Meeting event={event} key={event.id} />
+                    <Meeting event={event} key={event._id} />
                   ))
                 ) : (
                   <p>No events for today.</p>
@@ -246,7 +248,7 @@ export default function Calendar(props) {
 
 function Meeting({ event }) {
   // let startDateTime = parseISO(meeting.startDatetime)
-  let startDateTime = event.startDateTime
+  let date = event.date
 
   return (
   
@@ -265,8 +267,8 @@ function Meeting({ event }) {
                     </div>
                     <div className="event__time">
                         <span>         
-                           <time dateTime={event.startDatetime}>
-                              {/* {format(startDateTime, 'h:mm a')} */}
+                           <time dateTime={event.date}>
+                              {/* {format(date, 'h:mm a')} */}
                           </time>{' '}
                         </span>
                     </div>

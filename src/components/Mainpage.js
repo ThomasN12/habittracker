@@ -39,8 +39,8 @@ function Mainpage() {
     const [checkedTask, setCheckedTask] = useState([]);
     useEffect(() => {
         const token = localStorage.getItem('token');
-        const baseUrl = "http://localhost:5000/api";
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "http://localhost:5000/api";
+        const baseUrl = process.env.REACT_APP_ROOT_API;
         axios.get(`${baseUrl}/habit`, {
             headers: {
                 "accessToken": token,
@@ -53,10 +53,34 @@ function Mainpage() {
             } else {
                 toast.error(data.message);
                 navigate('/login');
+                return;
             }
         }).catch(err => {
             toast.error(err.response.data);
             navigate('/login');
+            return;
+        });
+
+        axios.get(`${baseUrl}/schedule`, {
+            headers: {
+                "accessToken": token,
+            }
+        }).then(res => {
+            const { data } = res;
+            if (data.success) {
+                let foundSchedules = res.data.schedules;
+                setSchedule(foundSchedules);
+                let checkedTask = foundSchedules.filter(schedule => schedule.checked).map(schedule => schedule._id);
+                setCheckedTask(checkedTask);
+            } else {
+                toast.error(data.message);
+                navigate('/login');
+                return;
+            }
+        }).catch(err => {
+            toast.error(err.response.data);
+            navigate('/login');
+            return;
         });
     }, [])
 
@@ -68,25 +92,52 @@ function Mainpage() {
 
     const addNewHabit = (habit) => {
         const token = localStorage.getItem('token');
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
-        const baseUrl = "http://localhost:5000/api"
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "http://localhost:5000/api"
         let body = {habit};
         axios.post(`${baseUrl}/habit`, body, {
             headers: {
                 "accessToken": token,
             }
         }).then(res => {
-            const foundHabits = res.data.habits;
-            setHabits(foundHabits);
+            const { data } = res;
+            if (data.success) {
+                let foundHabits = data.habits;
+                setHabits(foundHabits);
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
         }).catch(err => {
             toast.error(err.response.data);
         });
     }
 
     const addNewSchedule = (schedule) => {
-        setSchedule((prevSchedule) => {
-            return [schedule, ...prevSchedule];
-        })
+        // console.log(schedule);
+        // setSchedule((prevSchedule) => {
+        //     return [schedule, ...prevSchedule];
+        // })
+        const token = localStorage.getItem('token');
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "http://localhost:5000/api"
+        let body = {schedule};
+        axios.post(`${baseUrl}/schedule`, body, {
+            headers: {
+                "accessToken": token,
+            }
+        }).then(res => {
+            const { data } = res;
+            if (data.success) {
+                let foundSchedule = data.schedules;
+                setSchedule(foundSchedule);
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
+        }).catch(err => {
+            toast.error(err.response.data);
+        });
     }
 
     // console.log("myhabits: ", myHabits)

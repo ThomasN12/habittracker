@@ -100,8 +100,25 @@ const Habit = (props) =>{
             }))
         })
         
-        console.log("id la", id)
-        console.log("habits la: ", mainPageTheme.habits)
+        const token = localStorage.getItem('token');
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        axios.delete(`${baseUrl}/habit/${id}`, {
+            headers: {
+                "accessToken": token,
+            },
+        }).then(res => {
+            const { data } = res;
+            if (data.success) {
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
+        }).catch(err => {
+            toast.error(err.response.data);
+        });
+        // console.log("id la", id)
+        // console.log("habits la: ", mainPageTheme.habits)
+        
     }
 
     const addId = (id) => {
@@ -133,9 +150,7 @@ const Habit = (props) =>{
             setRecord(props.habit.record);
             //Send update
             const token = localStorage.getItem('token');
-            // const baseUrl = process.env.REACT_APP_ROOT_API;
-            const baseUrl = "http://localhost:5000/api"
-            // console.log(props.habit.checkedId);
+            const baseUrl = process.env.REACT_APP_ROOT_API;
             let updatedHabit = {
                 ...props.habit,
                 checkedId: props.habit.checkedId
