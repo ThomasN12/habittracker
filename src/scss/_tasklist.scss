@@ -8,11 +8,11 @@
     --text: #414856;
     --check: #4F29F0;
     --disabled: #C3C8DE;
-    padding: 20px;
+    padding: 2.0rem;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 2.0rem;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 2.0rem;
 }
 
 .tasklist__container{
@@ -30,34 +30,34 @@
     width: 100%;
 }
 .task__item--type > span{
-    margin-left: 35px;
-    font-size: 12px;
+    margin-left: 3.5rem;
+    font-size: 1.2rem;
     font-family: montserrat;
 }
 .task__item--img{
-    width: 30px;
-    height: 30px;
+    width: 3.0rem;
+    height: 3.0rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #D5797F;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     position: absolute;
     align-self: center;
-    left: 15px;
+    left: 1.5rem;
 }
 
 .task__item--img > img{
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
 }
 .tasklist__item{
   width: 33.33%;
-  padding: 0 5px;
+  padding: 0 .5rem;
   box-sizing: border-box;
 }
 .task__blank{
-  font-size: 18px;
+  font-size: 1.8rem;
   font-family: montserrat;
 }
   .task__name {
@@ -71,37 +71,37 @@
     font-family:varela round;
     font-weight: 600;
     user-select: none;
-    font-size: 18px;
+    font-size: 1.8rem;
   }
   .task__name::before, .task__name::after {
     content: "";
     position: absolute;
   }
   .task__name::before {
-    height: 0px;
-    width: 8px;
-    left: -27px;
+    height: .0rem;
+    width: .8rem;
+    left: -2.7rem;
     background: var(--check);
-    border-radius: 2px;
+    border-radius: .2rem;
     transition: background 0.3s ease;
   }
 
   .task__name:after {
-    height: 4px;
-    width: 4px;
-    top: 20px;
-    left: -27px;
+    height: .4rem;
+    width: .4rem;
+    top: 2.0rem;
+    left: -2.7rem;
     border-radius: 50%;
   }
   .task__item{
     -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
-    height: 15px;
-    width: 15px;
+    height: 1.5rem;
+    width: 1.5rem;
     outline: none;
     border: 0;
-    margin: 0 20px 0 0;
+    margin: 0 2.0rem 0 0;
     cursor: pointer;
     background: var(--background);
     display: grid;
@@ -110,18 +110,18 @@
   .task__item::before, .task__item::after {
     content: "";
     position: absolute;
-    height: 2px;
+    height: .2rem;
     top: auto;
     background: var(--check);
-    border-radius: 2px;
+    border-radius: .2rem;
   }
   .task__item::before {
-    width: 0px;
+    width: .0rem;
     right: 40%;
     transform-origin: right bottom;
   }
   .task__item::after {
-    width: 0px;
+    width: .0rem;
     left: 65%;
     transform-origin: left bottom;
   }
@@ -141,7 +141,7 @@
             animation: move 0.3s ease 0.1s forwards;
   }
   .task__item:checked ~ label::before {
-    height: 2px;
+    height: .2rem;
     background: var(--disabled);
     -webkit-animation: slice 0.4s ease forwards;
             animation: slice 0.4s ease forwards;
@@ -162,92 +162,92 @@
   
   @-webkit-keyframes move {
     50% {
-      padding-left: 8px;
-      padding-right: 0px;
+      padding-left: .8rem;
+      padding-right: .0rem;
     }
     100% {
-      padding-right: 4px;
+      padding-right: .4rem;
     }
   }
   
   @keyframes move {
     50% {
-      padding-left: 8px;
-      padding-right: 0px;
+      padding-left: .8rem;
+      padding-right: .0rem;
     }
     100% {
-      padding-right: 4px;
+      padding-right: .4rem;
     }
   }
   @-webkit-keyframes slice {
     60% {
       width: 100%;
-      left: 4px;
+      left: .4rem;
     }
     100% {
       width: 100%;
-      left: -2px;
+      left: -.2rem;
       padding-left: 0;
     }
   }
   @keyframes slice {
     60% {
       width: 100%;
-      left: 4px;
+      left: .4rem;
     }
     100% {
       width: 100%;
-      left: -2px;
+      left: -.2rem;
       padding-left: 0;
     }
   }
   @keyframes check-01 {
     0% {
-      width: 4px;
+      width: .4rem;
       top: auto;
       transform: rotate(0);
     }
     50% {
-      width: 0px;
+      width: .0rem;
       top: auto;
       transform: rotate(0);
     }
     51% {
-      width: 0px;
-      top: 8px;
+      width: .0rem;
+      top: .8rem;
       transform: rotate(45deg);
     }
     100% {
-      width: 5px;
-      top: 8px;
+      width: .5rem;
+      top: .8rem;
       transform: rotate(45deg);
-      width: 9px;
-      top: 18px;
+      width: .9rem;
+      top: 1.8rem;
       transform: rotate(45deg);
     }
   }
   @keyframes check-02 {
     0% {
-      width: 4px;
+      width: .4rem;
       top: auto;
       transform: rotate(0);
     }
     50% {
-      width: 0px;
+      width: .0rem;
       top: auto;
       transform: rotate(0);
     }
     51% {
-      width: 0px;
-      top: 8px;
+      width: .0rem;
+      top: .8rem;
       transform: rotate(-45deg);
     }
     100% {
-      width: 10px;
-      top: 8px;
+      width: 1.0rem;
+      top: .8rem;
       transform: rotate(-45deg);
-      width: 17px;
-      top: 18px;
+      width: 1.7rem;
+      top: 1.8rem;
       transform: rotate(-45deg);
 
     }
@@ -255,33 +255,33 @@
   @keyframes firework {
     0% {
       opacity: 1;
-      box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+      box-shadow: 0 0 0 -.2rem #4F29F0, 0 0 0 -.2rem #4F29F0, 0 0 0 -.2rem #4F29F0, 0 0 0 -.2rem #4F29F0, 0 0 0 -.2rem #4F29F0, 0 0 0 -.2rem #4F29F0;
     }
     30% {
       opacity: 1;
     }
     100% {
       opacity: 0;
-      box-shadow: 0 -20px 0 0px #4F29F0, 19px -13px 0 0px #4F29F0, 19px 13px 0 0px #4F29F0, 0 20px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+      box-shadow: 0 -2.0rem 0 .0rem #4F29F0, 1.9rem -1.3rem 0 .0rem #4F29F0, 1.9rem 1.3rem 0 .0rem #4F29F0, 0 2.0rem 0 .0rem #4F29F0, -1.4rem .8rem 0 .0rem #4F29F0, -1.4rem -.8rem 0 .0rem #4F29F0;
     }
   }
   .tasklist__title > span{
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
   }
   
   .tasklist__title{
-    margin-bottom: 7px;
+    margin-bottom: .7rem;
   }
   
   .tasklist__content{
-    margin-bottom: 25px;
+    margin-bottom: 2.5rem;
   }
   .tasklist__content > span{
     font-family: Montserrat;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 2.5rem;
   }
   
