@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/habittracker/static/css/main.8fa0aee4.css",
-    "main.js": "/habittracker/static/js/main.4f1910cd.js",
+    "main.js": "/habittracker/static/js/main.adfd8bae.js",
     "static/js/787.5a766354.chunk.js": "/habittracker/static/js/787.5a766354.chunk.js",
     "static/media/formbg2.jpg": "/habittracker/static/media/formbg2.f08846e370c78ea6066f.jpg",
     "static/media/CocoSharpTrial-Heavy.woff": "/habittracker/static/media/CocoSharpTrial-Heavy.c2ebf91fc0a87d0763f7.woff",
@@ -39,11 +39,11 @@
     "static/media/icondashboard.svg": "/habittracker/static/media/icondashboard.aa79cd189064e3be9f65e64b460d62b6.svg",
     "static/media/search.svg": "/habittracker/static/media/search.a0e0e0e117d11d7c2f25245a337dd426.svg",
     "main.8fa0aee4.css.map": "/habittracker/static/css/main.8fa0aee4.css.map",
-    "main.4f1910cd.js.map": "/habittracker/static/js/main.4f1910cd.js.map",
+    "main.adfd8bae.js.map": "/habittracker/static/js/main.adfd8bae.js.map",
     "787.5a766354.chunk.js.map": "/habittracker/static/js/787.5a766354.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8fa0aee4.css",
-    "static/js/main.4f1910cd.js"
+    "static/js/main.adfd8bae.js"
   ]
 }
