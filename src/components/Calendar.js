@@ -110,7 +110,7 @@ export default function Calendar(props) {
         <div className="rightbar__intro">
             <div className="rightbar__intro--content">
                 <div className="rightbar__name">
-                    <span className="rightbar__name--text">Jane Oegentro</span><br/>
+                    <span className="rightbar__name--text">Guest's</span><br/>
                     <span className="rightbar__name--schedule">Schedule</span>
                 </div>
                 <div className="rightbar__edit">
