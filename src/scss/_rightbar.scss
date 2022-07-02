@@ -1,51 +1,51 @@
 .rightbar__container{
     box-sizing: border-box;
-    width: 450px;
+    width: 45.0rem;
     height: 100vh;
     position: fixed;
     right: 0;
     background: #fbf5ee;
-    padding: 30px 23px;
-    margin-bottom: 20px;
+    padding: 3.0rem 2.3rem;
+    margin-bottom: 2.0rem;
 }
 .rightbar__intro--content{
     width: 100%;
-    height: 50px;
+    height: 5.0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
 }
 .rightbar__editimg{
-    width: 35px;
-    height: 35px;
+    width: 3.5rem;
+    height: 3.5rem;
     background: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    margin: 0 5px;
+    margin: 0 .5rem;
 }
 
 .rightbar__editimg > img{
-    width: 20px;
-    height: 20px;
+    width: 2.0rem;
+    height: 2.0rem;
 }
 .rightbar__notiimg > img{
-    width: 20px;
-    height: 20px;
+    width: 2.0rem;
+    height: 2.0rem;
 }
 .rightbar__notiimg{
-    width: 35px;
-    height: 35px;
+    width: 3.5rem;
+    height: 3.5rem;
     background: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    margin: 0 5px;
+    margin: 0 .5rem;
 }
 .rightbar__name{
     flex: 1 1 auto;
@@ -54,38 +54,38 @@
 .rightbar__name--text{
     font-family: mulish;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
 }
 
 .rightbar__name--schedule{
     font-family: mulish;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
 }
 
 //Part 2
 
 .rightbar__schedule{
-    margin-top: 4px;
+    margin-top: .4rem;
     display: flex;
 }
 .rightbar__event{
     margin: 0 auto;
-    width: 320px;
-    height: 65px;
+    width: 32.0rem;
+    height: 6.5rem;
     display: flex;
-    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 15px;
+    // box-shadow: rgba(100, 100, 111, 0.2) .0rem .7rem 2.9rem .0rem;
+    border-radius: 1.5rem;
 }
 
 
 
 .event__datecontainer{
     min-width: 15.65%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
     display: flex;
     align-items: center;
     // background-color: white;
@@ -103,10 +103,10 @@
 }
 
 .event__border{
-    width: 5px;
+    width: .5rem;
     height: 60%;
     background-color: #70367c;
-    border-radius: 999px;
+    border-radius: 99.9rem;
 }
 
 .rightbar__event--info{
@@ -115,26 +115,26 @@
     align-items: center;
     flex: 1 1 auto;
     color: black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 16px 24px 16px 16px;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 1.6rem 2.4rem 1.6rem 1.6rem;
 }
 .event__name{
     font-family: montserrat;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 .event__type{
     font-family: montserrat;
     font-weight: 400;
-    font-size: 9px;
+    font-size: .9rem;
 }
 .event__time{
     text-align: center;
     font-family: montserrat;
     font-weight: 400;
-    font-size: 9px;
-    min-width: 50px;
+    font-size: .9rem;
+    min-width: 5.0rem;
 }
 .event__title{
     flex: 1 1 auto;
@@ -143,16 +143,16 @@
 
 
 .schedule__dot{
-    width: 4px;
-    height: 4px;
+    width: .4rem;
+    height: .4rem;
     border-radius: 50%;
 }
 .schedule__dotcontainer{
-    width: 4px;
-    height: 4px;
-    margin: 4px auto 0;
+    width: .4rem;
+    height: .4rem;
+    margin: .4rem auto 0;
     position: absolute;
-    bottom: 6px;
+    bottom: .6rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -166,16 +166,16 @@
 }
 
 .options__button{
-    padding: 6px;
-    margin: -8px;
+    padding: .6rem;
+    margin: -.8rem;
     display: flex;
     align-items: center;
     border-radius: 50%;
 }
 
 .options__dots{
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .schedule__content{
