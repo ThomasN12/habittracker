@@ -273,17 +273,29 @@ button {
     background-color: black;
 }
 
-.checkbox__disable{
-    opacity: 0.8;
-}
+// .checkbox__disable{
+//     opacity: 0.8;
+// }
 .checkbox__disable::after{
     position: absolute;
     content: "";
     top: 50%;
-    width: 10px;
-    height: 1px;
-    background-color: red;
+    width: 3px;
+    height: 10px;
+    z-index: 10;
+    background-color: #f4f5f5;
     left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 999px;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.checkbox__disable::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #e84849;
+    border-radius: 4px;
 }
