@@ -168,7 +168,7 @@ function Mainpage() {
                     <div className = 'page__container'>
                         <div className="habit__welcome">
                             <div className="habit__hello">
-                                <div className="hello__title">Hello, Jane</div>
+                                <div className="hello__title">Hello, guest</div>
                                 <div className="hello__content">Hurry up and finish the task today</div>
                             </div>
                             <div className="habit__search">
