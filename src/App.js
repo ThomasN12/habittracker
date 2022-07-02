@@ -13,13 +13,13 @@ function App() {
   return (
     <>
       <GoogleOAuthProvider clientId="868855841872-rqi0fq7l869n55toq9f1js9f977ugd35.apps.googleusercontent.com">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path="/main" element={<Mainpage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
         <ToastContainer
           position="top-right"
           autoClose={2000}
