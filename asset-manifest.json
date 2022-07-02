@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://thomasn12.github.io/habittracker/static/css/main.84386326.css",
-    "main.js": "https://thomasn12.github.io/habittracker/static/js/main.a166dcd1.js",
+    "main.js": "https://thomasn12.github.io/habittracker/static/js/main.79e221c7.js",
     "static/js/787.5a766354.chunk.js": "https://thomasn12.github.io/habittracker/static/js/787.5a766354.chunk.js",
     "static/media/formbg2.jpg": "https://thomasn12.github.io/habittracker/static/media/formbg2.f08846e370c78ea6066f.jpg",
     "static/media/plant.svg": "https://thomasn12.github.io/habittracker/static/media/plant.74c2e94b11ee5ee3d5919b163db4bcc7.svg",
@@ -15,11 +15,11 @@
     "static/media/icondashboard.svg": "https://thomasn12.github.io/habittracker/static/media/icondashboard.aa79cd189064e3be9f65e64b460d62b6.svg",
     "static/media/search.svg": "https://thomasn12.github.io/habittracker/static/media/search.a0e0e0e117d11d7c2f25245a337dd426.svg",
     "main.84386326.css.map": "https://thomasn12.github.io/habittracker/static/css/main.84386326.css.map",
-    "main.a166dcd1.js.map": "https://thomasn12.github.io/habittracker/static/js/main.a166dcd1.js.map",
+    "main.79e221c7.js.map": "https://thomasn12.github.io/habittracker/static/js/main.79e221c7.js.map",
     "787.5a766354.chunk.js.map": "https://thomasn12.github.io/habittracker/static/js/787.5a766354.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84386326.css",
-    "static/js/main.a166dcd1.js"
+    "static/js/main.79e221c7.js"
   ]
 }
