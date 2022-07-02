@@ -70,6 +70,8 @@ function Mainpage() {
             if (data.success) {
                 let foundSchedules = res.data.schedules;
                 setSchedule(foundSchedules);
+                let checkedTask = foundSchedules.filter(schedule => schedule.checked).map(schedule => schedule._id);
+                setCheckedTask(checkedTask);
             } else {
                 toast.error(data.message);
                 navigate('/login');

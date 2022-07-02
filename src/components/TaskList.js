@@ -55,10 +55,10 @@ const TaskList = () => {
                 {selectedDayTasks.length > 0 ? (
                     selectedDayTasks.map((task) => (
                         <Task 
-                        // task={task} 
+                        task={task} 
                         name = {task.name}
                         key={task._id} 
-                        id={`${task.name}/${task.stringDate}`}
+                        id={task._id}
                         onAddId = {addId}
                         onRemoveId = {removeId}
                         checkedTask = {mainPageTheme.checkedTask}
