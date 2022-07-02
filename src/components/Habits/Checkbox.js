@@ -21,11 +21,10 @@ const Checkbox = (props) =>{
                 setCheckedState(props.id)
             }
 
-            else{
-                setChecked('');
-                if (props.checkedId.includes(props.id)){
-                    setChecked(props.id)
-                }
+            setChecked('');
+
+            if (props.checkedId.includes(props.id)){
+                setChecked(props.id)
             }
         } 
         

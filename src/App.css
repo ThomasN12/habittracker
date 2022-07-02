@@ -6,7 +6,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 50%; }
 
 .task__container {
   display: flex;
@@ -903,6 +903,99 @@ body {
   font-weight: 600;
   font-family: montserrat; }
 
+.form__radio {
+  font-family: montserrat; }
+
+.form__radio > span {
+  font-family: mulish;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: black; }
+
+.radio__container {
+  width: 100%;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between; }
+
+/* label */
+.radio__label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  position: relative; }
+
+/* input */
+input[name="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; }
+
+/* .design */
+.radio__design {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #242424;
+  border-radius: 100%;
+  margin-right: 16px;
+  position: relative;
+  box-sizing: unset; }
+
+.radio__design::before,
+.radio__design::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center; }
+
+.radio__design:before {
+  background: #242424;
+  opacity: 0;
+  transition: .3s; }
+
+.radio__design::after {
+  background: #2500E0;
+  opacity: .4;
+  transition: .6s; }
+
+/* .text */
+.radio__text {
+  color: #242424;
+  font-weight: bold;
+  user-select: none; }
+
+/* checked state */
+input[name="radio"]:checked + .radio__design::before {
+  opacity: 1;
+  transform: scale(0.6); }
+
+/* other states */
+input[name="radio"]:hover + .radio__design,
+input[name="radio"]:focus + .radio__design {
+  border: 1px solid #2500E0; }
+
+input[name="radio"]:hover + .radio__design:before,
+input[name="radio"]:focus + .radio__design:before {
+  background: #2500E0; }
+
+input[name="radio"]:hover ~ .text {
+  color: #2500E0; }
+
+input[name="radio"]:focus + .radio__design::after,
+input[name="radio"]:active + .radio__design::after {
+  opacity: .1;
+  transform: scale(2.6); }
+
 .form__container {
   padding: 5rem 10rem;
   background: #FFFFFF;
@@ -1469,16 +1562,24 @@ button {
 .background-blue {
   background-color: black; }
 
-.checkbox__disable {
-  opacity: 0.8; }
-
 .checkbox__disable::after {
   position: absolute;
   content: "";
   top: 50%;
-  width: 10px;
-  height: 1px;
-  background-color: red;
+  width: 3px;
+  height: 10px;
+  z-index: 10;
+  background-color: #f4f5f5;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 999px; }
+  transform: translate(-50%, -50%) rotate(90deg); }
+
+.checkbox__disable::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #e84849;
+  border-radius: 4px; }
