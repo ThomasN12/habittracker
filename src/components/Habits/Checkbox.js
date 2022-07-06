@@ -10,7 +10,7 @@ const Checkbox = (props) =>{
 
 
     useEffect(() => {
-        if (isMounted.current) {
+        // if (isMounted.current) {
 
             let checkeddaystring =  props.id.split('/')[0];
             let parts = checkeddaystring.split('-')
@@ -26,11 +26,11 @@ const Checkbox = (props) =>{
             if (props.checkedId.includes(props.id)){
                 setChecked(props.id)
             }
-        } 
+        // } 
         
-        else {
-          isMounted.current = true;
-        }
+        // else {
+        //   isMounted.current = true;
+        // }
       }, [props.id]);
 
     const [checked, setChecked] = useState('empty');

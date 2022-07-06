@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import google from "../img/google.png"
 import background from "../img/formbg2.jpg";
+import { Link } from 'react-router-dom';
+
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -81,7 +83,7 @@ const Register = (props) => {
                             <span>Already have an account &nbsp;
                             &nbsp;</span>
                             
-                            <a href="#"> Log in</a>
+                            <Link to="/login">Sign Up</Link>
                         </div>
                     </div>
                 </div>

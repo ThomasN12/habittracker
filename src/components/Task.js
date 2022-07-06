@@ -11,14 +11,14 @@ const Task = (props) => {
     const isMounted = useRef(false)
     
     useEffect(() =>{
-        if (isMounted.current){
+        // if (isMounted.current){
             if (props.checkedTask.includes(props.id)){
                 setChecked(true);
             }
-        }
-        else {
-            isMounted.current = true
-        }
+        // }
+        // else {
+        //     isMounted.current = true
+        // }
     },[props.id])
 
     const checkHandler = (id) => {
