@@ -1,5 +1,5 @@
-import background from "../img/formbg2.jpg";
-import google from "../img/google.png"
+import background from "../../img/formbg2.jpg";
+import google from "../../img/google.png"
 import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';

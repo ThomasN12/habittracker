@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import google from "../img/google.png"
-import background from "../img/formbg2.jpg";
+import google from "../../img/google.png"
+import background from "../../img/formbg2.jpg";
 import { Link } from 'react-router-dom';
 
 
