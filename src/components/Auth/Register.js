@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import google from "../img/google.png"
-import background from "../img/formbg2.jpg";
+import google from "../../img/google.png"
+import background from "../../img/formbg2.jpg";
+import { Link } from 'react-router-dom';
+
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -81,8 +83,7 @@ const Register = (props) => {
                         <div className="signup__signup">
                             <span>Already have an account &nbsp;
                             &nbsp;</span>
-                            
-                            <a href="#"> Log in</a>
+                            <Link to="/login">Sign in</Link>
                         </div>
                     </div>
                 </div>

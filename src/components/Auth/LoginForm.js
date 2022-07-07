@@ -1,10 +1,11 @@
-import background from "../img/formbg2.jpg";
-import google from "../img/google.png"
+import background from "../../img/formbg2.jpg";
+import google from "../../img/google.png"
 import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 import "./LoginForm.css"
 
@@ -90,7 +91,8 @@ const LoginForm = (props) => {
                     </div>
                     <div className="login__signup">
                         <span>Don't have an account? &nbsp;&nbsp;</span>
-                        <a href="#"> Sign up</a>
+                        {/* <a href="register"> Sign up</a> */}
+                        <Link to="/register">Sign Up</Link>
                     </div>
                     <GoogleLogin
                         buttonText="Login"

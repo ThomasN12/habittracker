@@ -77,9 +77,10 @@ const Habit = (props) =>{
         let date = new Date(e);
         let year = date.getFullYear();
         let month = date.getMonth();
-        let monthPrefix = date.getMonth() < 10 ? '0' : '';
+        let monthPrefix = month < 10 ? '0' : '';
         let day = date.getDate();
-        let res = `${monthPrefix}${month+1}-${day}-${year}/${props.habit.name}`
+        let dayPrefix = day < 10 ? '0': '';
+        let res = `${monthPrefix}${month+1}-${dayPrefix}${day}-${year}/${props.habit.name}`
         return res;
     });
     // console.log(props.habit.checkedId);
@@ -123,7 +124,7 @@ const Habit = (props) =>{
     }
 
     const addId = (id) => {
-        
+        console.log("ADDID", id);
         const searchIndex = chartData.findIndex((habit) => {
             return habit.name === id
         });
@@ -145,8 +146,10 @@ const Habit = (props) =>{
     let mount = 0;
 
     useEffect(() => {
-        if (isMounted.current) {
+        console.log(isMounted.current, mount); //False in deployment instead of true in local
+        // if (isMounted.current) {
             props.onUpdateChecked(props.habit, checkedId);
+            console.log("Send update");
             setStreak(props.habit.streak);
             setRecord(props.habit.record);
             //Send update
@@ -164,22 +167,22 @@ const Habit = (props) =>{
                 },
             }).then(res => {
                 // console.log(res);
-                // console.log("Successfully update a habit");
             }).catch(err => {
                 toast.error(err.response.data);
             });
-        } 
-        else {
-            mount++
-          if(mount === 2){
-            isMounted.current = true;
-            console.log("prevent")
-          }
-        }
+        // } 
+        // else {
+        //     mount++
+        //   if(mount === 2){
+        //     isMounted.current = true;
+        //     console.log("prevent")
+        //   }
+        // }
     },[checkedId]);
 
     // Remove Id function
     const removeId = (id) => {
+        console.log("REMOVEID", id);
         const searchIndex = chartData.findIndex((habit) => {
             return habit.name === id
         });

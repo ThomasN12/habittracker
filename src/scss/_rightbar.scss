@@ -1,16 +1,16 @@
 .rightbar__container{
     box-sizing: border-box;
-    width: 45rem;
+    width: 45.0rem;
     height: 100vh;
     position: fixed;
     right: 0;
     background: #fbf5ee;
-    padding: 3rem 2.3rem;
-    margin-bottom: 2rem;
+    padding: 3.0rem 2.3rem;
+    margin-bottom: 2.0rem;
 }
 .rightbar__intro--content{
     width: 100%;
-    height: 5rem;
+    height: 5.0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,16 +25,16 @@
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
 }
 
 .rightbar__editimg > img{
-    width: 2rem;
-    height: 2rem;
+    width: 2.0rem;
+    height: 2.0rem;
 }
 .rightbar__notiimg > img{
-    width: 2rem;
-    height: 2rem;
+    width: 2.0rem;
+    height: 2.0rem;
 }
 .rightbar__notiimg{
     width: 3.5rem;
@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
 }
 .rightbar__name{
     flex: 1 1 auto;
@@ -68,14 +68,15 @@
 //Part 2
 
 .rightbar__schedule{
-    margin-top: 0.4rem;
+    margin-top: .4rem;
     display: flex;
 }
 .rightbar__event{
     margin: 0 auto;
-    width: 32rem;
+    width: 32.0rem;
     height: 6.5rem;
     display: flex;
+    // box-shadow: rgba(100, 100, 111, 0.2) .0rem .7rem 2.9rem .0rem;
     border-radius: 1.5rem;
 }
 
@@ -100,10 +101,10 @@
 }
 
 .event__border{
-    width: 0.5rem;
+    width: .5rem;
     height: 60%;
     background-color: #70367c;
-    border-radius: 999px;
+    border-radius: 99.9rem;
 }
 
 .rightbar__event--info{
@@ -124,14 +125,14 @@
 .event__type{
     font-family: montserrat;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: .9rem;
 }
 .event__time{
     text-align: center;
     font-family: montserrat;
     font-weight: 400;
-    font-size: 0.9rem;
-    min-width: 5rem;
+    font-size: .9rem;
+    min-width: 5.0rem;
 }
 .event__title{
     flex: 1 1 auto;
@@ -140,16 +141,16 @@
 
 
 .schedule__dot{
-    width: 0.4rem;
-    height: 0.4rem;
+    width: .4rem;
+    height: .4rem;
     border-radius: 50%;
 }
 .schedule__dotcontainer{
-    width: 0.4rem;
-    height: 0.4rem;
-    margin: 0.4rem auto 0;
+    width: .4rem;
+    height: .4rem;
+    margin: .4rem auto 0;
     position: absolute;
-    bottom: 0.6rem;
+    bottom: .6rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -163,8 +164,8 @@
 }
 
 .options__button{
-    padding: 0.6rem;
-    margin: -0.8rem;
+    padding: .6rem;
+    margin: -.8rem;
     display: flex;
     align-items: center;
     border-radius: 50%;

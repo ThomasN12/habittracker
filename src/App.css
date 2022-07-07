@@ -1,12 +1,12 @@
 *,
 *::after,
 *::before {
-  margin: 0px;
-  padding: 0px;
+  margin: .0rem;
+  padding: .0rem;
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 50%; }
 
 .task__container {
   display: flex;
@@ -262,16 +262,6 @@ html {
   font-weight: 600;
   margin-bottom: 2.5rem; }
 
-*,
-*::after,
-*::before {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-
 body {
   background-color: antiquewhite; }
 
@@ -301,12 +291,12 @@ body {
   margin: 0;
   padding: 0;
   cursor: pointer;
-  border-radius: 0.4rem;
+  border-radius: .4rem;
   transition: box-shadow .3s;
-  box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border)); }
+  box-shadow: inset 0 0 0 var(--s, 0.1rem) var(--b, var(--border)); }
 
 .checkbox input:hover {
-  --s: 2px;
+  --s: .2rem;
   --b: var(--border-hover); }
 
 .checkbox input:checked {
@@ -315,7 +305,7 @@ body {
 .checkbox svg {
   pointer-events: none;
   fill: none;
-  stroke-width: 2px;
+  stroke-width: .2rem;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke: var(--stroke, var(--border-active));
@@ -326,7 +316,7 @@ body {
   transform: scale(var(--scale, 1)) translateZ(0); }
 
 .checkbox.path input:checked {
-  --s: 2px;
+  --s: .2rem;
   transition-delay: .4s; }
 
 .checkbox.path input:checked + svg {
@@ -362,12 +352,12 @@ body {
 
 .date {
   font-weight: 400;
-  border-bottom: 1px solid black;
-  margin-bottom: 1rem; }
+  border-bottom: .1rem solid black;
+  margin-bottom: 1.0rem; }
 
 .round {
   padding: 1rem 0rem 1rem 2rem;
-  border: 0.3rem solid black; }
+  border: .3rem solid black; }
 
 .habit__box {
   background: linear-gradient(to right, #2bc0e4, #eaecc6);
@@ -375,10 +365,10 @@ body {
   flex-wrap: wrap;
   width: 100%;
   background-color: white;
-  border-radius: 0.5rem;
-  padding: 1.8rem 1rem 1.8rem 2rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 0.5rem 1.5rem;
-  margin: 0 2rem; }
+  border-radius: .5rem;
+  padding: 1.8rem 1.0rem 1.8rem 2.0rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
+  margin: 0 2.0rem; }
 
 .habit__name {
   height: 4rem;
@@ -393,8 +383,8 @@ body {
 
 .date__container {
   display: flex;
-  border: 0.3rem solid transparent;
-  padding: 0 3rem 0 4rem; }
+  border: .3rem solid transparent;
+  padding: 0 3.0rem 0 4.0rem; }
 
 .date__empty {
   flex: 0 0 auto;
@@ -419,7 +409,7 @@ body {
   justify-content: center; }
 
 .checkbox, .checkbox.path svg {
-  padding: 0.5rem 0 0.5rem; }
+  padding: .5rem 0 .5rem; }
 
 .habit__container {
   display: flex;
@@ -461,19 +451,19 @@ body {
   padding: 0rem 2rem 2rem;
   background-color: #f6d1cb;
   margin: 3rem auto 0;
-  border-radius: 0.4rem;
+  border-radius: .4rem;
   position: relative; }
 
 .habitform {
   background-color: white;
-  border-radius: 0.7rem;
+  border-radius: .7rem;
   padding: 5rem 8rem;
   font-family: quicksand;
   font-weight: 700;
   color: #132663; }
 
 .dots {
-  padding: 0.5rem 0; }
+  padding: .5rem 0; }
 
 .newhabit__control {
   font-size: 1.4rem; }
@@ -519,7 +509,7 @@ body {
   font-weight: 600;
   outline: 0;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: .5rem;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   letter-spacing: .08rem;
@@ -564,11 +554,15 @@ body {
 
 .current__img {
   width: 40%;
-  margin-right: 0.2rem; }
+  margin-right: .2rem; }
 
 .current__img > img {
   width: 100%; }
 
+/* .current__data > span, .record__data > span, .total__data > span{
+  border-radius: 50%;
+  padding: .5rem;
+} */
 .record__container {
   flex: 0 0 auto;
   width: 33.33%;
@@ -578,7 +572,7 @@ body {
 
 .record__img {
   width: 40%;
-  margin-right: 0.5rem; }
+  margin-right: .5rem; }
 
 .record__img > img {
   width: 100%; }
@@ -592,7 +586,7 @@ body {
 
 .total__img {
   width: 40%;
-  margin-right: 0.5rem; }
+  margin-right: .5rem; }
 
 .total__img > img {
   width: 100%; }
@@ -606,7 +600,7 @@ body {
   color: #333;
   padding: 1rem;
   background: #fff0f0;
-  border: 0.2rem solid #b18597;
+  border: .2rem solid #b18597;
   border-radius: 0.75em;
   transform-style: preserve-3d;
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
@@ -623,6 +617,7 @@ body {
   bottom: 0;
   background: #f9c4d2;
   border-radius: inherit;
+  /* box-shadow: 0 0 0 .2rem #b18597, 0 0.625rem 0 0 #ffe3e2; */
   transform: translate3d(0, 0.5rem, -1rem);
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1); }
 
@@ -631,6 +626,7 @@ body {
   transform: translate(0, 0.25rem); }
 
 .weekadd:hover::after {
+  /* box-shadow: 0 0 0 .2rem #b18597, 0 0.5rem 0 0 #ffe3e2; */
   transform: translate3d(0, 0.3rem, -1rem); }
 
 .weekadd:active {
@@ -638,6 +634,7 @@ body {
   transform: translate(0rem, 0.5rem); }
 
 .weekadd:active::after {
+  /* box-shadow: 0 0 0 .2rem #b18597, 0 0 #ffe3e2; */
   transform: translate3d(0, 0, -1rem); }
 
 .habit__button {
@@ -709,7 +706,7 @@ body {
 
 .introduction__container {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: .5rem;
   display: inline-block; }
 
 .calendar__container {
@@ -756,15 +753,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  border-radius: 9999px;
+  border-radius: 999.9rem;
   align-items: center; }
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: .1rem;
+  height: .1rem;
   padding: 0;
-  margin: -1px;
+  margin: -.1rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -849,7 +846,7 @@ input[name="radio"] {
 .radio__design {
   width: 1.6rem;
   height: 1.6rem;
-  border: 1px solid #242424;
+  border: .1rem solid #242424;
   border-radius: 100%;
   margin-right: 1.6rem;
   position: relative;
@@ -890,7 +887,7 @@ input[name="radio"]:checked + .radio__design::before {
 /* other states */
 input[name="radio"]:hover + .radio__design,
 input[name="radio"]:focus + .radio__design {
-  border: 1px solid #2500E0; }
+  border: .1rem solid #2500E0; }
 
 input[name="radio"]:hover + .radio__design:before,
 input[name="radio"]:focus + .radio__design:before {
@@ -907,7 +904,7 @@ input[name="radio"]:active + .radio__design::after {
 .form__container {
   padding: 5rem 10rem;
   background: #FFFFFF;
-  box-shadow: 0px 4.4rem 6.4rem rgba(69, 25, 160, 0.1);
+  box-shadow: 0rem 4.4rem 6.4rem rgba(69, 25, 160, 0.1);
   border-radius: 3.2rem;
   padding: 7.5rem; }
 
@@ -930,8 +927,8 @@ input[name="radio"]:active + .radio__design::after {
   margin-top: 0.8rem;
   width: 100%;
   padding: 1.25rem;
-  border: 1px solid #8F9DCE;
-  border-radius: 0.4rem;
+  border: .1rem solid #8F9DCE;
+  border-radius: .4rem;
   box-sizing: border-box; }
 
 .form__query--1 > input::placeholder {
@@ -972,8 +969,8 @@ input[name="radio"]:active + .radio__design::after {
   padding: 1.6rem;
   width: 30rem;
   height: 6.5rem;
-  border: 1px solid #8F9DCE;
-  border-radius: 0.4rem; }
+  border: .1rem solid #8F9DCE;
+  border-radius: .4rem; }
 
 .form__query {
   display: flex;
@@ -985,7 +982,7 @@ input[name="radio"]:active + .radio__design::after {
   background: linear-gradient(to right, #2bc0e4, #eaecc6);
   padding: 3.2rem;
   width: 35%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 0.7rem 2.9rem 0px; }
+  box-shadow: rgba(100, 100, 111, 0.2) 0rem 0.7rem 2.9rem 0rem; }
 
 .form__apply {
   margin: 4.5rem auto 0;
@@ -1039,17 +1036,17 @@ input[name="radio"]:active + .radio__design::after {
 
 .rightbar__container {
   box-sizing: border-box;
-  width: 45rem;
+  width: 45.0rem;
   height: 100vh;
   position: fixed;
   right: 0;
   background: #fbf5ee;
-  padding: 3rem 2.3rem;
-  margin-bottom: 2rem; }
+  padding: 3.0rem 2.3rem;
+  margin-bottom: 2.0rem; }
 
 .rightbar__intro--content {
   width: 100%;
-  height: 5rem;
+  height: 5.0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1064,15 +1061,15 @@ input[name="radio"]:active + .radio__design::after {
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
-  margin: 0 0.5rem; }
+  margin: 0 .5rem; }
 
 .rightbar__editimg > img {
-  width: 2rem;
-  height: 2rem; }
+  width: 2.0rem;
+  height: 2.0rem; }
 
 .rightbar__notiimg > img {
-  width: 2rem;
-  height: 2rem; }
+  width: 2.0rem;
+  height: 2.0rem; }
 
 .rightbar__notiimg {
   width: 3.5rem;
@@ -1083,7 +1080,7 @@ input[name="radio"]:active + .radio__design::after {
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
-  margin: 0 0.5rem; }
+  margin: 0 .5rem; }
 
 .rightbar__name {
   flex: 1 1 auto; }
@@ -1101,12 +1098,12 @@ input[name="radio"]:active + .radio__design::after {
   line-height: 1.6rem; }
 
 .rightbar__schedule {
-  margin-top: 0.4rem;
+  margin-top: .4rem;
   display: flex; }
 
 .rightbar__event {
   margin: 0 auto;
-  width: 32rem;
+  width: 32.0rem;
   height: 6.5rem;
   display: flex;
   border-radius: 1.5rem; }
@@ -1128,10 +1125,10 @@ input[name="radio"]:active + .radio__design::after {
   align-items: center; }
 
 .event__border {
-  width: 0.5rem;
+  width: .5rem;
   height: 60%;
   background-color: #70367c;
-  border-radius: 999px; }
+  border-radius: 99.9rem; }
 
 .rightbar__event--info {
   display: flex;
@@ -1150,29 +1147,29 @@ input[name="radio"]:active + .radio__design::after {
 .event__type {
   font-family: montserrat;
   font-weight: 400;
-  font-size: 0.9rem; }
+  font-size: .9rem; }
 
 .event__time {
   text-align: center;
   font-family: montserrat;
   font-weight: 400;
-  font-size: 0.9rem;
-  min-width: 5rem; }
+  font-size: .9rem;
+  min-width: 5.0rem; }
 
 .event__title {
   flex: 1 1 auto; }
 
 .schedule__dot {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: .4rem;
+  height: .4rem;
   border-radius: 50%; }
 
 .schedule__dotcontainer {
-  width: 0.4rem;
-  height: 0.4rem;
-  margin: 0.4rem auto 0;
+  width: .4rem;
+  height: .4rem;
+  margin: .4rem auto 0;
   position: absolute;
-  bottom: 0.6rem;
+  bottom: .6rem;
   left: 50%;
   transform: translateX(-50%); }
 
@@ -1184,8 +1181,8 @@ input[name="radio"]:active + .radio__design::after {
   opacity: 0; }
 
 .options__button {
-  padding: 0.6rem;
-  margin: -0.8rem;
+  padding: .6rem;
+  margin: -.8rem;
   display: flex;
   align-items: center;
   border-radius: 50%; }
@@ -1301,16 +1298,16 @@ input[name="radio"]:active + .radio__design::after {
 .signup__account input {
   height: 4rem;
   width: 29rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #333;
+  border-radius: .6rem;
+  border: .2rem solid #333;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem; }
 
 .signup__password input {
   height: 4rem;
   width: 29rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #333;
+  border-radius: .6rem;
+  border: .2rem solid #333;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem; }
 
@@ -1330,8 +1327,8 @@ input[name="radio"]:active + .radio__design::after {
 .signup__rememberme input {
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.2rem solid #333;
-  border-radius: 0.7rem;
+  border: .2rem solid #333;
+  border-radius: .7rem;
   margin-right: 1rem; }
 
 .signup__forgot {
@@ -1351,8 +1348,8 @@ input[name="radio"]:active + .radio__design::after {
   justify-content: center;
   font-size: 1.4rem;
   height: 4rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #333;
+  border-radius: .6rem;
+  border: .2rem solid #333;
   font-weight: 600;
   margin-bottom: 1.5rem;
   font-family: 'Nunito'; }
@@ -1366,8 +1363,8 @@ input[name="radio"]:active + .radio__design::after {
   justify-content: center;
   font-size: 1.4rem;
   height: 4rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #333;
+  border-radius: .6rem;
+  border: .2rem solid #333;
   font-weight: 600;
   margin-bottom: 1.5rem; }
 
@@ -1440,7 +1437,7 @@ input[name="radio"]:active + .radio__design::after {
   border-radius: 50%; }
 
 .border-top {
-  border-top: 1px solid grey; }
+  border-top: .1rem solid grey; }
 
 .background-beige {
   background-color: #84b29c;
@@ -1454,12 +1451,12 @@ input[name="radio"]:active + .radio__design::after {
   border-radius: unset; }
 
 .border-left {
-  border-top-left-radius: 999px;
-  border-bottom-left-radius: 999px; }
+  border-top-left-radius: 99.9rem;
+  border-bottom-left-radius: 99.9rem; }
 
 .border-right {
-  border-top-right-radius: 999px;
-  border-bottom-right-radius: 999px; }
+  border-top-right-radius: 99.9rem;
+  border-bottom-right-radius: 99.9rem; }
 
 button {
   border: none;
@@ -1474,8 +1471,8 @@ button {
   position: absolute;
   content: "";
   top: 50%;
-  width: 0.3rem;
-  height: 1rem;
+  width: .3rem;
+  height: 1.0rem;
   z-index: 10;
   background-color: #f4f5f5;
   left: 50%;
@@ -1490,4 +1487,4 @@ button {
   right: 0;
   z-index: 10;
   background-color: #e84849;
-  border-radius: 0.4rem; }
+  border-radius: .4rem; }

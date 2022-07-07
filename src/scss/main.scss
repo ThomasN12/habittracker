@@ -1,12 +1,12 @@
 *,
 *::after,
 *::before {
-  margin: 0px;
-  padding: 0px;
+  margin: .0rem;
+  padding: .0rem;
   box-sizing: inherit; }
 
   html{
-      font-size: 62.5%;
+      font-size: 50%;
   }
 @import "tasklist.scss";
 @import "habittable.scss";
@@ -69,7 +69,7 @@
 }
 
 .border-top{
-    border-top: 1px solid grey;
+    border-top: .1rem solid grey;
 }
 .background-beige{
     background-color: #84b29c;
@@ -83,12 +83,12 @@
     border-radius: unset;
 }
 .border-left{
-    border-top-left-radius: 999px;
-    border-bottom-left-radius: 999px;
+    border-top-left-radius: 99.9rem;
+    border-bottom-left-radius: 99.9rem;
 }
 .border-right{
-    border-top-right-radius: 999px;
-    border-bottom-right-radius: 999px;
+    border-top-right-radius: 99.9rem;
+    border-bottom-right-radius: 99.9rem;
 }
 
 // .display-none{
@@ -112,8 +112,8 @@ button {
     position: absolute;
     content: "";
     top: 50%;
-    width: 0.3rem;
-    height: 1rem;
+    width: .3rem;
+    height: 1.0rem;
     z-index: 10;
     background-color: #f4f5f5;
     left: 50%;
@@ -129,5 +129,5 @@ button {
     right: 0;
     z-index: 10;
     background-color: #e84849;
-    border-radius: 0.4rem;
+    border-radius: .4rem;
 }
