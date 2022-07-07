@@ -82,8 +82,7 @@ const Register = (props) => {
                         <div className="signup__signup">
                             <span>Already have an account &nbsp;
                             &nbsp;</span>
-                            
-                            <Link to="/login">Sign Up</Link>
+                            <Link to="/login">Sign in</Link>
                         </div>
                     </div>
                 </div>

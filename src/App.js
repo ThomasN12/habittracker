@@ -8,6 +8,7 @@ import Register from './components/Register';
 import Mainpage from './components/Mainpage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Landing from './components/Landing';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         </Router> */}
         <HashRouter>
             <Routes>
+              <Route path='/' element={<Landing />} />
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
               <Route path="/main" element={<Mainpage />} />
