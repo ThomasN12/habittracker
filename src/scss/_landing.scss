@@ -1,0 +1,405 @@
+$text-color: #333;
+.s1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.landing__background{
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+}
+.arrow{
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    position: relative;
+  }
+   #video--arrow{
+     margin-left: 1.5rem;
+   }
+  
+   .intro__container{
+    flex: 1 1 auto;
+   }
+   .intro{
+      height: 100vh;
+      font-family: mosk;
+      position: relative;
+      z-index: 100;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+  
+      &__content{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 200;
+      }
+  
+      &__hello{
+        display:inline-block;
+        width: 40vw;
+        position:relative;
+  
+        & > img{
+          max-width: 100%;
+          position: absolute;
+          bottom: -5rem;
+        }
+      }
+  
+      &__title{
+        padding-left: 6rem;
+        display: inline-block;
+        font-family: montserrat;
+  
+        &--intro{
+  
+          margin-bottom: 3.5rem;
+  
+          & .intro--hi{
+  
+            font-size: 3.8rem;
+            line-height: 4.4rem;
+            font-weight: 700;
+            color: $text-color;
+            margin-right: 1rem;
+            position: relative;
+            margin-right: 5px;
+          }
+  
+          & > .text--highlight{
+            display: inline-block;
+            position: relative;
+  
+            & > .space--white{
+              position: absolute;
+              left: 4%;
+              right: 0%;
+              top: 50%;
+              height: 36%;
+              background-color: white;
+            }
+          }
+        }
+  
+        &--about{
+  
+          margin-bottom: 3.5rem;
+          overflow: hidden;
+  
+          & > p{
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: $text-color;
+          }
+        }
+      }
+      
+      &__scroll{
+        position: fixed;
+        bottom: -1.5rem;
+        right: 5rem;
+        width: 5rem;
+        height: 10rem;
+        display: inline-block;
+  
+        &-text{
+          position: absolute;
+          transform: rotate(90deg);
+          top: 2rem;
+          font-size: 1.4rem;
+          font-weight: 700;
+          font-family: muli;
+        }
+  
+        &-line{
+          position: absolute;
+          bottom: 0;
+          background-color: black;
+          width: 2px;
+          height: 10rem;
+  
+          animation: scrollDown 2s ease-in-out 4s infinite;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+   }
+
+   .space--white-1{
+    animation: whiteLine 1s ease-in-out 2s backwards;
+  }
+  .space--white-2{
+    animation: whiteLine 1s ease-in-out 3s backwards;
+  }
+
+
+
+  $white: #ececec;
+$black: $text-color;
+
+$colorPrimary: $black;
+$colorSecondary: $black;
+$cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+//split button mixin
+.hoverbutton:hover ~ .arrow{
+  margin-left: 2rem;
+}
+.hoverbutton:active ~ .arrow{
+  top: 0.8rem;
+  left: 0.8rem;
+  transition-duration: 0.4s;
+}
+
+@mixin btn__split($foregroundColor, $backgroundColor, $textColor) {
+	.hoverbutton {
+    font-family: montserrat;
+		text-decoration: none;
+		font-weight: 900;
+		border: 0;
+		display: inline-block;
+		position: relative;
+		letter-spacing: 0.15em;
+		margin: 0 auto;
+		padding: 2rem 3rem;
+		background: transparent;
+		outline: none;
+		font-size: 28px;
+		color: $textColor;
+		transition: all 0.5s $cubic-bezier 0.15s;
+    & > span{
+      font-size: 2.8rem;
+      position: relative;
+      z-index: 20;
+      color: $text-color;
+      top: 0;
+      left: 0;
+    }
+		&::after,
+		&::before {
+			border: 0;
+			content: "";
+			position: absolute;
+			height: 2rem;
+      width: 2rem;
+			transition: all 0.5s $cubic-bezier;
+			border-radius: 50%;
+			// animation: grow 1s infinite;
+		}
+		&::before {
+			border: 0;
+			background-color: $backgroundColor;
+			top: -0.75rem;
+			left: 0;
+			animation: topAnimation 2s $cubic-bezier 0.25s infinite alternate;
+		}
+		&::after {
+			background-color: $foregroundColor;
+			bottom: 0rem;
+			left: 13rem;
+			animation: bottomAnimation 2s $cubic-bezier 0.5s infinite alternate;
+		}
+		&:hover {
+
+			& > span{
+        transition-delay: 0.2s;
+        color: white;
+      }
+			&::before,
+			&::after {
+				top: 0;
+				//transform: skewx(-10deg);
+				height: 100%;
+				width: 100%;
+				border-radius: 0;
+				animation: none;
+			}
+			&::after {
+				left: 0rem;
+
+			}
+			&::before {
+				top: 0.8rem;
+				left: 0.8rem;
+                background-color: transparent;
+                border: 3px solid $black;
+                box-sizing: border-box;
+			}
+		}
+
+    &:active{
+      &::after {
+        top: 0.8rem;
+        left: 0.8rem;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+      }
+
+      & > span{
+        top: 0.8rem;
+		left: 0.8rem;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+      }
+    }
+	}
+}
+
+
+@include btn__split($colorPrimary, $colorSecondary, $black);
+
+@keyframes infiniteRotate{
+    100%{
+      transform: rotate(1turn)
+    }
+  }
+
+  @keyframes whiteLine{
+    from{
+      transform: scaleX(0);
+      transform-origin: 0 0;
+    }
+    to{
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes scrollDown{
+    0%{
+      // transform: translate3d(0,0,0);
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    50%{
+      transform-origin: top;
+      transform: scaleY(1);
+    }
+    51%{
+      transform-origin: bottom;
+      transform: scaleY(1);
+    }
+    100%{
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+  
+  @keyframes scrolldown {
+      0%{
+          background-position: 0 -6rem;
+      }
+      75% {
+          background-position: 0 0;
+      }
+      100%{
+          background-position: 0 6rem;
+      }
+  }
+  @keyframes topAnimation {
+	from {
+		transform: translate(0rem, 0);
+	}
+	to {
+		transform: translate(0rem, 3.5rem);
+	}
+}
+@keyframes bottomAnimation {
+	from {
+		transform: translate(-11.5rem, 0);
+	}
+	to {
+		transform: translate(0rem, 0);
+	}
+}
+
+.blueplanet{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37.78%;
+  
+    & > img{
+      width: 100%;
+    }
+  }
+  .lightblueplanet{
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 29.94%;
+  
+    & > img{
+      width: 100%;
+    }
+  }
+  .orangeplanet{
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    width: 16.47%;
+  
+    & > img{
+      width: 100%;
+    }
+  }
+  .redplanet{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50.81%;
+  
+    & > img{
+      width: 100%;
+    }
+  }
+  .space{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+  }
+  .lightenspace{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -20;
+  }
+  .longstars{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+  
+    & > img{
+      position: absolute;
+      right: 5%;
+    }
+  }
+  .stars{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+    
+  }
+  .redsmallplanet{
+    position: absolute;
+    top: 0%;
+    left: 45%;
+    width: 20.42%;
+    
+    & > img{
+      width: 100%;
+    }
+  }
