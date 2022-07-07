@@ -14,13 +14,13 @@ const Date = (props) =>{
     let friday = parseISO(new window.Date(props.daterange[5]).toISOString())
     let saturday = parseISO(new window.Date(props.daterange[6]).toISOString())
 
-    let sundaytitle = format(sunday, 'dd-MMM')
-    let mondaytitle = format(monday, 'dd-MMM')
-    let tuesdaytitle = format(tuesday, 'dd-MMM')
-    let wednesdaytitle = format(wednesday, 'dd-MMM')
-    let thursdaytitle = format(thursday, 'dd-MMM')
-    let fridaytitle = format(friday, 'dd-MMM')
-    let saturdaytitle = format(saturday, 'dd-MMM')
+    let sundaytitle = format(sunday, 'dd-M')
+    let mondaytitle = format(monday, 'dd-M')
+    let tuesdaytitle = format(tuesday, 'dd-M')
+    let wednesdaytitle = format(wednesday, 'dd-M')
+    let thursdaytitle = format(thursday, 'dd-M')
+    let fridaytitle = format(friday, 'dd-M')
+    let saturdaytitle = format(saturday, 'dd-M')
 
     return (
         <div className="date">
