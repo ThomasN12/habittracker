@@ -36,20 +36,6 @@ const Register = (props) => {
     }
     return (
         <>
-            {/* <h1>Register</h1>
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label htmlFor="username">Enter username</label>
-                    <input type="text" name="" id="username" value={username} onChange={event => setUsername(event.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor="password">Enter password</label>
-                    <input type="password" name="" id="password" value={password} onChange={event => setPassword(event.target.value)} />
-                </div>
-                <button type="submit">Create account</button>
-            </form> */}
-
-
             <form className="signup__container" onSubmit={submitHandler}>
                 <img src={background} alt=""/>
                 <div className="signup__form">

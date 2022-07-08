@@ -116,7 +116,6 @@ function Mainpage() {
     }
 
     const addNewSchedule = (schedule) => {
-        // console.log(schedule);
         // setSchedule((prevSchedule) => {
         //     return [schedule, ...prevSchedule];
         // })
@@ -131,6 +130,7 @@ function Mainpage() {
             }
         }).then(res => {
             const { data } = res;
+            console.log("data:", data)
             if (data.success) {
                 let foundSchedule = data.schedules;
                 setSchedule(foundSchedule);

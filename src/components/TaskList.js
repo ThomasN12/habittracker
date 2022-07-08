@@ -21,19 +21,17 @@ const TaskList = () => {
         mainPageTheme.setCheckedTask((prevTasks) => {
             return [...prevTasks, id];
         })
-        console.log("add");
     }
 
     const removeId = (id) => {
         mainPageTheme.setCheckedTask(
             mainPageTheme.checkedTask.filter((task) => task !== id) 
         )
-        console.log("remove")
     }
 
-    console.log("checked task: ", mainPageTheme.checkedTask);
+    // console.log("checked task: ", mainPageTheme.checkedTask);
 
-    console.log("tasks: ", tasks)
+    // console.log("tasks: ", tasks)
 
     let selectedDayTasks = tasks.filter((task) =>
         isSameDay((task.date), selectedDay)
@@ -59,6 +57,7 @@ const TaskList = () => {
                         name = {task.name}
                         key={task._id} 
                         id={task._id}
+                        check = {task.check}
                         onAddId = {addId}
                         onRemoveId = {removeId}
                         checkedTask = {mainPageTheme.checkedTask}
