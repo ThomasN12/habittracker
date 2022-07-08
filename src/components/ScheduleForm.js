@@ -7,11 +7,17 @@ const ScheduleForm = (props) => {
     const mainPageTheme = useContext(MainPageTheme)
     let selectedDay = format(mainPageTheme.selectedDay, 'dd-MMM');
 
+    const [type, setType] = useState(''); 
     const [scheduleName, setScheduleName] = useState('');
     const [scheduleImportance, setScheduleImportance] = useState('');
     const [scheduleGenre, setScheduleGenre] = useState('');
     const [scheduleTarget, setScheduleTarget] = useState('');
     const [scheduleDays, setScheduleDays] = useState('');
+
+    const handleChecked = (id) => {
+        console.log("ok")
+        setType(id)
+    }
 
     const titleChangeHandler = (event) =>{
         setScheduleName(event.target.value);
@@ -35,8 +41,8 @@ const ScheduleForm = (props) => {
 
         const scheduleData = {
             name: scheduleName,
-            date: mainPageTheme.selectedDay.getTime()
-            // date: '2022-05-20T00:00'
+            type: type,
+            date: mainPageTheme.selectedDay.getTime(),
         }
 
         
@@ -48,6 +54,8 @@ const ScheduleForm = (props) => {
         props.onNewSchedule(scheduleObject);
 
         console.log("scheduleobject: ", scheduleObject)
+
+        
         
 
         setScheduleName('');
@@ -59,53 +67,6 @@ const ScheduleForm = (props) => {
     }
 
     return (
-        // <div className="form__query">
-        //         <form className="form__content">
-        //             <div className="form__title">
-        //                 <span>Create new habit today</span>
-        //             </div>
-        //             <div className="form__query--1">
-        //                 <label>What's your habit name?</label>
-        //                 <input type="text" placeholder="Playing sport, do exercise, eat clean..." className="queryform__style--1" onChange={titleChangeHandler} value={habitName}/>
-        //             </div>
-        //             <div className="form__checkbox--1">
-        //                 <input type="checkbox"/>
-        //                 <label className="queryform__style--1">Send notification automatically</label>
-        //             </div>
-        //             <div className="form__query--1 mt-32">
-        //                 <label>Importance rate of habit</label>
-        //                 <input type="text" placeholder="City, airport, region, district..." className="queryform__style--1" onChange={importanceChangeHandler} value={habitImportance}/>
-        //             </div>
-        //             <div className="form__apply">
-        //                 <button className='form__apply--btn' type='submit'>
-        //                     <span>Add new habit</span>
-        //                 </button>
-        //             </div>
-        //         </form>
-        //         <form className="form__content">
-        //             <div className="form__title">
-        //                 <span>Create your schedule</span>
-        //             </div>
-        //             <div className="form__query--1">
-        //                 <label>What's your activities or events?</label>
-        //                 <input type="text" placeholder="Finish assignments, friend meeting..." className="queryform__style--1"/>
-        //             </div>
-        //             <div className="form__checkbox--1">
-        //                 <input type="checkbox"/>
-        //                 <label className="queryform__style--1">Deliver the car somewhere else</label>
-        //             </div>
-        //             <div className="form__query--1 mt-32">
-        //                 <label>Pick up location</label>
-        //                 <input type="text" placeholder="City, airport, region, district..." className="queryform__style--1"/>
-        //             </div>
-        //             <div className="form__apply">
-        //                 <button className='form__apply--btn' type='submit'>
-        //                     <span>Add new habit</span>
-        //                 </button>
-        //             </div>
-        //         </form>
-        //     </div>
-
         <form className="form__content" onSubmit={submitHandler}>
             <div className="form__title">
                 <span>New schedule for {selectedDay}</span>
@@ -121,6 +82,29 @@ const ScheduleForm = (props) => {
             <div className="form__query--1 mt-32">
                 <label>Type of schedule:</label>
                 <input type="text" placeholder="Deadline, regular activities..." className="queryform__style--1" onChange={importanceChangeHandler} value={scheduleImportance}/>
+            </div>
+            <div className="form__radio mt-32">
+                <span>Task type: </span>
+                
+                <div className="radio__container">
+                    <label className="radio__label">
+                        <input type="radio" name="tasktype" onChange={() => handleChecked('deadline')} value = {type === 'deadline'}/>
+                        <span className="radio__design"></span>
+                        <span className="radio__text">Deadline</span>
+                    </label>
+                    
+                    <label className="radio__label">
+                        <input type="radio" name="tasktype" onChange={() => handleChecked('event')} value = {type === 'event'}/>
+                        <span className="radio__design"></span>
+                        <span className="radio__text">Event</span>
+                    </label>
+                    
+                    <label className="radio__label">
+                        <input type="radio" name="tasktype" onChange={() => handleChecked('other')} value = {type === 'other'}/>
+                        <span className="radio__design"></span>
+                        <span className="radio__text">Other</span>
+                    </label>
+                </div>
             </div>
             <div className="form__apply">
                 <button className='form__apply--btn' type='submit'>

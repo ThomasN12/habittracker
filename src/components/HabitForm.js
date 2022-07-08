@@ -80,19 +80,19 @@ const HabitForm = (props) => {
                 
                 <div className="radio__container">
                     <label className="radio__label">
-                        <input type="radio" name="radio"/>
+                        <input type="radio" name="importance"/>
                         <span className="radio__design"></span>
                         <span className="radio__text">Low</span>
                     </label>
                     
                     <label className="radio__label">
-                        <input type="radio" name="radio"/>
+                        <input type="radio" name="importance"/>
                         <span className="radio__design"></span>
                         <span className="radio__text">Moderate</span>
                     </label>
                     
                     <label className="radio__label">
-                        <input type="radio" name="radio"/>
+                        <input type="radio" name="importance"/>
                         <span className="radio__design"></span>
                         <span className="radio__text">High</span>
                     </label>

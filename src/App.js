@@ -9,6 +9,8 @@ import Mainpage from './components/Mainpage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Landing from './components/Landing';
+import ForgotEmail from './components/Auth/ForgotEmail';
+import NewPassword from './components/Auth/NewPassword';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
               <Route path="/main" element={<Mainpage />} />
+              <Route path="/forgotpassword" element={<ForgotEmail/>} />
+              <Route path="/newpassword" element={<NewPassword/>} />
             </Routes>
         </HashRouter>
         <ToastContainer
