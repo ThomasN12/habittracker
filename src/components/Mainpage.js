@@ -49,7 +49,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundHabits = res.data.habits;
+                let foundHabits = res.data.data;
                 setHabits(foundHabits);
             } else {
                 toast.error(data.message);
@@ -69,7 +69,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundSchedules = res.data.schedules;
+                let foundSchedules = res.data.data;
                 setSchedule(foundSchedules);
                 let checkedTask = foundSchedules.filter(schedule => schedule.checked).map(schedule => schedule._id);
                 setCheckedTask(checkedTask);
@@ -104,7 +104,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundHabits = data.habits;
+                let foundHabits = data.data;
                 setHabits(foundHabits);
                 toast.success(data.message);
             } else {
@@ -132,7 +132,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundSchedule = data.schedules;
+                let foundSchedule = data.data;
                 setSchedule(foundSchedule);
                 toast.success(data.message);
             } else {
