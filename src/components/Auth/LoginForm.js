@@ -80,8 +80,8 @@ const LoginForm = (props) => {
                         </div>
                     </div>
                     <div className="login__signin">
-                        <div className="login__signin--btn">
-                            <span onClick={submitHandler}>Sign in</span>
+                        <div className="login__signin--btn" onClick={submitHandler}>
+                            <span>Sign in</span>
                         </div>
                     </div>
                     <div className="login__google">

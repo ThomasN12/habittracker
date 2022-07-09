@@ -1,6 +1,9 @@
-import event from "./../img/event.png";
-import activity from "./../img/activity.png";
-import deadline from "./../img/deadline.png";
+// import event from "./../img/event.png";
+// import activity from "./../img/activity.png";
+// import deadline from "./../img/deadline1.png";
+import event from "./../img/badge.svg";
+import activity from "./../img/sun.svg";
+import deadline from "./../img/sleeping.svg";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
