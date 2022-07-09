@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/habittracker/static/css/main.5b1fca88.css",
-    "main.js": "/habittracker/static/js/main.32669c69.js",
+    "main.css": "/habittracker/static/css/main.00ca66c9.css",
+    "main.js": "/habittracker/static/js/main.dda78fa2.js",
     "static/js/787.5a766354.chunk.js": "/habittracker/static/js/787.5a766354.chunk.js",
     "static/media/formbg2.jpg": "/habittracker/static/media/formbg2.f08846e370c78ea6066f.jpg",
     "static/media/back3.jpg": "/habittracker/static/media/back3.4255c4ff6b099f23971d.jpg",
@@ -20,12 +20,12 @@
     "static/media/iconpage.svg": "/habittracker/static/media/iconpage.aee0d2a5052bd61738f0dfa3222b79fc.svg",
     "static/media/icondashboard.svg": "/habittracker/static/media/icondashboard.aa79cd189064e3be9f65e64b460d62b6.svg",
     "static/media/search.svg": "/habittracker/static/media/search.a0e0e0e117d11d7c2f25245a337dd426.svg",
-    "main.5b1fca88.css.map": "/habittracker/static/css/main.5b1fca88.css.map",
-    "main.32669c69.js.map": "/habittracker/static/js/main.32669c69.js.map",
+    "main.00ca66c9.css.map": "/habittracker/static/css/main.00ca66c9.css.map",
+    "main.dda78fa2.js.map": "/habittracker/static/js/main.dda78fa2.js.map",
     "787.5a766354.chunk.js.map": "/habittracker/static/js/787.5a766354.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b1fca88.css",
-    "static/js/main.32669c69.js"
+    "static/css/main.00ca66c9.css",
+    "static/js/main.dda78fa2.js"
   ]
 }
