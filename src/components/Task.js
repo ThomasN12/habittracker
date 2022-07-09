@@ -1,8 +1,11 @@
-import event from "./../img/event.png";
-import activity from "./../img/activity.png";
-import deadline from "./../img/deadline.png";
 import { useState, useEffect, useRef, useContext } from "react";
 import { MainPageTheme } from "./Mainpage";
+// import event from "./../img/event.png";
+// import activity from "./../img/activity.png";
+// import deadline from "./../img/deadline1.png";
+import event from "./../img/badge.svg";
+import activity from "./../img/sun.svg";
+import deadline from "./../img/sleeping.svg";
 import { toast } from "react-toastify";
 const Task = (props) => {
     const mainPageTheme = useContext(MainPageTheme)

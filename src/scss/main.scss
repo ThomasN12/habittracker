@@ -119,6 +119,7 @@ button {
     height: 1.0rem;
     z-index: 10;
     background-color: #f4f5f5;
+    opacity: 0.8;
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
 }
@@ -131,6 +132,13 @@ button {
     left: 0;
     right: 0;
     z-index: 10;
-    background-color: #e84849;
+    background-color: #73777b;
+    opacity: 0.55;
     border-radius: .4rem;
 }
+
+// @media (max-width: 1000px){
+//     html{
+//         font-size: 40%;
+//     }
+// }
