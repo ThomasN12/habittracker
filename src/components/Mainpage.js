@@ -47,7 +47,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundHabits = res.data.habits;
+                let foundHabits = res.data.data;
                 setHabits(foundHabits);
             } else {
                 toast.error(data.message);
@@ -67,7 +67,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundSchedules = res.data.schedules;
+                let foundSchedules = res.data.data;
                 setSchedule(foundSchedules);
                 let checkedTask = foundSchedules.filter(schedule => schedule.checked).map(schedule => schedule._id);
                 setCheckedTask(checkedTask);
@@ -91,9 +91,9 @@ function Mainpage() {
 
     const addNewHabit = (habit) => {
         const token = localStorage.getItem('token');
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = process.env.REACT_APP_ROOT_API;
         // const baseUrl = "http://localhost:5000/api"
-        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let body = {habit};
         axios.post(`${baseUrl}/habit`, body, {
             headers: {
@@ -102,7 +102,7 @@ function Mainpage() {
         }).then(res => {
             const { data } = res;
             if (data.success) {
-                let foundHabits = data.habits;
+                let foundHabits = data.data;
                 setHabits(foundHabits);
                 toast.success(data.message);
             } else {
@@ -130,7 +130,7 @@ function Mainpage() {
             const { data } = res;
             console.log("data:", data)
             if (data.success) {
-                let foundSchedule = data.schedules;
+                let foundSchedule = data.data;
                 setSchedule(foundSchedule);
                 toast.success(data.message);
             } else {

@@ -75,7 +75,8 @@ const LoginForm = (props) => {
                             <label>Remember me</label>
                         </div>
                         <div className="login__forgot">
-                            <a href="#">Forgot password</a>
+                            {/* <a href="#">Forgot password</a> */}
+                            <Link to="/forgotpassword">Forgot password</Link>
                         </div>
                     </div>
                     <div className="login__signin">

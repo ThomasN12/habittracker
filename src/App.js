@@ -31,7 +31,7 @@ function App() {
               <Route path='/register' element={<Register />} />
               <Route path="/main" element={<Mainpage />} />
               <Route path="/forgotpassword" element={<ForgotEmail/>} />
-              <Route path="/newpassword" element={<NewPassword/>} />
+              <Route path="/newpassword/:token" element={<NewPassword/>} />
             </Routes>
         </HashRouter>
         <ToastContainer
