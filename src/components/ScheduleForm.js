@@ -41,10 +41,13 @@ const ScheduleForm = (props) => {
 
         const scheduleData = {
             name: scheduleName,
-            type: type,
+            type: upperFirstLetter(type),
             date: mainPageTheme.selectedDay.getTime(),
         }
 
+        function upperFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+          }
         
 
         const scheduleObject = {

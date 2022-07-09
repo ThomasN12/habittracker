@@ -36,6 +36,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
+
 export default function Calendar(props) {
   const mainPageTheme = useContext(MainPageTheme)
 
@@ -248,7 +250,15 @@ export default function Calendar(props) {
 
 function Meeting({ event }) {
   // let startDateTime = parseISO(meeting.startDatetime)
-  let date = event.date
+
+  const mainPageTheme = useContext(MainPageTheme)
+
+  const handleDelete = (id) => {
+    mainPageTheme.setSchedule(() => {
+       return mainPageTheme.schedule.filter((task) => task._id !== id)
+    })
+    console.log("id:" , id)
+  }
 
   return (
   
@@ -315,8 +325,9 @@ function Meeting({ event }) {
                       active ? 'bg-gray-100 text-gray-900 task__option--active' : 'text-gray-700 task__option--unactive',
                       'block px-4 py-2 text-sm task__option'
                     )}
+                    onClick= {() => handleDelete(event._id)}
                   >
-                    Cancel
+                    Delete
                   </div>
                 )}
               </Menu.Item>

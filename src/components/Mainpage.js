@@ -147,6 +147,7 @@ function Mainpage() {
 
     const value = {
         schedule,
+        setSchedule,
         habits,
         setHabits,
         today,

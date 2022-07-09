@@ -45,12 +45,15 @@ const ForgotEmail = () => {
                             <div className="forgot__account">
                                 <input type="text" placeholder="Enter your email" name="" id="email" value={email} onChange={event => setEmail(event.target.value)} />
                             </div>
+                            <div className="forgot__submit">
+                                <button type='submit' className="forgot__submit--btn">
+                                    <span>Submit</span>
+                                </button>
+                            </div>
+                            <div className="signup__signup">
+                                <Link to="/login">Back to login</Link>
+                            </div>
                         </div>
-                        <div className="forgot__block">
-                            <button>Submit</button>
-                            <Link to="/login">Back to login</Link>
-                        </div>
-
                     </div>
                 </form>
             </>

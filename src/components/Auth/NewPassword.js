@@ -52,8 +52,12 @@ const NewPassword = (props) => {
                                 <div className="password__account">
                                     <input type="password" placeholder="Enter your password" name="repassword" id="password" value={repassword} onChange={event => setRepasswword(event.target.value)} />
                                 </div>
-                                <div>
-                                    <button>Submit</button>
+                                <div className="forgot__submit">
+                                    <button type='submit' className="forgot__submit--btn">
+                                        <span>Submit</span>
+                                    </button>
+                                </div>
+                                <div className="signup__signup">
                                     <Link to="/login">Back to login</Link>
                                 </div>
                             </div>

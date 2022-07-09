@@ -1,10 +1,25 @@
 import event from "./../img/event.png";
+import activity from "./../img/activity.png";
+import deadline from "./../img/deadline.png";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 const Task = (props) => {
 
     console.log("id: ", props.id)
+    var img;
+
+    switch(props.type){
+        case 'Deadline':
+            img = deadline;
+            break;
+        case 'Event':
+            img = event;
+            break;
+        default:
+            img = activity;
+            break;
+    }
 
     const [checked, setChecked] = useState(false);
 
@@ -70,7 +85,7 @@ const Task = (props) => {
                     </label>
                     <label htmlFor={props.id} className="task__item--area"></label>
                     <label htmlFor={props.id} className="task__item--img">
-                        <img src={event} alt=""/>
+                        <img src={img} alt=""/>
                     </label>
                 </div>
             </div>
