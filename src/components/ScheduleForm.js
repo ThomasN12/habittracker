@@ -111,7 +111,7 @@ const ScheduleForm = (props) => {
             </div>
             <div className="form__apply">
                 <button className='form__apply--btn' type='submit'>
-                    <span>Add new habit</span>
+                    <span>Add new schedule</span>
                 </button>
             </div>
         </form>

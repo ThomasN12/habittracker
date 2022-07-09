@@ -15,9 +15,9 @@ const Register = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         // console.log(email, password);
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
+        const baseUrl = process.env.REACT_APP_ROOT_API;
         // const baseUrl = "http://localhost:5000/api"
-        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         axios.post(`${baseUrl}/user/register`, {
             email: email,
             password: password,

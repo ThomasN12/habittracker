@@ -102,8 +102,8 @@ const Habit = (props) =>{
         })
         
         const token = localStorage.getItem('token');
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
-        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+        const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         axios.delete(`${baseUrl}/habit/${id}`, {
             headers: {
                 "accessToken": token,
@@ -154,8 +154,8 @@ const Habit = (props) =>{
             setRecord(props.habit.record);
             //Send update
             const token = localStorage.getItem('token');
-            // const baseUrl = process.env.REACT_APP_ROOT_API;
-            const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+            const baseUrl = process.env.REACT_APP_ROOT_API;
+            // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
             let updatedHabit = {
                 ...props.habit,
                 checkedId: props.habit.checkedId
