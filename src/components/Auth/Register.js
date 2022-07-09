@@ -52,7 +52,7 @@ const Register = (props) => {
                         <div className="signup__utilities">
                             <div className="signup__rememberme">
                                 <input type="checkbox" id="remember"/>
-                                <label for="remember">I agree with Terms and Privacy</label>
+                                <label htmlFor="remember">I agree with Terms and Privacy</label>
                             </div>
                         </div>
                         <div className="signup__signin">
