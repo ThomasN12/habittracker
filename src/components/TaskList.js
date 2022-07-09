@@ -57,7 +57,7 @@ const TaskList = () => {
                         name = {task.name}
                         key={task._id} 
                         id={task._id}
-                        check = {task.check}
+                        type = {task.type}
                         onAddId = {addId}
                         onRemoveId = {removeId}
                         checkedTask = {mainPageTheme.checkedTask}

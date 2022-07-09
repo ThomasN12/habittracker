@@ -263,7 +263,7 @@ function Meeting({ event }) {
                 <div className="rightbar__event--info">
                     <div className="event__title">
                         <span className="event__name">{event.name}</span><br/>
-                        <span className="event__type">Deadline</span>
+                        <span className="event__type">{event.type}</span>
                     </div>
                     <div className="event__time">
                         <span>         
@@ -298,28 +298,26 @@ function Meeting({ event }) {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="a"
+                  <div
                     className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
+                      active ? 'bg-gray-100 text-gray-900 task__option--active' : 'text-gray-700 task__option--unactive',
+                      'block px-4 py-2 text-sm task__option'
                     )}
                   >
                     Edit
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="a"
+                  <div
                     className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
+                      active ? 'bg-gray-100 text-gray-900 task__option--active' : 'text-gray-700 task__option--unactive',
+                      'block px-4 py-2 text-sm task__option'
                     )}
                   >
                     Cancel
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
             </div>

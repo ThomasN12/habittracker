@@ -66,7 +66,7 @@ const Task = (props) => {
                         {props.name}
                     </label>
                     <label htmlFor={props.id} className="task__item--type">
-                        <span>{props.check}</span>
+                        <span>{props.type}</span>
                     </label>
                     <label htmlFor={props.id} className="task__item--area"></label>
                     <label htmlFor={props.id} className="task__item--img">

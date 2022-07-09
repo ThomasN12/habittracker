@@ -6,7 +6,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 50%; }
+  font-size: 62.5%; }
 
 .password__container {
   height: 100vh;
@@ -1294,9 +1294,23 @@ input[type="radio"]:active + .radio__design::after {
   position: absolute;
   right: 0;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: white;
   margin-top: 2rem;
-  border: 1px solid black; }
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  bottom: -5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+
+.task__option {
+  display: block;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.4rem; }
+
+.task__option--active {
+  background-color: #f3f4f6; }
+
+.focus-within\:opacity-100:focus-within {
+  opacity: 1; }
 
 .form__container {
   padding: 5rem 10rem;
