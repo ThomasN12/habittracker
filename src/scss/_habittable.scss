@@ -701,3 +701,13 @@ input[type="radio"]:active+.radio__design::after {
   opacity: .1;
   transform: scale(2.6);
 }
+
+.task__menu{
+  width: 18rem;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background-color: rgba($color: white, $alpha: 0.05);
+  margin-top: 2rem;
+  border: 1px solid black;
+}

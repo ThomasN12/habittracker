@@ -1289,6 +1289,15 @@ input[type="radio"]:active + .radio__design::after {
   opacity: .1;
   transform: scale(2.6); }
 
+.task__menu {
+  width: 18rem;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-top: 2rem;
+  border: 1px solid black; }
+
 .form__container {
   padding: 5rem 10rem;
   background: #FFFFFF;
