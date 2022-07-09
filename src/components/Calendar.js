@@ -5,7 +5,6 @@ import pencil from "../img/Pencil.svg"
 import bell from "../img/Bell.svg"
 import clsx from 'clsx';
 import React, { useState, useContext } from 'react';
-import axios from 'axios';
 import { toast } from 'react-toastify';
 import { MainPageTheme } from './Mainpage';
 import {
@@ -254,15 +253,13 @@ function Meeting({ event }) {
   // let startDateTime = parseISO(meeting.startDatetime)
 
   const mainPageTheme = useContext(MainPageTheme)
-
+  const { api } = mainPageTheme;
   const handleDelete = (id) => {
     mainPageTheme.setSchedule(() => {
        return mainPageTheme.schedule.filter((task) => task._id !== id)
     })
     const token = localStorage.getItem('token');
-    const baseUrl = process.env.REACT_APP_ROOT_API;
-    // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
-    axios.delete(`${baseUrl}/schedule/${id}`, {
+    api.delete(`/schedule/${id}`, {
         headers: {
             "accessToken": token,
         },

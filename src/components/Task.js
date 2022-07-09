@@ -1,11 +1,12 @@
 import event from "./../img/event.png";
 import activity from "./../img/activity.png";
 import deadline from "./../img/deadline.png";
-import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { useState, useEffect, useRef, useContext } from "react";
+import { MainPageTheme } from "./Mainpage";
 import { toast } from "react-toastify";
 const Task = (props) => {
-
+    const mainPageTheme = useContext(MainPageTheme)
+    const { api } = mainPageTheme;
     console.log("id: ", props.id)
     var img;
 
@@ -47,14 +48,12 @@ const Task = (props) => {
         setChecked(prev => !prev);
         //Send update
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let updatedSchedule = {
             ...props.task,
             checked: !checkedVal
         }
         let body = {updatedSchedule};
-        axios.put(`${baseUrl}/schedule/${props.id}`, body, {
+        api.put(`/schedule/${props.id}`, body, {
             headers: {
                 "accessToken": token,
             },

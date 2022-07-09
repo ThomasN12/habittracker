@@ -5,7 +5,6 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import medal from "../../img/gold-medal.png";
 import calendar from "../../img/calendar.png";
 import Chart from "../Charts/HabitChart";
-import axios from "axios";
 import { toast } from "react-toastify";
 import information from "../../img/info2.png"
 import bin from "../../img/bin.png"
@@ -16,6 +15,7 @@ import { MainPageTheme } from "../Mainpage";
 const Habit = (props) =>{
 
     const mainPageTheme = useContext(MainPageTheme)
+    const { api } = mainPageTheme;
     // const [weeks, setWeeks] = useState(props.weeks)
 
 
@@ -102,9 +102,7 @@ const Habit = (props) =>{
         })
         
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
-        axios.delete(`${baseUrl}/habit/${id}`, {
+        api.delete(`/habit/${id}`, {
             headers: {
                 "accessToken": token,
             },
@@ -154,14 +152,12 @@ const Habit = (props) =>{
             setRecord(props.habit.record);
             //Send update
             const token = localStorage.getItem('token');
-            const baseUrl = process.env.REACT_APP_ROOT_API;
-            // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
             let updatedHabit = {
                 ...props.habit,
                 checkedId: props.habit.checkedId
             }
             let body = {updatedHabit};
-            axios.put(`${baseUrl}/habit/${props.id}`, body, {
+            api.put(`/habit/${props.id}`, body, {
                 headers: {
                     "accessToken": token,
                 },

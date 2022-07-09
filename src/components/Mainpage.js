@@ -35,11 +35,12 @@ function Mainpage() {
     const [habits, setHabits] = useState([]);
     const [schedule, setSchedule] = useState([]);
     const [checkedTask, setCheckedTask] = useState([]);
+    const api = axios.create({
+        baseURL:  process.env.REACT_APP_ROOT_API,
+    })
     useEffect(() => {
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
-        axios.get(`${baseUrl}/habit`, {
+        api.get(`/habit`, {
             headers: {
                 "accessToken": token,
             }
@@ -59,7 +60,7 @@ function Mainpage() {
             return;
         });
 
-        axios.get(`${baseUrl}/schedule`, {
+        api.get(`/schedule`, {
             headers: {
                 "accessToken": token,
             }
@@ -90,11 +91,8 @@ function Mainpage() {
 
     const addNewHabit = (habit) => {
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        // const baseUrl = "http://localhost:5000/api"
-        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let body = {habit};
-        axios.post(`${baseUrl}/habit`, body, {
+        api.post(`/habit`, body, {
             headers: {
                 "accessToken": token,
             }
@@ -117,11 +115,8 @@ function Mainpage() {
         //     return [schedule, ...prevSchedule];
         // })
         const token = localStorage.getItem('token');
-        const baseUrl = process.env.REACT_APP_ROOT_API;
-        // const baseUrl = "http://localhost:5000/api"
-        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
         let body = {schedule};
-        axios.post(`${baseUrl}/schedule`, body, {
+        api.post(`/schedule`, body, {
             headers: {
                 "accessToken": token,
             }
@@ -153,7 +148,8 @@ function Mainpage() {
         selectedDay,
         setSelectedDay,
         checkedTask,
-        setCheckedTask
+        setCheckedTask,
+        api,
     }
 
     return (
