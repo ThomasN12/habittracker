@@ -75,7 +75,7 @@ const HabitForm = (props) => {
                 <label>Importance rate of habit</label>
                 <input type="text" placeholder="City, airport, region, district..." className="queryform__style--1" onChange={importanceChangeHandler} value={habitImportance}/>
             </div> */}
-            <div className="form__radio mt-32">
+            {/* <div className="form__radio mt-32">
                 <span>Importance rate of habit</span>
                 
                 <div className="radio__container">
@@ -97,9 +97,9 @@ const HabitForm = (props) => {
                         <span className="radio__text">High</span>
                     </label>
                 </div>
-            </div>
+            </div> */}
             <div className="form__radio mt-32">
-                <span>Habit type</span>
+                <span>Habit type:</span>
                 
                 <div className="radio__container">
                     <label className="radio__label">

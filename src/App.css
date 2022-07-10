@@ -664,7 +664,6 @@ html {
 .tasklist__content > span {
   font-family: Montserrat;
   font-size: 1.4rem;
-  font-weight: 600;
   margin-bottom: 2.5rem; }
 
 body {
@@ -1418,7 +1417,6 @@ input[type="radio"]:active + .radio__design::after {
   border-radius: 0.8rem;
   width: 13rem;
   color: white;
-  padding: 1.25rem;
   text-align: center; }
 
 .form__apply > span {
@@ -1430,7 +1428,8 @@ input[type="radio"]:active + .radio__design::after {
 .form__apply--btn {
   color: white;
   font-family: 'Montserrat';
-  font-weight: 600; }
+  font-weight: 600;
+  padding: 1.25rem; }
 
 .sidebar {
   position: fixed;

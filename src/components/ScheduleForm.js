@@ -10,27 +10,27 @@ const ScheduleForm = (props) => {
     const [type, setType] = useState(''); 
     const [scheduleName, setScheduleName] = useState('');
     const [scheduleImportance, setScheduleImportance] = useState('');
-    const [scheduleGenre, setScheduleGenre] = useState('');
-    const [scheduleTarget, setScheduleTarget] = useState('');
-    const [scheduleDays, setScheduleDays] = useState('');
+    // const [scheduleGenre, setScheduleGenre] = useState('');
+    // const [scheduleTarget, setScheduleTarget] = useState('');
+    // const [scheduleDays, setScheduleDays] = useState('');
 
-    const handleChecked = (id) => {
-        console.log("ok")
-        setType(id)
-    }
+    // const handleChecked = (id) => {
+    //     console.log("ok")
+    //     setType(id)
+    // }
 
     const titleChangeHandler = (event) =>{
         setScheduleName(event.target.value);
     }
-    const genreChangeHandler = (event) =>{
-        setScheduleGenre(event.target.value);
-    }
-    const targetChangeHandler = (event) =>{
-        setScheduleTarget(event.target.value);
-    }
-    const daysChangeHandler = (event) =>{
-        setScheduleDays(event.target.value);
-    }
+    // const genreChangeHandler = (event) =>{
+    //     setScheduleGenre(event.target.value);
+    // }
+    // const targetChangeHandler = (event) =>{
+    //     setScheduleTarget(event.target.value);
+    // }
+    // const daysChangeHandler = (event) =>{
+    //     setScheduleDays(event.target.value);
+    // }
 
     const importanceChangeHandler = (event) =>{
         setScheduleImportance(event.target.value);
@@ -62,11 +62,11 @@ const ScheduleForm = (props) => {
         
 
         setScheduleName('');
-        setScheduleGenre('');
-        setScheduleTarget('');
-        setScheduleDays('');
-        setScheduleImportance('');
-        
+        setType('')
+        // setScheduleGenre('');
+        // setScheduleTarget('');
+        // setScheduleDays('');
+        // setScheduleImportance('');
     }
 
     return (
@@ -82,28 +82,28 @@ const ScheduleForm = (props) => {
                 <input type="checkbox"/>
                 <label className="queryform__style--1">Send notification automatically</label>
             </div>
-            <div className="form__query--1 mt-32">
+            {/* <div className="form__query--1 mt-32">
                 <label>Type of schedule:</label>
                 <input type="text" placeholder="Deadline, regular activities..." className="queryform__style--1" onChange={importanceChangeHandler} value={scheduleImportance}/>
-            </div>
+            </div> */}
             <div className="form__radio mt-32">
                 <span>Task type: </span>
                 
                 <div className="radio__container">
                     <label className="radio__label">
-                        <input type="radio" name="tasktype" onChange={() => handleChecked('deadline')} value = {type === 'deadline'}/>
+                        <input type="radio" name="tasktype" onChange={() => setType('deadline')} value = {type === 'deadline'} checked = {type === 'deadline'}/>
                         <span className="radio__design"></span>
                         <span className="radio__text">Deadline</span>
                     </label>
                     
                     <label className="radio__label">
-                        <input type="radio" name="tasktype" onChange={() => handleChecked('event')} value = {type === 'event'}/>
+                        <input type="radio" name="tasktype" onChange={() => setType('event')} value = {type === 'event'} checked = {type === 'event'}/>
                         <span className="radio__design"></span>
                         <span className="radio__text">Event</span>
                     </label>
                     
                     <label className="radio__label">
-                        <input type="radio" name="tasktype" onChange={() => handleChecked('other')} value = {type === 'other'}/>
+                        <input type="radio" name="tasktype" onChange={() => setType('other')} value = {type === 'other'} checked = {type === 'other'}/>
                         <span className="radio__design"></span>
                         <span className="radio__text">Other</span>
                     </label>
