@@ -90,15 +90,12 @@
 .form__content{
     background: linear-gradient(to right, #2bc0e4, #eaecc6);
     padding: 3.2rem;
-    width: 35%;
+    width: 37.5%;
     box-shadow: rgba(100, 100, 111, 0.2) .0rem .7rem 2.9rem .0rem;
 }
 
 .form__apply{
     margin: 4.5rem auto 0;
-    background: #1E1411;
-    border-radius: 0.8rem;
-    width: 13rem;
     color: white;
     text-align: center;
 }
@@ -113,6 +110,8 @@
 .form__apply--btn{
     color: white;
     font-family: 'Montserrat';
+    background: #1E1411;
+    border-radius: 0.8rem;
     font-weight: 600;
     padding: 1.25rem;
 }

@@ -6,7 +6,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 40%; }
 
 .password__container {
   height: 100vh;
@@ -531,7 +531,7 @@ html {
 
 .task__item::after {
   width: .0rem;
-  left: 65%;
+  left: 55%;
   transform-origin: left bottom; }
 
 .task__item:checked::before {
@@ -1408,14 +1408,11 @@ input[type="radio"]:active + .radio__design::after {
 .form__content {
   background: linear-gradient(to right, #2bc0e4, #eaecc6);
   padding: 3.2rem;
-  width: 35%;
+  width: 37.5%;
   box-shadow: rgba(100, 100, 111, 0.2) 0rem 0.7rem 2.9rem 0rem; }
 
 .form__apply {
   margin: 4.5rem auto 0;
-  background: #1E1411;
-  border-radius: 0.8rem;
-  width: 13rem;
   color: white;
   text-align: center; }
 
@@ -1428,6 +1425,8 @@ input[type="radio"]:active + .radio__design::after {
 .form__apply--btn {
   color: white;
   font-family: 'Montserrat';
+  background: #1E1411;
+  border-radius: 0.8rem;
   font-weight: 600;
   padding: 1.25rem; }
 
@@ -1871,8 +1870,8 @@ input[type="radio"]:active + .radio__design::after {
   color: black; }
 
 .padding-9 {
-  padding-left: 2.43rem;
-  padding-right: 2.43rem; }
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; }
 
 .border-radius-none {
   border-radius: unset; }
@@ -1917,3 +1916,23 @@ button {
   background-color: #73777b;
   opacity: 0.55;
   border-radius: .4rem; }
+
+@media (min-width: 1350px) {
+  html {
+    font-size: 48%; } }
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 55%; } }
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 60%; } }
+
+@media (min-width: 1760px) {
+  html {
+    font-size: 65%; } }
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 72.5%; } }
