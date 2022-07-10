@@ -6,7 +6,7 @@
   box-sizing: inherit; }
 
   html{
-      font-size: 62.5%;
+      font-size: 40%;
   }
 @import "passwordform.scss";
 @import "forgotform.scss";
@@ -79,8 +79,8 @@
     color: black;
 }
 .padding-9{
-    padding-left: 2.43rem;
-    padding-right: 2.43rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 .border-radius-none{
     border-radius: unset;
@@ -137,8 +137,28 @@ button {
     border-radius: .4rem;
 }
 
-// @media (max-width: 1000px){
-//     html{
-//         font-size: 40%;
-//     }
-// }
+@media (min-width: 1350px){
+    html{
+        font-size: 48%;
+    }
+}
+@media (min-width: 1440px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (min-width: 1600px){
+    html{
+        font-size: 60%;
+    }
+}
+@media (min-width: 1760px){
+    html{
+        font-size: 65%;
+    }
+}
+@media (min-width: 1920px){
+    html{
+        font-size: 72.5%;
+    }
+}
