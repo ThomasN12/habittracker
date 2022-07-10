@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/habittracker/static/css/main.e7a88cf8.css",
-    "main.js": "/habittracker/static/js/main.045ba070.js",
+    "main.css": "/habittracker/static/css/main.3b03707b.css",
+    "main.js": "/habittracker/static/js/main.26e29768.js",
     "static/js/787.5a766354.chunk.js": "/habittracker/static/js/787.5a766354.chunk.js",
     "static/media/formbg2.jpg": "/habittracker/static/media/formbg2.f08846e370c78ea6066f.jpg",
     "static/media/back3.jpg": "/habittracker/static/media/back3.4255c4ff6b099f23971d.jpg",
@@ -10,7 +10,10 @@
     "static/media/relightblueplanet.png": "/habittracker/static/media/relightblueplanet.0bf4fe1b87eb2aa13c0a.png",
     "static/media/reblueplanet.png": "/habittracker/static/media/reblueplanet.9b94490d604a2dcdd8da.png",
     "static/media/longstar.svg": "/habittracker/static/media/longstar.1cb4e5b75201b70bb57dc4096e9a3afd.svg",
+    "static/media/sun.svg": "/habittracker/static/media/sun.b73fef27b238650e086b6d7dd82bdcdb.svg",
     "static/media/iconsetting.svg": "/habittracker/static/media/iconsetting.1d4cffc599526afb74c18be3cb5f72fc.svg",
+    "static/media/sleeping.svg": "/habittracker/static/media/sleeping.137964c82116733a42abad50fd7fc4c4.svg",
+    "static/media/badge.svg": "/habittracker/static/media/badge.4aee9786a21230ea60a3b4a02f70f8f3.svg",
     "index.html": "/habittracker/index.html",
     "static/media/iconreport.svg": "/habittracker/static/media/iconreport.0c5901894eafd6d99ced5c443902cdf7.svg",
     "static/media/Bell.svg": "/habittracker/static/media/Bell.6f8b6093a0f08329c192dae2f19ddb4b.svg",
@@ -18,12 +21,12 @@
     "static/media/iconpage.svg": "/habittracker/static/media/iconpage.aee0d2a5052bd61738f0dfa3222b79fc.svg",
     "static/media/icondashboard.svg": "/habittracker/static/media/icondashboard.aa79cd189064e3be9f65e64b460d62b6.svg",
     "static/media/search.svg": "/habittracker/static/media/search.a0e0e0e117d11d7c2f25245a337dd426.svg",
-    "main.e7a88cf8.css.map": "/habittracker/static/css/main.e7a88cf8.css.map",
-    "main.045ba070.js.map": "/habittracker/static/js/main.045ba070.js.map",
+    "main.3b03707b.css.map": "/habittracker/static/css/main.3b03707b.css.map",
+    "main.26e29768.js.map": "/habittracker/static/js/main.26e29768.js.map",
     "787.5a766354.chunk.js.map": "/habittracker/static/js/787.5a766354.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7a88cf8.css",
-    "static/js/main.045ba070.js"
+    "static/css/main.3b03707b.css",
+    "static/js/main.26e29768.js"
   ]
 }
