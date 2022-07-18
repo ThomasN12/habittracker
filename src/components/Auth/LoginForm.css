@@ -50,7 +50,6 @@
   width: 29rem;
   border-radius: 6px;
   border: 2px solid #333;
-  margin-bottom: 1.5rem;
   padding-left: 1.5rem;
 }
 
@@ -147,4 +146,10 @@
 .login__signup a{
   color:black;
   font-weight: 700;
+}
+
+.login__invalid{
+  color: red;
+  padding: 0.8rem;
+  font-size: 1.2rem;
 }

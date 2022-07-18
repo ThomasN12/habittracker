@@ -1917,22 +1917,22 @@ button {
   opacity: 0.55;
   border-radius: .4rem; }
 
-@media (min-width: 1920px) {
+@media (min-width: 1350px) {
   html {
-    font-size: 72.5%; } }
-
-@media (min-width: 1760px) {
-  html {
-    font-size: 65%; } }
-
-@media (min-width: 1600px) {
-  html {
-    font-size: 60%; } }
+    font-size: 48%; } }
 
 @media (min-width: 1440px) {
   html {
     font-size: 55%; } }
 
-@media (min-width: 1350px) {
+@media (min-width: 1600px) {
   html {
-    font-size: 48%; } }
+    font-size: 60%; } }
+
+@media (min-width: 1760px) {
+  html {
+    font-size: 65%; } }
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 72.5%; } }

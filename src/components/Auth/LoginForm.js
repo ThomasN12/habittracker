@@ -1,6 +1,6 @@
 import background from "../../img/formbg2.jpg";
 import google from "../../img/google.png"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -8,55 +8,85 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
 import "./LoginForm.css"
+// import { eventManager } from "react-toastify/dist/core";
 
 const LoginForm = (props) => {
     const [email, setEmail] = useState('');
+    const [emailIsTouched, setEmailIsTouched] = useState(false)
     const [password, setPassword] = useState('');
-    let navigate = useNavigate();
-    const responseSuccessGoogle = (res) => {
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
-        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
-        // const baseUrl = "http://localhost:5000/api";
-        axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
-            const { data } = res;
-            if (data.success) {
-                localStorage.setItem('token', data.token);
-                navigate('/main');
-                toast.success(data.message);
-            } else {
-                toast.error(data.message);
-            }
-        }).catch(err => {
-            toast.error(err.message);
-        })
+    const [isLoading, setIsLoading] = useState('');
+    // let navigate = useNavigate();
+    // const responseSuccessGoogle = (res) => {
+    //     // const baseUrl = process.env.REACT_APP_ROOT_API;
+    //     const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+    //     // const baseUrl = "http://localhost:5000/api";
+    //     axios.post(`${baseUrl}/user/googlelogin`, {idToken: res.credential}).then(res => {
+    //         const { data } = res;
+    //         if (data.success) {
+    //             localStorage.setItem('token', data.token);
+    //             navigate('/main');
+    //             toast.success(data.message);
+    //         } else {
+    //             toast.error(data.message);
+    //         }
+    //     }).catch(err => {
+    //         toast.error(err.message);
+    //     })
+    // }
+
+    // const responseErrorGoogle = (err) => {
+    //     toast.error(err.message);
+    // }
+    const submitHandler = (event) => {
+        
+        // // const baseUrl = "http://localhost:5000/api"
+        // // const baseUrl = process.env.REACT_APP_ROOT_API;
+        // const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
+        // axios.post(`${baseUrl}/user/login`, {
+        //     email: email,
+        //     // password: password,
+        // }).then(res => {
+        //     const { data } = res;
+        //     if (data.success) {
+        //         localStorage.setItem('token', data.token);
+        //         navigate('/main');
+        //         toast.success(data.message);
+        //     } else {
+        //         toast.error(data.message);
+        //     }
+        // }).catch(err => {
+        //     toast.error(err.message);
+        // })
     }
 
-    const responseErrorGoogle = (err) => {
-        toast.error(err.message);
+    const emailIsValid = email.trim() !== '';
+    const emailInputIsInvalid = !emailIsValid && emailIsTouched;
+
+    const emailChangeHandler = (event) => {
+        setEmailIsTouched(true)
+        setEmail(event.target.value)
     }
-    const submitHandler = (event) => {
-        // const baseUrl = "http://localhost:5000/api"
-        // const baseUrl = process.env.REACT_APP_ROOT_API;
-        const baseUrl = "https://habit-tracker-server.herokuapp.com/api"
-        axios.post(`${baseUrl}/user/login`, {
-            email: email,
-            password: password,
-        }).then(res => {
-            const { data } = res;
-            if (data.success) {
-                localStorage.setItem('token', data.token);
-                navigate('/main');
-                toast.success(data.message);
-            } else {
-                toast.error(data.message);
-            }
-        }).catch(err => {
-            toast.error(err.message);
-        })
+
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        setEmailIsTouched(true)
+        if (!emailIsValid){
+            return;
+        }
+        setEmail('')
+        setEmailIsTouched(false)
     }
+
+    const emailBlurHandler = (event) => {
+        setEmailIsTouched(true)
+    }
+
+    
+    console.log("touch:", emailIsTouched);
+    console.log("valid:", emailIsValid)
 
     return (
-        <div className="login__container">
+        <form className="login__container" onSubmit={formSubmitHandler}>
             <img src={background} alt="" />
             <div className="login__form">
                 <div className="login__block">
@@ -64,11 +94,23 @@ const LoginForm = (props) => {
                         <h2>Welcome</h2>
                     </div>
                     <div className="login__account">
-                        <input type="text" placeholder="Enter your email" value={email} onChange={event => setEmail(event.target.value)} />
+                        <input 
+                        type="text" 
+                        placeholder="Enter your email" 
+                        value={email} 
+                        onChange={emailChangeHandler}
+                        onBlur={emailBlurHandler}
+                         />
                     </div>
-                    <div className="login__password">
+                    <div className='login__invalid'>
+                        {emailInputIsInvalid && <span>Email must not be empty</span>}
+                    </div>
+                    {/* <div className="login__password">
                         <input type="password" placeholder="Enter your password" onChange={event => setPassword(event.target.value)} />
                     </div>
+                    <div className='login__invalid'>
+                        <span>Email address must be valid email</span>
+                    </div> */}
                     <div className="login__utilities">
                         <div className="login__rememberme">
                             <input type="checkbox" id="remember" />
@@ -80,7 +122,10 @@ const LoginForm = (props) => {
                         </div>
                     </div>
                     <div className="login__signin">
-                        <button className="login__signin--btn" onClick={submitHandler}>
+                        <button 
+                        className="login__signin--btn" 
+                        onClick={submitHandler}
+                        >
                             <span>Sign in</span>
                         </button>
                     </div>
@@ -95,16 +140,16 @@ const LoginForm = (props) => {
                         {/* <a href="register"> Sign up</a> */}
                         <Link to="/register">Sign Up</Link>
                     </div>
-                    <GoogleLogin
+                    {/* <GoogleLogin
                         buttonText="Login"
                         onSuccess={responseSuccessGoogle}
                         onFailure={responseErrorGoogle}
                         cookiePolicy={'single_host_origin'}
                         useOneTap
-                    />
+                    /> */}
                 </div>
             </div>
-        </div>
+        </form>
     )
 }
 

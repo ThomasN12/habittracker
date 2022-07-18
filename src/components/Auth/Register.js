@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState('')
     let navigate = useNavigate();
 
     const submitHandler = (event) => {
