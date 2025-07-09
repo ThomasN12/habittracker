@@ -13,10 +13,11 @@ import ForgotEmail from './components/Auth/ForgotEmail';
 import NewPassword from './components/Auth/NewPassword';
 
 function App() {
+  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || "868855841872-rqi0fq7l869n55toq9f1js9f977ugd35.apps.googleusercontent.com";
 
   return (
     <>
-      <GoogleOAuthProvider clientId="868855841872-rqi0fq7l869n55toq9f1js9f977ugd35.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={googleClientId}>
         {/* <Router basename={"/habittracker"}>
             <Routes>
               <Route exact path='/login' element={<Login />} />
